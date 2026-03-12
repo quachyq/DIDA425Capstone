@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Title{% endblock %}</title>
+    <link rel="stylesheet" href = "{{ url_for('static',filename='styles/mainpage.css') }}">
+    {% endblock %}
+</head>
+
+<body>
+    {% block body %}
+    
+    <div id="main-content">
+        <div id="sidebar">
+            <div class = "sidebar-buttons">
+                <button class='open-sidebar' onclick = "toggleSidebar()">Sidebar</button>
+            </div>
+
+            <div class = "sidebar-content">
+                
+                <a href="/module">1.1</a> </br>
+                <a>1.2</a>
+            </div>
+        </div>
+
+        <div id="learn-panel">
+            {% block module_content %}
+
+            {% endblock %}
+        </div>
+    </div>
+
+        {% endblock %}
+
+    <script>
+
+        const mainContent = document.getElementById("main-content");
+
+        // Show Sidebar button functionality
+        function toggleSidebar() {
+            mainContent.classList.toggle("sidebar-open")
+        }
+    </script>
+</body>
+</html>

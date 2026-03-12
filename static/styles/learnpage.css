@@ -1,0 +1,70 @@
+body {
+    background-color: gray
+}
+
+header {
+    padding: 10px;
+    position: fixed;
+}
+
+
+#learn-panel {
+    transition: 0.5s ease-in-out;
+    position: fixed;
+    margin-top: 3%;
+    margin-left: 5%;
+    margin-right: 10%;
+    padding: 20px;
+    width: 85dvw;
+    height: 85dvh;
+    border: 2px solid black;
+    border-radius: 20px;
+    background-color: whitesmoke;
+}
+
+#sidebar {
+    border: 2px solid grey;
+    border-radius: 20px;
+    color: white;
+    height: 100%;
+    width: 5%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s ease-in-out;
+    padding-top: 60px;
+}
+
+.sidebar-content {
+    overflow-x: hidden;
+    transition: 0.5s ease-in-out;
+    width: 0;
+}
+
+.sidebar-buttons {
+    overflow-x: hidden;
+    position: fixed;
+    transition: 0.5s ease-in-out;
+    padding: 10px;
+}
+
+#main-content.sidebar-open #sidebar         { 
+    width: 15dvw;
+    }
+
+#main-content.sidebar-open .sidebar-content { 
+    width: 15dvw; 
+}
+
+#main-content.sidebar-open .sidebar-buttons { 
+    margin-left: 10%; 
+}
+
+#main-content.sidebar-open #learn-panel     { 
+    width: 80dvw; 
+    margin-left: 15%;
+    
+}
