@@ -3,5 +3,14 @@ body {
 }
 
 .title {
+    display: flex;
     font-size: 2em;
+    position: fixed;
+    justify-content: center;
+    padding-left: 50%;
+    width: 85dvw;
+    height: 85dvh;
+    background: white;
+    border-radius: 20px;
 }
+
