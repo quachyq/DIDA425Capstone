@@ -1,13 +1,26 @@
-{% extends layout %}
+{% extends "layout.html" %}
 
 {% block title%}Main Page{% endblock %}
 
 {% block head %}
 {{ super() }}
+<link rel="stylesheet" href = "{{ url_for('static',filename='styles/titlepage.css') }}">
 {% endblock %}
 
 {% block body %}
-<div class = 'title'>
-    Data Center Learning Modules
+
+<div id = "title-block">
+    <div class = 'title'>
+        Data Center Learning Modules
+    </div>
+    
+    <div class = 'description'>
+        DESCIPTION DESCRIPTION DESCRIPTION DESCRIPTION
+    </div>
+    
+    <form action="{{ url_for('next_button') }}" method="POST">
+        <button type="submit" name="submit_button" value="Clicked">Access the Modules</button>
+    </form>
 </div>
+
 {% endblock %}
