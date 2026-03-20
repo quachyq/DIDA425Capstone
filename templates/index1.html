@@ -5,21 +5,27 @@
 {% block head %}
 {{ super() }}
 <link rel="stylesheet" href = "{{ url_for('static',filename='styles/titlepage.css') }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz@0,9..40;1,9..40&family=Libre+Baskerville:ital@0;1&display=swap" rel="stylesheet">
 {% endblock %}
 
 {% block body %}
 
-<div id = "title-block">
+<div id = "home-block">
     <div class = 'title'>
-        Data Center Learning Modules
+        Data Center</br>Learning Modules
     </div>
     
     <div class = 'description'>
-        DESCIPTION DESCRIPTION DESCRIPTION DESCRIPTION
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae nisl laoreet, interdum metus et, 
+        consectetur nunc. Donec dignissim nulla in sapien mattis, a finibus nulla placerat. Quisque at lacinia 
+        nisl, in tincidunt est. In hac habitasse platea dictumst. Nullam malesuada fermentum augue et tempor. 
+        Proin laoreet nisi eget libero vehicula, quis eleifend ante aliquam.
     </div>
     
     <form action="{{ url_for('next_button') }}" method="POST">
-        <button type="submit" name="submit_button" value="Clicked">Access the Modules</button>
+        <button class = 'access-button' type="submit" name="submit_button" value="Clicked">Access the Modules</button>
     </form>
 </div>
 

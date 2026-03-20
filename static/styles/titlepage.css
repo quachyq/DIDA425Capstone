@@ -1,16 +1,32 @@
 body {
-    background-color: gray;
+    background-color: white;
+}
+
+#home-block {
+    background-color: white; 
+    padding: 9%;
 }
 
 .title {
-    display: flex;
-    font-size: 2em;
-    position: fixed;
-    justify-content: center;
-    padding-left: 50%;
-    width: 85dvw;
-    height: 85dvh;
-    background: white;
-    border-radius: 20px;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 3.75em;
+}
+
+.description {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.3em;
+    max-width: 55%;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+.access-button {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1.25em;
+    background-color: black;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
 }
 
