@@ -1,0 +1,10 @@
+
+.module-block {
+    cursor: pointer;
+    position: relative;
+    background: white;
+    padding: 5%;
+    border-radius: 20px;
+    height: 20dvh;
+    width: 40dvh;
+}
