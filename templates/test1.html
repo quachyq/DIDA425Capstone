@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}Index{% endblock %}
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static',filename='styles/test.css') }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz@0,9..40;1,9..40&family=Libre+Baskerville:ital@0;1&display=swap" rel="stylesheet">
+{% endblock %}
+
+
+{% block body %}
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Your Headline</h1>
+    <p>A short supporting line of text.</p>
+    <a href="#" class="btn">Call to Action</a>
+  </div>
+</section>
+
+{% endblock %}

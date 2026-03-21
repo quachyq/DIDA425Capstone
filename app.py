@@ -17,3 +17,7 @@ def next_button():
 @app.route('/module')
 def module():
     return render_template('index2.html')
+
+@app.route('/test')
+def test():
+    return render_template('test1.html')
