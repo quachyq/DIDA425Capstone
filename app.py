@@ -11,7 +11,7 @@ def index():
 @app.route('/', methods=['POST'])
 def next_button():
     if 'submit_button' in request.form:
-        return redirect(url_for('module'))
+        return redirect(url_for('outline'))
     return "An issue occurred."
 
 @app.route('/module')
@@ -21,3 +21,7 @@ def module():
 @app.route('/test')
 def test():
     return render_template('test1.html')
+
+@app.route('/module-outline')
+def outline():
+    return render_template('module-outline.html')

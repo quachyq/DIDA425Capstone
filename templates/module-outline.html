@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title%}Module Outline{% endblock %}
+
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href = "{{ url_for('static',filename='styles/module_outline.css') }}">
+{% endblock %}
+
+{% block body %}
+
+<div id = 'title-block'>
+    <div class = 'title'>
+        Data Center Learning Modules
+    </div>
+</div>
+
+<div class = 'module-block-container'>
+    <a href=''>
+        <div class = 'module-block'>
+            <div class = 'module-name'>
+                Module 1: What is a Data Center?
+            </div>
+            <div class = 'learning-objective'>
+                blah blah
+            </div>
+        </div>
+    </a>
+</div>
+
+{% endblock %}
