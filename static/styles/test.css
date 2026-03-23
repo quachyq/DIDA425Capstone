@@ -42,6 +42,7 @@ body {
     background-color: rgb(108, 108, 108);
     border-radius: 0 10px 0 0;
     justify-content: right;
+    transition: width 0.5s ease-in-out;
 }
 
 .sidebar-content {
@@ -64,6 +65,8 @@ button.sidebar-open {
     width: auto; 
     height: 100%;
     background-color: rgb(135, 135, 135); 
+    transition: 0.5s ease-in-out;
+    transition: width 0.5s ease;
 }
 
 .layout.sidebar-expand .sidebar-expanded {
@@ -72,7 +75,7 @@ button.sidebar-open {
 }
 
 .layout.sidebar-expand .sidebar {
-    width: 0;
+    width: 50px;
 }
 
 .empty-space {
