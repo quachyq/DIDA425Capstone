@@ -5,7 +5,7 @@ app = CustomFlask(__name__)
 
 @app.route('/')
 def index():
-    module = app.module_num
+    module = app.module_dict
     return render_template('index1.html', module = module)
 
 @app.route('/', methods=['POST'])
@@ -24,4 +24,5 @@ def test():
 
 @app.route('/module-outline')
 def outline():
+    modules = {}
     return render_template('module-outline.html')

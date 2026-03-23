@@ -1,20 +1,30 @@
-'''
-Object File
-'''
-
 from flask import Flask
+import os
+import json
 
 class CustomFlask(Flask):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.module_num = 1
+        self.module_dict = {}
+    
+    
     
 class Module:
-    def __init__(self, content: str, href: str,):
+    def __init__(self, id, title, href: str = None, content: str= None, objective: str = None):
         self.content = content
+        self.title = title
         self.href = href
+        self.id = id
+        self.objective = objective
+        self.nested = {}
+        
+        if self.href == None:
+            self.href = f"module{id.replace(".","-")}"
+        
+    def add_nest(self, module):
+        self.nested.update({module.id: module})
 
-class Submodule(Module):
-    def __init__(self, subnum, *args):
-        super().__init__(*args)
-        self.subnum = subnum
+with open('static/json/module_outline.json') as f:
+    MODULES = json.load(f)
+
+mod1 = Module(id="1.1", title = "What is a data center?")

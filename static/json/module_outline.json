@@ -1,15 +1,31 @@
-{
-    "What is a data center?": {
-        "What is a data center?": {
-            "Definition": "",
-            "Bones of a data center": {
-                "What are servers, racks, and networking equipment?": "",
+[
+    {
+        "id": 1,
+        "label": "1.1",
+        "name": "What is a data center?",
+        "sections": [
+            {
+            "id": "1.1.1",
+            "name": "Definition",
+            "content": "At its simplest, a data center is just a building that houses technology infrastructure such as servers, data storage systems, networking devices, and operating systems. Previously, companies would own a data center to facilitate their computing needs. Nowadays, cloud service providers (CSPs) own massive data centers capable of fulfilling the needs for multiple separate companies at once."
+            }             
+        ]
+    },
+    {
+        "id": 2,
+        "label": "1.2",
+        "name": "Bones of a data center",
+        "sections": [
+            {
+            "id": "1.2.1",
+            "name": "What are servers, racks, and networking equipment?",
+            "content": "test"
             },
-        },
-        "What are they used for?": {
-            "What services depend on them?": "",
-
-        }
+            {
+            "id": "1.2.2",
+            "name": "Interactive",
+            "content": "test"
+            }                    
+        ]
     }
-
-}
+]

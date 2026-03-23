@@ -49,7 +49,7 @@ body {
     background-color: beige;
 }
 
-.hamburger {
+button.sidebar-open {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -64,6 +64,15 @@ body {
     width: auto; 
     height: 100%;
     background-color: rgb(135, 135, 135); 
+}
+
+.layout.sidebar-expand .sidebar-expanded {
+    width: 0;
+    opacity: 0;
+}
+
+.layout.sidebar-expand .sidebar {
+    width: 0;
 }
 
 .empty-space {

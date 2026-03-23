@@ -26,7 +26,9 @@
     </div>
     <div class = 'sidebar'>
         <div class="sidebar-content">
-            <div class = "hamburger">☰</div>
+            <button class = "sidebar-open" onclick = "toggleSidebar()">
+                ☰
+            </button>
         </div>
         <div class = "sidebar-expanded">
             <div class="empty-space">
@@ -99,5 +101,17 @@
         perferendis sequi, minima rem reiciendis?</p>
     </div>
 </section>
+
+<script>
+
+        const layout = document.getElementsByClassName("layout")[0];
+
+        console.log(layout)
+        // Show Sidebar button functionality
+        function toggleSidebar() {
+            layout.classList.toggle("sidebar-expand")
+        }
+
+</script>
 
 {% endblock %}
