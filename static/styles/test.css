@@ -14,6 +14,7 @@ body {
     display: grid;
     grid-template-columns: [col1] 45px [col2] 255px [col3] auto [col4];
     grid-template-rows: [row1] 45px [row2] auto [row3];
+    overflow-x: none;
 }
 
 .header {
