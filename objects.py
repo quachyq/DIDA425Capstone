@@ -19,7 +19,8 @@ class Module:
         self.nested = {}
         
         if self.href == None:
-            self.href = f"module{id.replace(".","-")}"
+            new_id = id.replace(".", "-")
+            self.href = f"module{new_id}"
         
     def add_nest(self, module):
         self.nested.update({module.id: module})

@@ -62,7 +62,7 @@ button.sidebar-open {
     width: fit-content;
     height: fit-content;
     font-size: 1.75em;
-    background-color: aquamarine;
+    background-color: rgb(108, 108, 108);
 }
 
 .sidebar-expanded {
