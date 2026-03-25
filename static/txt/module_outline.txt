@@ -1,32 +1,29 @@
--
-What is a data center?
---
-What is a data center?
 ---
-Definition
-Bones of a data center
-----
-What are servers, racks, and networking equipment?
-Clickable/hoverable models of equipment that display what functions things have
---
-What are they used for?
----
-What services depend on them?
-What is the difference in data center usage between a company like Netflix vs OpenAI?
---
-What is the scope of the issue?
----
-How many data centers are there now?
-How many more will there be in 10 years?
-Where are they being built?
---
-Who profits from them?
----
-OpenAI, Google, Meta, etc.
-What other companies are looking to profit?
---
-Why should we care?
----
-Who are the stakeholders?
-What are the negative impacts? (lead into module 2)
 
+label: 1.1
+title: What is a data center?
+
+---
+
+label: 1.1.1
+title: Definition
+content: 
+At its simplest, a data center is just a building that houses technology infrastructure such as servers,
+data storage systems, networking devices, and operating systems. Previously, companies would own a
+data center to facilitate their computing needs. Nowadays, cloud service providers (CSPs) own massive
+data centers capable of fulfilling the needs for multiple separate companies at once.
+
+---
+
+label: 1.2
+title: Bones of a data center
+
+---
+
+label: 1.2.1
+title: What are servers, racks, and networking equipment?
+content:
+test
+test
+
+---
