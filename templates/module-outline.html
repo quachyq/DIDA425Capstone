@@ -5,27 +5,24 @@
 {% block head %}
 {{ super() }}
 <link rel="stylesheet" href = "{{ url_for('static',filename='styles/module_outline.css') }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz@0,9..40;1,9..40&family=Libre+Baskerville:ital@0;1&display=swap" rel="stylesheet">
 {% endblock %}
 
 {% block body %}
 
-<div id = 'title-block'>
-    <div class = 'title'>
-        Data Center Learning Modules
+<div class = 'title-box'>
+    Data Center Learning Modules
+</div>
+<div class = 'module-box'>
+    <div class="box-div-1">
+        hey
+    </div>
+    <div class="box-div-2">
+        hey
     </div>
 </div>
 
-<div class = 'module-block-container'>
-    <a href=''>
-        <div class = 'module-block'>
-            <div class = 'module-name'>
-                Module 1: What is a Data Center?
-            </div>
-            <div class = 'learning-objective'>
-                blah blah
-            </div>
-        </div>
-    </a>
-</div>
 
 {% endblock %}

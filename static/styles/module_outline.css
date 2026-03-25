@@ -1,10 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-.module-block {
-    cursor: pointer;
-    position: relative;
-    background: white;
-    padding: 5%;
+body {
+    margin: 0;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.title-box {
+    font-family: 'Libre Baskerville', serif;
+    background-color: gray;
+    margin: 45px;
+    width: auto;
     border-radius: 20px;
-    height: 20dvh;
-    width: 40dvh;
+    font-size: 3em;
+    text-align: center;
+    padding: 1.5em;
+
+}
+
+.module-box {
+    background-color: gray;
+    margin: 0 45px 15px 45px;
+    width: auto;
+    border-radius: 20px;
+}
+
+.box-div-1 {
+    background-color: red;
+    width: 50%;
+    height: auto;
+
+}
+
+.box-div-2 {
+    background-color: blue;
+    width: 50%;
+    margin-left: 50%;
+    height: auto;
+
 }
