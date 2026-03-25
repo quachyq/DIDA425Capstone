@@ -4,36 +4,30 @@ path = os.path.abspath(__file__)
 dir = os.path.dirname(path)
 
 with open(f"{dir}/static/txt/module_outline.txt", "r") as f:
-    line_list = [line.strip() for line in f]
+    line_list = [line.strip() for line in f if line.strip() != '']
     content = "".join(line_list)
-    
+
 module_dict = {}
-    
-def create_json_module(line_list, module_dict):
-    nest_count = 1
-    i = 0
-    for line in line_list:
-        og_nest = nest_count
-        if line[0] == "-":
-            nest_count = len(line)
-            if nest_count > og_nest:
-                current_nest = line_list[i+1]
-            else: continue
-        if line[0].isalpha():
-            if nest_count == 1:
-                module_dict.update({line:{}})
-            if nest_count == 2:
-                module_dict[current_nest].update({line:{}})
-                
-            
-                
-        i+=1
-        
-    return module_dict
-        
 
+for i in line_list:
+    if i == "---":
+        content_collect = False
+        try:
+            module_dict.update({"content":" ".join(content_list)})
+        except: continue
+        
+        print(module_dict)
+    if content_collect:
+        content_list.append(i)
+        
+    elif i.startswith("label:"):
+        module_dict.update({"label": i.split(': ', 1)[1]})
+    
+    elif i.startswith("title:"):
+        module_dict.update({"name": i.split(': ', 1)[1]})
+        
+    elif i.startswith("content:"):
+        content_list = []
+        content_collect = True
         
     
-
-
-print(create_json_module(line_list[:-1], {}))
