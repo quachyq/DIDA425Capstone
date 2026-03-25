@@ -1,12 +1,11 @@
 from flask import Flask, render_template, abort, redirect, url_for, request
 from objects import *
 
-app = CustomFlask(__name__)
+app = CustomFlask(__name__, modules = ModuleJson(ModuleTxt("module_outline.txt")).master_list)
 
 @app.route('/')
 def index():
-    module = app.module_dict
-    return render_template('index1.html', module = module)
+    return render_template('index1.html')
 
 @app.route('/', methods=['POST'])
 def next_button():
@@ -24,5 +23,5 @@ def test():
 
 @app.route('/module-outline')
 def outline():
-    modules = {}
-    return render_template('module-outline.html')
+    modules = app.modules
+    return render_template('module-outline.html', modules = modules)

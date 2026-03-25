@@ -4,9 +4,9 @@ import json
 import copy
 
 class CustomFlask(Flask):
-    def __init__(self, *args, **kwargs):
+    def __init__(self, modules, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.module_dict = {}
+        self.modules = modules
 
 class ModuleTxt:
     """
@@ -116,6 +116,7 @@ class ModuleJson:
             temp_module = Module(title=mod["name"], label = mod["label"])
             for submod in self.txt.submodule_list:
                 if mod["label"][2] == submod["label"][2]: 
+                    print(submod)
                     temp_module.add_submodule(Submodule(
                         title = submod["name"],
                         label = submod["label"],
@@ -124,10 +125,4 @@ class ModuleJson:
                     
             self.master_list.append(copy.deepcopy(temp_module))
         
-
-with open('static/json/module_outline.json') as f:
-    MODULES = json.load(f)
-
-print(ModuleJson(ModuleTxt("module_outline.txt")).master_list[0].sections[0])
-
-
+print(ModuleJson(ModuleTxt("module_outline.txt")).master_list)
