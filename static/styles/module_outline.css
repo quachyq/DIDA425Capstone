@@ -14,7 +14,6 @@ body {
 
 .title-box {
     font-family: 'Libre Baskerville', serif;
-    background-color: gray;
     margin: 45px;
     width: auto;
     border-radius: 20px;
@@ -25,7 +24,7 @@ body {
 }
 
 .module-box {
-    background-color: gray;
+    background-color: rgb(196, 196, 196);
     margin: 0 45px 15px 45px;
     width: auto;
     border-radius: 20px;
@@ -41,19 +40,10 @@ body {
 }
 
 .box-div-2 {
-    background-color: rgb(166, 166, 219);
     flex: 1;
-    height: auto;
-    display: flex;
+    display: block;
     flex-direction: column;
-}
-
-.lock-symbol {
-    font-size: 1.25em;
-    width: fit-content;
-    margin-right: 10px;
-    display: flex;
-    align-items: center; 
+    margin: 20px 20px 0 0;
 }
 
 .module-title {
@@ -73,8 +63,18 @@ body {
 
 .submodule-box {
     font-family: 'DM Sans', sans-serif; 
-    background-color: aquamarine;
-    margin: 20px 20px 0 20px;
-    font-size: 1.25em;
+    font-size: 1.1em;
+    display: flex;
+    margin-bottom: 15px;
 
+}
+
+.box-content {
+    font-family: 'DM Sans', sans-serif; 
+    display: flex;
+}
+
+.module-number {
+    font-family: 'DM Sans', sans-serif;
+    margin-right: 10px;
 }
