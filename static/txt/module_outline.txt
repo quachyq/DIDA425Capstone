@@ -27,3 +27,57 @@ test
 test
 
 ---
+
+label: 1.3
+title: What are they used for?
+content:
+
+---
+
+label: 1.3.1
+title: What services depend on them?
+content:
+
+---
+
+label: 1.3.2
+title: What is the difference in data center usage between a company like Netflix vs OpenAI?
+content:
+
+---
+
+label: 1.4
+title: What is the scope of the issue?
+content:
+
+---
+
+label: 1.4.1
+title: How many data centers are there now?
+content:
+
+---
+
+label: 1.4.2
+title: How many more will there be in 10 years?
+content:
+
+---
+
+label: 1.4.3
+title: Where are they being built?
+content:
+
+---
+
+label: 1.5
+title: Who profits from them?
+content:
+
+---
+
+label: 1.6
+title: Why should we care?
+content:
+
+---

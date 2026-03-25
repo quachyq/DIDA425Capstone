@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.title-box {
+    font-family: 'Libre Baskerville', serif;
+    margin: 45px;
+    width: auto;
+    border-radius: 20px;
+    font-size: 3em;
+    text-align: center;
+    padding: 1.5em;
+
+}
+
+.module-box {
+    background-color: rgb(196, 196, 196);
+    margin: 0 45px 15px 45px;
+    width: auto;
+    border-radius: 20px;
+    display: flex;
+}
+
+.box-div-1 {
+    flex: 1;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.box-div-2 {
+    flex: 1;
+    display: block;
+    flex-direction: column;
+    margin: 20px 20px 0 0;
+}
+
+.module-title {
+    font-family: 'Libre Baskerville', serif; 
+    font-size: 1.75em;
+    margin: 20px 20px 10px 20px;
+    display: flex;
+    align-items: center; 
+}
+
+.learn-obj {
+    font-family: 'DM Sans', sans-serif; 
+    padding: 0 20px 20px 20px;  
+    font-size: 1.1em;
+
+}
+
+.submodule-box {
+    font-family: 'DM Sans', sans-serif; 
+    font-size: 1.1em;
+    display: flex;
+    margin-bottom: 15px;
+
+}
+
+.box-content {
+    font-family: 'DM Sans', sans-serif; 
+    display: flex;
+}
+
+.module-number {
+    font-family: 'DM Sans', sans-serif;
+    margin-right: 10px;
+}
