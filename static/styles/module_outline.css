@@ -29,19 +29,52 @@ body {
     margin: 0 45px 15px 45px;
     width: auto;
     border-radius: 20px;
+    display: flex;
 }
 
 .box-div-1 {
-    background-color: red;
-    width: 50%;
+    flex: 1;
     height: auto;
+    display: flex;
+    flex-direction: column;
 
 }
 
 .box-div-2 {
-    background-color: blue;
-    width: 50%;
-    margin-left: 50%;
+    background-color: rgb(166, 166, 219);
+    flex: 1;
     height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.lock-symbol {
+    font-size: 1.25em;
+    width: fit-content;
+    margin-right: 10px;
+    display: flex;
+    align-items: center; 
+}
+
+.module-title {
+    font-family: 'Libre Baskerville', serif; 
+    font-size: 1.75em;
+    margin: 20px 20px 10px 20px;
+    display: flex;
+    align-items: center; 
+}
+
+.learn-obj {
+    font-family: 'DM Sans', sans-serif; 
+    padding: 0 20px 20px 20px;  
+    font-size: 1.1em;
+
+}
+
+.submodule-box {
+    font-family: 'DM Sans', sans-serif; 
+    background-color: aquamarine;
+    margin: 20px 20px 0 20px;
+    font-size: 1.25em;
 
 }
