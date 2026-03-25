@@ -63,10 +63,10 @@ class ModuleTxt:
                 content_collect = True
 
 class Module:
-    def __init__(self, title, label, sections: list = [], id = None, href: str = None, objective: str = None):
+    def __init__(self, title, label, sections=None, id = None, href: str = None, objective: str = None):
         self.title = title
         self.label = label
-        self.sections = sections
+        self.sections = sections if sections is not None else []
         self.href = href
         self.id = id
         self.objective = objective
@@ -77,7 +77,7 @@ class Module:
             self.href = f"module{new_label}"
     
     def add_submodule(self, submodule):
-        self.sections.append(submodule.format_dict())
+        self.sections.append(submodule)
     
     def format_dict(self):
         self.id = len(self.json)
@@ -116,22 +116,18 @@ class ModuleJson:
             temp_module = Module(title=mod["name"], label = mod["label"])
             for submod in self.txt.submodule_list:
                 if mod["label"][2] == submod["label"][2]: 
-                    print(mod["label"], submod["label"])
                     temp_module.add_submodule(Submodule(
                         title = submod["name"],
                         label = submod["label"],
                         content = submod["content"]
                             ))
                     
-            self.master_list.append(copy.copy(temp_module))
+            self.master_list.append(copy.deepcopy(temp_module))
         
 
 with open('static/json/module_outline.json') as f:
     MODULES = json.load(f)
 
-mod1 = Module(title = "What is a data center?", label = "1.1")
-
-#mod2 = Submodule(title = "test", label = "1.1.1", parent = mod1)
-print(ModuleJson(ModuleTxt("module_outline.txt")).master_list[1].format_dict())
+print(ModuleJson(ModuleTxt("module_outline.txt")).master_list[0].sections[0])
 
 
