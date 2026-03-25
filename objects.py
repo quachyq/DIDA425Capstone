@@ -1,14 +1,67 @@
 from flask import Flask
 import os
 import json
+import copy
 
 class CustomFlask(Flask):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.module_dict = {}
+
+class ModuleTxt:
+    """
+    ModuleTxt Object used to parse out txt files in the static/txt file.
+    Follow the exact syntax that is contained in those files.
+    """
     
-    
-    
+    def __init__(self, file_name):
+        path = os.path.abspath(__file__)
+        self.dir = os.path.dirname(path)
+        self.file_name = file_name
+        self.module_list = []
+        self.submodule_list = []
+        self.parse_txt()
+        
+    def parse_txt(self):
+        # creates list of lines in txt
+        with open(f"{self.dir}/static/txt/{self.file_name}", "r") as f:
+            line_list = [line.strip() for line in f if line.strip() != '']
+            
+        # allocating an empty temporary dict
+        module_dict = {}
+        
+        # looping over lines
+        for i in line_list:
+            if i == "---":
+                # checking for content key in dict
+                content_collect = False
+                try:
+                    
+                    # checking if its a submodule/module
+                    # copy() is used to avoid pointers (shallow copy)
+                    if module_dict["label"].count(".") == 2:
+                        self.submodule_list.append(module_dict.copy())
+                    else:
+                        self.module_list.append(module_dict.copy())
+                except: continue
+
+                # clearing after new module detected
+                module_dict.clear()
+                
+            elif content_collect:
+                content_list.append(i)
+                module_dict.update({"content":" ".join(content_list)})
+                
+            elif i.startswith("label:"):
+                module_dict.update({"label": i.split(': ', 1)[1]})
+            
+            elif i.startswith("title:"):
+                module_dict.update({"name": i.split(': ', 1)[1]})
+                
+            elif i.startswith("content:"):
+                content_list = []
+                content_collect = True
+
 class Module:
     def __init__(self, title, label, sections: list = [], id = None, href: str = None, objective: str = None):
         self.title = title
@@ -41,23 +94,44 @@ class Module:
             try:
                 self.dict.update({"content":self.content})
             except:
-                raise ValueError("Object Unknown")
+                raise ValueError("Module contents unknown")
         return self.dict
     
     
 class Submodule(Module):
-    def __init__(self, parent: Module, content = None, *args, **kwargs):
+    def __init__(self, content = None, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.content = content
-        
-        parent.add_submodule(self)
+        self.sections = []
     
+class ModuleJson:
+    def __init__(self, txt: ModuleTxt):
+        self.txt = txt
+        self.master_list = []
+        self.construct_list()
+        
+    def construct_list(self):
+
+        for mod in self.txt.module_list:
+            temp_module = Module(title=mod["name"], label = mod["label"])
+            for submod in self.txt.submodule_list:
+                if mod["label"][2] == submod["label"][2]: 
+                    print(mod["label"], submod["label"])
+                    temp_module.add_submodule(Submodule(
+                        title = submod["name"],
+                        label = submod["label"],
+                        content = submod["content"]
+                            ))
+                    
+            self.master_list.append(copy.copy(temp_module))
+        
 
 with open('static/json/module_outline.json') as f:
     MODULES = json.load(f)
 
 mod1 = Module(title = "What is a data center?", label = "1.1")
 
-mod2 = Submodule(title = "test", label = "1.1.1", parent = mod1)
+#mod2 = Submodule(title = "test", label = "1.1.1", parent = mod1)
+print(ModuleJson(ModuleTxt("module_outline.txt")).master_list[1].format_dict())
 
-print(mod1.format_dict())
+
