@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block title %}Index{% endblock %}
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static',filename='styles/test.css') }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz@0,9..40;1,9..40&family=Libre+Baskerville:ital@0;1&display=swap" rel="stylesheet">
+{% endblock %}
+
+
+{% block body %}
+
+<section class = 'layout'>
+    <div class = 'header'>
+        <ol class = 'header-content'>
+            <li><a href = "/">Home</a></li>
+            <li>➤</li>
+            <li><a href = "/module-outline">Module List</a></li>
+            <li>➤</li>
+            <li>X Module Name</li>
+            <li>➤</li>
+            <li>{{ current_mod.label }} {{ current_mod.title }}</li>
+        </ol>
+    </div>
+    <div class = 'sidebar'>
+        <div class="sidebar-content">
+            <button class = "sidebar-open" onclick = "toggleSidebar()">
+                ☰
+            </button>
+        </div>
+        <div class = "sidebar-expanded">
+            <ol class='module-section'>  
+                <div class="module-name">
+                    <b class="module-num">1</b>
+                    What is a data center?
+                </div>
+                {% for mod in modules_list %}
+                <a href= "{{ url_for('module', module_label=mod.label.replace(".","-"))}}">
+                <li class="submodule-section">
+                    <div class="module-name">
+                        <b class="module-num"> {{ mod.label }} </b>
+                        {{ mod.title }}
+                    </div>
+                </li>
+                </a>
+                {% endfor %}
+            </ol>
+        </div>
+    </div>
+    <div class = 'main-area'>
+    <p>{{ current_mod.sections[0].content }}</p>
+    </div>
+</section>
+
+<script>
+
+        const layout = document.getElementsByClassName("layout")[0];
+
+        console.log(layout)
+        // Show Sidebar button functionality
+        function toggleSidebar() {
+            layout.classList.toggle("sidebar-expand")
+        }
+
+</script>
+
+{% endblock %}

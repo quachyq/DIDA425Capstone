@@ -4,9 +4,9 @@ import json
 import copy
 
 class CustomFlask(Flask):
-    def __init__(self, modules, *args, **kwargs):
+    def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.modules = modules
+
 
 class ModuleTxt:
     """
@@ -24,7 +24,7 @@ class ModuleTxt:
         
     def parse_txt(self):
         # creates list of lines in txt
-        with open(f"{self.dir}/static/txt/{self.file_name}", "r") as f:
+        with open(f"{self.dir}/static/txt/{self.file_name}", "r",encoding='utf-8') as f:
             line_list = [line.strip() for line in f if line.strip() != '']
             
         # allocating an empty temporary dict
@@ -109,6 +109,7 @@ class ModuleJson:
         self.txt = txt
         self.master_list = []
         self.construct_list()
+        self.dict_master_list = [mod.format_dict() for mod in self.master_list]
         
     def construct_list(self):
 
@@ -116,7 +117,7 @@ class ModuleJson:
             temp_module = Module(title=mod["name"], label = mod["label"])
             for submod in self.txt.submodule_list:
                 if mod["label"][2] == submod["label"][2]: 
-                    print(submod)
+
                     temp_module.add_submodule(Submodule(
                         title = submod["name"],
                         label = submod["label"],
@@ -124,5 +125,12 @@ class ModuleJson:
                             ))
                     
             self.master_list.append(copy.deepcopy(temp_module))
-        
-print(ModuleJson(ModuleTxt("module_outline.txt")).master_list)
+    
+    def get_labels(self):
+        label_list = [mod['label'] for mod in self.dict_master_list]
+        return label_list
+    
+    def find_id_from_label(self, lab):
+        for mod in self.dict_master_list:
+            if mod["label"] == lab:
+                return self.dict_master_list.index(mod)

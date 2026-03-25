@@ -59,14 +59,13 @@ Services like Netflix use data centers to deliver already existing content to us
 are considered to be low power systems. Services such as OpenAI’s ChatGPT, however, use a lot more power and resources because 
 they are generative. ChatGPT and other large language models such as Google Gemini, Meta AI, and others do not deliver existing 
 data files, they are used to create new content. Many of these services now offer image and or video creation. This requires the
- model to use lots of energy. In 2024, data centers accounted for about 4.4% of total electricity consumption in the US, and that 
- number is expected to grow to anywhere from 6.7 to 12% by 2028.
+model to use lots of energy. In 2024, data centers accounted for about 4.4% of total electricity consumption in the US, and that 
+number is expected to grow to anywhere from 6.7 to 12% by 2028.
 
 ---
 
 label: 1.4
 title: What is the scope of the issue?
-content:
 
 ---
 
@@ -105,8 +104,8 @@ title: Large Corporations
 content:
 Companies have two main revenue streams regarding data centers. Firstly, in physical chips and hardware. Companies like 
 Nvidia and Broadcom generate immense amounts of revenue. These companies made about $194 billion and $20 billion last year,
- respectively. The other avenue for profit is from cloud services, which is software. Companies such as Amazon Web Services 
- and Microsoft made $129 billion and $106 billion in revenue in 2025.
+respectively. The other avenue for profit is from cloud services, which is software. Companies such as Amazon Web Services 
+and Microsoft made $129 billion and $106 billion in revenue in 2025.
 
 ---
 
@@ -114,27 +113,27 @@ label: 1.5.2
 title: Costs vs. Profits
 content:
 It costs a lot of money to build and maintain a data center. It can cost around tens of millions of dollars just to
- build the infrastructure for a large data center. The cost depends on size and location. In order to maintain the
-  data center, operating costs are around $10-25 million annually. However, data centers are highly profitable, and 
-  the global data center market made approximately $350 billion in 2024, and that amount is expected to nearly double 
-  by 2029. This means that data centers are big investments, however they are immensely profitable for companies that 
-  can afford to build and then rent them.
+build the infrastructure for a large data center. The cost depends on size and location. In order to maintain the
+data center, operating costs are around $10-25 million annually. However, data centers are highly profitable, and 
+the global data center market made approximately $350 billion in 2024, and that amount is expected to nearly double 
+by 2029. This means that data centers are big investments, however they are immensely profitable for companies that 
+can afford to build and then rent them.
 
 ---
 
 label: 1.6
 title: Why should we care?
-content:
 
 ---
 
 label: 1.6.1
 title: Who are the stakeholders?
+content:
 Many data centers are built with the purpose of running one or a few projects. For example, an entire data center might be used to 
 process ChatGPT prompts. While this means the construction of a data center can affect practically anyone (since things like ChatGPT 
 are public to use), its most noticeable effects are on the following groups:
 The companies that use the data center to run their computing software. Data centers exist to streamline these processes, helping
- companies run more efficiently and save money.
+companies run more efficiently and save money.
 Locals. While it may not often be thought about, those who live near data centers put up with some major negative consequences, 
 such as the strong noise pollution from all the machines running at the center 24/7.
 
@@ -145,7 +144,7 @@ title: What are the negative impacts?
 content:
 The main negative impacts for locals are mostly the noise that the data center causes, sometimes even making it difficult for 
 people to sleep, even when measures are taken to make the data center quieter. However, the truly large-scale effects come into
- play with how energy and water-intensive running a data center is. Even a medium-sized data center can use as much power as 100,000 
- homes, and really drain nearby water sources. This is the main cause of concern for scaling them up across the country.
+play with how energy and water-intensive running a data center is. Even a medium-sized data center can use as much power as 100,000 
+homes, and really drain nearby water sources. This is the main cause of concern for scaling them up across the country.
 
 ---

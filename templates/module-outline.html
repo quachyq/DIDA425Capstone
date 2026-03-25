@@ -15,6 +15,8 @@
 <div class = 'title-box'>
     Data Center Learning Modules
 </div>
+
+
 <div class = 'module-box'>
     <div class="box-div-1">
         <div class="module-title">
@@ -26,25 +28,16 @@
          maxime libero consectetur? 
         </div>
     </div>
+    
     <div class="box-div-2">
+        {% for mod in modules_list %}
         <div class="submodule-box">
             <div class="box-content">
-                <b class="module-number">X.X</b>
-                Submodule Name Submodule Name
+                <b class="module-number">{{ mod.label }} </b>
+                {{ mod.title }}
             </div>
         </div>
-        <div class="submodule-box">
-            <div class="box-content">
-                <b class="module-number">X.X</b>
-                Submodule Name Submodule Name Submodule Name Submodule Name
-            </div>
-        </div>
-        <div class="submodule-box">
-            <div class="box-content"></div>
-                <b class="module-number">X.X</b>
-                Submodule Name
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </div>
 
