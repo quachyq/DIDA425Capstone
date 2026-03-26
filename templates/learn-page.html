@@ -19,7 +19,9 @@
             <li>➤</li>
             <li><a class='links' href = "/module-outline">Module List</a></li>
             <li>➤</li>
-            <li>{{ working_module.master_module.label }} {{ working_module.master_module.title }}</li>
+            <li><a class = 'links' href = "/learn-page/{{ working_module.master_module.href }}">
+                {{ working_module.master_module.label }} {{ working_module.master_module.title }} 
+            </a></li>
             {% if current_mod != [{}] %}
             <li>➤</li>
             <li>{{ current_mod.label }} {{ current_mod.title }}</li>
@@ -33,9 +35,9 @@
             </button>
         </div>
         <div class = "sidebar-expanded">
-
+            {% for module in learning_outline_list %}
             <ol class='module-section'>  
-                {% for module in learning_outline_list %}
+                
                 <div class="module-name">
                     <b class="module-num">{{ module.master_module.label }}</b>
                     {{ module.master_module.title }}
@@ -50,50 +52,9 @@
                 </li>
                 </a>
                 {% endfor %}
-                {% endfor %}
+                
             </ol>
-
-            <ol class='module-section'>  
-                <div class="module-name">
-                    <b class="module-num">X</b>
-                    Module Name Module Name Module Name 
-                </div>
-                <li class="submodule-section">
-                    <div class="module-name">
-                        <b class="module-num"> X.X </b>
-                        Submodule Title
-                    </div>
-                </li>
-                </a>
-            </ol>
-
-            <ol class='module-section'>  
-                <div class="module-name">
-                    <b class="module-num">X</b>
-                    Module Name Module Name Module Name 
-                </div>
-                <li class="submodule-section">
-                    <div class="module-name">
-                        <b class="module-num"> X.X </b>
-                        Submodule Title
-                    </div>
-                </li>
-                </a>
-            </ol>
-
-            <ol class='module-section'>  
-                <div class="module-name">
-                    <b class="module-num">X</b>
-                    Module Name Module Name Module Name 
-                </div>
-                <li class="submodule-section">
-                    <div class="module-name">
-                        <b class="module-num"> X.X </b>
-                        Submodule Title
-                    </div>
-                </li>
-                </a>
-            </ol>
+            {% endfor %}
 
         </div>
     </div>
@@ -120,12 +81,16 @@
     const nextButton = document.getElementById("next");
     const backButton = document.getElementById("back");
 
-    console.log(nextButton)
+
+    if (!modules.sections || modules.sections.length == 1) {
+        nextButton.style.visibility = "hidden";
+        backButton.style.visibility = "hidden";
+    }
+    
     function renderText(Index) {
         content.innerText = modules.sections[Index].content;
         backButton.disabled = currentIndex === 0;
         nextButton.disabled = currentIndex === modules.sections.length -1
-        console.log(modules.sections)
     }
 
     nextButton.onclick = () => renderText(++currentIndex)
@@ -139,7 +104,6 @@
         layout.classList.toggle("sidebar-expand");
     }
 
-            
 </script>
 
 {% endblock %}

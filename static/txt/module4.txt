@@ -1,0 +1,64 @@
+---
+
+label: 4.1
+title: Geographical effects
+
+---
+
+label: 4.1.1
+title: Interactive map of data centers
+content:
+
+.
+
+---
+
+label: 4.1.2
+title: Plans for future data centers
+content:
+
+.
+
+---
+
+label: 4.2
+title: Good habits
+
+---
+
+label: 4.2.1
+title: Less AI usage
+content:
+
+.
+
+---
+
+label: 4.2.2
+title: Petition your representatives
+content:
+
+.
+
+---
+
+label: 4.2.3
+title: Push for clean energy
+content:
+
+.
+
+---
+
+label: 4.3
+title: Continue to stay informed
+
+---
+
+label: 4.3.1
+title: Resources for users to stay up to dat on data center developments
+content:
+
+.
+
+---

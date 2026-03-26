@@ -1,0 +1,103 @@
+---
+
+label: 2.1
+title: Energy Demand
+
+---
+
+label: 2.1.1
+title: Why is energy needed?
+content:
+
+.
+
+---
+
+label: 2.1.2
+title: How much energy is needed?
+content:
+
+.
+
+---
+
+label: 2.1.3
+title: Where does the energy come from?
+content:
+
+.
+
+---
+label: 2.1.4
+title: Understanding Power Usage Effectiveness (PUE)
+content:
+
+.
+
+---
+
+label: 2.2
+title: Water Consumption
+
+---
+
+label: 2.2.1
+title: Heat as a byproduct
+content:
+
+.
+
+---
+
+label: 2.2.2
+title: What role does cold water play?
+content:
+
+.
+
+---
+
+label: 2.2.3
+title: How much water is needed?
+content:
+
+.
+
+---
+
+label: 2.2.4
+title: Where does the water come from?
+content:
+
+.
+
+---
+
+label: 2.3
+title: Labor in other countries
+
+---
+
+label: 2.3.1
+title: Pricing (RAM)
+content:
+
+.
+
+---
+
+label: 2.3.2
+title: Rare metals
+content:
+
+.
+
+---
+
+label: 2.3.3
+title: Exploitation of laborers
+content:
+
+.
+
+---
