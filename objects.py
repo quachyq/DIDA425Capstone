@@ -2,21 +2,40 @@ from flask import Flask
 import os
 import json
 import copy
+from pathlib import Path
 
 class CustomFlask(Flask):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        path = os.path.abspath(__file__)
+        self.dir = os.path.dirname(path)
+        
+    def initialize_modules(self):
+        main_mod_1 = MasterModule(title = "What is a data center?", label = "1", objective = "Lorem")
+        main_mod_2 = MasterModule(title = "What are the borad implications?", label = "2", objective = "Lorem")
+        main_mod_3 = MasterModule(title = "What are the local effects?", label = "3", objective = "Lorem")
+        main_mod_4 = MasterModule(title = "How are you affected and what can you do?", label = "4", objective = "Lorem")
+        
+        main_mod_list = [main_mod_1,main_mod_2,main_mod_3,main_mod_4]
+        learning_outline_list = []
+        
+        for i in range(len(list(os.scandir(f"{self.dir}/static/txt")))):
+            learning_outline_list.append(ModuleJson(ModuleTxt(f"module{i+1}.txt", self.dir), main_mod_list[i]))
 
-
+        self.jinja_env.globals.update(
+            learning_outline_list = learning_outline_list
+        )
+        
+        self.learning_outline_list = learning_outline_list
+        
 class ModuleTxt:
     """
     ModuleTxt Object used to parse out txt files in the static/txt file.
     Follow the exact syntax that is contained in those files.
     """
     
-    def __init__(self, file_name):
-        path = os.path.abspath(__file__)
-        self.dir = os.path.dirname(path)
+    def __init__(self, file_name, dir):
+        self.dir = dir
         self.file_name = file_name
         self.module_list = []
         self.submodule_list = []
@@ -63,13 +82,12 @@ class ModuleTxt:
                 content_collect = True
 
 class Module:
-    def __init__(self, title, label, sections=None, id = None, href: str = None, objective: str = None):
+    def __init__(self, title, label, sections=None, id = None, href: str = None):
         self.title = title
         self.label = label
         self.sections = sections if sections is not None else []
         self.href = href
-        self.id = id
-        self.objective = objective
+        self.id = int(label[-1]) - 1
         self.json = []
         
         if self.href == None:
@@ -80,7 +98,7 @@ class Module:
         self.sections.append(submodule)
     
     def format_dict(self):
-        self.id = len(self.json)
+        #self.id = len(self.json)
         self.dict = {
             "id":self.id,
             "label":self.label,
@@ -97,7 +115,11 @@ class Module:
                 raise ValueError("Module contents unknown")
         return self.dict
     
-    
+class MasterModule(Module):
+    def __init__(self, *args, objective = None, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.objective = objective
+        
 class Submodule(Module):
     def __init__(self, content = None, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -105,8 +127,9 @@ class Submodule(Module):
         self.sections = []
     
 class ModuleJson:
-    def __init__(self, txt: ModuleTxt):
+    def __init__(self, txt: ModuleTxt, master_module: MasterModule):
         self.txt = txt
+        self.master_module = master_module
         self.master_list = []
         self.construct_list()
         self.dict_master_list = [mod.format_dict() for mod in self.master_list]
@@ -137,3 +160,4 @@ class ModuleJson:
         for mod in self.dict_master_list:
             if mod["label"] == lab:
                 return self.dict_master_list.index(mod)
+            

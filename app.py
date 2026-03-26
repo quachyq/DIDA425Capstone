@@ -3,13 +3,7 @@ from objects import *
 
 app = CustomFlask(import_name = __name__)
 
-modules = ModuleJson(ModuleTxt("module_outline.txt"))
-modules_list = modules.master_list
-
-app.jinja_env.globals.update(
-    modules = modules,
-    modules_list = modules_list
-)
+app.initialize_modules()
 
 @app.route('/')
 def index():
@@ -31,12 +25,14 @@ def outline():
 
 @app.route("/learn-page/module<module_label>")
 def module(module_label):
-    if module_label.replace("-",".") not in modules.get_labels():
+    working_module = app.learning_outline_list[int(module_label[0])-1]
+    
+    if module_label.replace("-",".") not in working_module.get_labels():
         abort(404)
         
-    module_id = modules.find_id_from_label(module_label.replace("-","."))
-    current_mod = modules.dict_master_list[int(module_id)]
+    module_id = working_module.find_id_from_label(module_label.replace("-","."))
+    current_mod = working_module.dict_master_list[int(module_id)]
+    
+    
 
     return render_template("learn-page.html", current_mod = current_mod)
-
-#print(modules.dict_master_list)

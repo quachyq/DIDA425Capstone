@@ -16,31 +16,34 @@
     Data Center Learning Modules
 </div>
 
-<a class = 'clickable-box'>
+{% for module in learning_outline_list %}
+<a class = 'clickable-box' href = "{{ module.master_module.href }}">
     <div class = 'module-box'>
+        
+        
         <div class="box-div-1">
             <div class="module-title">
-                Module 1: What is a Data Center?
+                Module {{ module.master_module.label }}: {{ module.master_module.title }}
             </div>
             <div class="learn-obj">
-            <b>Learning Objective:</b> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis laborum odit optio
-            natus fugit suscipit quisquam id eum, nemo dolorum perspiciatis tempore culpa odio quo nulla assumenda 
-            maxime libero consectetur? 
+            <b>Learning Objective:</b> {{ module.master_module.objective }}
             </div>
         </div>
         
         <div class="box-div-2">
-            {% for mod in modules_list %}
+            {% for submodule in module.master_list %}
             <div class="submodule-box">
                 <div class="box-content">
-                    <b class="module-number">{{ mod.label }} </b>
-                    {{ mod.title }}
+                    <b class="module-number">{{ submodule.label }} </b>
+                    {{ submodule.title }}
                 </div>
             </div>
             {% endfor %}
         </div>
+        
     </div>
 </a>
+{% endfor %}
 
 <a class = 'clickable-box'>
     <div class = 'module-box'>
