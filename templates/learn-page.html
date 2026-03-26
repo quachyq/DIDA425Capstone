@@ -55,14 +55,15 @@
 </section>
 
 <script>
-
         const layout = document.getElementsByClassName("layout")[0];
 
-        console.log(layout)
         // Show Sidebar button functionality
         function toggleSidebar() {
-            layout.classList.toggle("sidebar-expand")
+            layout.classList.toggle("sidebar-expand");
         }
+
+        const module = {{ modules.dict_master_list | tojson}};
+        console.log(module);
 
 </script>
 

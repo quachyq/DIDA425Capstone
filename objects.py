@@ -111,6 +111,9 @@ class ModuleJson:
         self.construct_list()
         self.dict_master_list = [mod.format_dict() for mod in self.master_list]
         
+        for i in self.dict_master_list:
+            i["sections"] = [section.format_dict() for section in i["sections"]]
+        
     def construct_list(self):
 
         for mod in self.txt.module_list:

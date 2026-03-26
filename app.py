@@ -38,4 +38,3 @@ def module(module_label):
     current_mod = modules_list[int(module_id)]
 
     return render_template("learn-page.html", current_mod = current_mod)
-
