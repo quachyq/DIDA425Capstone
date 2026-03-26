@@ -9,12 +9,12 @@ class CustomFlask(Flask):
         super().__init__(*args, **kwargs)
         path = os.path.abspath(__file__)
         self.dir = os.path.dirname(path)
-        
+
     def initialize_modules(self):
-        main_mod_1 = MasterModule(title = "What is a data center?", label = "1", objective = "Lorem")
-        main_mod_2 = MasterModule(title = "What are the broad implications?", label = "2", objective = "Lorem")
-        main_mod_3 = MasterModule(title = "What are the local effects?", label = "3", objective = "Lorem")
-        main_mod_4 = MasterModule(title = "How are you affected and what can you do?", label = "4", objective = "Lorem")
+        main_mod_1 = MasterModule(title = "What Is a Data Center?", label = "1", objective = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.")
+        main_mod_2 = MasterModule(title = "What Are the Broad Implications?", label = "2", objective = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.")
+        main_mod_3 = MasterModule(title = "What Are the Local Effects?", label = "3", objective = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.")
+        main_mod_4 = MasterModule(title = "How Are You Affected and What Can You Do?", label = "4", objective = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.")
         
         main_mod_list = [main_mod_1,main_mod_2,main_mod_3,main_mod_4]
         learning_outline_list = []
