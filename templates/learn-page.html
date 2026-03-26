@@ -85,7 +85,8 @@
     const nextSection = document.getElementById("next-section");
 
     nextSection.style.visibility = "hidden";
-    
+    backButton.style.visibility = "hidden";
+
     if (!modules.sections || modules.sections.length == 1) {
         nextButton.style.visibility = "hidden";
         backButton.style.visibility = "hidden";
@@ -99,9 +100,17 @@
 
         if (nextButton.disabled) {
             nextSection.style.visibility = "visible";
+            nextButton.style.visibility = "hidden";
         }
         else {
+            nextButton.style.visibility = "visible";
             nextSection.style.visibility = "hidden";
+        }
+        if (backButton.disabled) {
+            backButton.style.visibility = "hidden";
+        }
+        else {
+            backButton.style.visibility = "visible";
         }
     }
 
