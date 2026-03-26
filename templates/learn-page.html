@@ -84,20 +84,24 @@
     const backButton = document.getElementById("back");
     const nextSection = document.getElementById("next-section");
 
+    // Made these hidden by default
     nextSection.style.visibility = "hidden";
     backButton.style.visibility = "hidden";
 
+    // Checking what kind of section we are in and if it has sections in it
     if (!modules.sections || modules.sections.length == 1) {
         nextButton.style.visibility = "hidden";
         backButton.style.visibility = "hidden";
         nextSection.style.visibility = "visible";
     }
     
+    // Function to render new text by indexing on section
     function renderText(Index) {
         content.innerText = modules.sections[Index].content;
         backButton.disabled = currentIndex === 0;
         nextButton.disabled = currentIndex === modules.sections.length -1
 
+        // Hides next button if at the end and makes the next section visible
         if (nextButton.disabled) {
             nextSection.style.visibility = "visible";
             nextButton.style.visibility = "hidden";
@@ -106,6 +110,8 @@
             nextButton.style.visibility = "visible";
             nextSection.style.visibility = "hidden";
         }
+
+        // If at the beginning, makes the back button hidden.
         if (backButton.disabled) {
             backButton.style.visibility = "hidden";
         }
@@ -114,6 +120,7 @@
         }
     }
 
+    // Shorthand to assign the onclick function to index ticking
     nextButton.onclick = () => renderText(++currentIndex)
     backButton.onclick = () => renderText(--currentIndex)
 
