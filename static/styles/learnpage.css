@@ -60,6 +60,11 @@ body {
     color: black;
 }
 
+.header-links {
+    text-decoration: none;
+    color: black;
+}
+
 a.links:hover .submodule-section {
     background-color: #949494;
     cursor: pointer;
@@ -69,6 +74,14 @@ a.links:active .submodule-section {
     background-color: #787878;
 }
 
+a.header-links:hover {
+    color: #7a7a7a;
+    cursor: pointer;
+}
+
+a.header-links:active {
+    color: #505050;
+}
 
 button.sidebar-open {
     position: fixed;
@@ -140,4 +153,28 @@ button.sidebar-open {
 
 .layout.sidebar-expand .main-area{
     transform: translateX(0px);
+}
+
+#next {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1em;
+    background-color: black;
+    color: white;
+    padding: 3px 8px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+
+}
+
+#back {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1em;
+    background-color: black;
+    color: white;
+    padding: 3px 8px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+
 }

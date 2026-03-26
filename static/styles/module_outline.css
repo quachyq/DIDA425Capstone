@@ -81,6 +81,11 @@ body {
 }
 
 
+a {
+    text-decoration: none;
+    color: black;
+
+}
 a.clickable-box:hover .module-box {
     background-color: #949494;
     cursor: pointer;
