@@ -1,7 +1,7 @@
 ---
 
 label: 4.1
-title: Geographical effects
+title: Geographical Effects
 
 ---
 

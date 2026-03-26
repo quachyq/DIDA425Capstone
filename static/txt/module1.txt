@@ -1,7 +1,7 @@
 ---
 
 label: 1.1
-title: What is a data center?
+title: What is a Data Center?
 
 ---
 
@@ -16,12 +16,12 @@ data centers capable of fulfilling the needs for multiple separate companies at 
 ---
 
 label: 1.2
-title: Bones of a data center
+title: Bones of a Data Center
 
 ---
 
 label: 1.2.1
-title: What are servers, racks, and networking equipment?
+title: What Are Servers, Racks, and Networking Equipment?
 content:
 The “technology infrastructure” are the physical pieces of equipment housed by the data center. The main components are the following:
 Data storage arrays
@@ -37,12 +37,12 @@ Usually either giant fans or water cooling systems are used to keep the rest of 
 ---
 
 label: 1.3
-title: What are they used for?
+title: What Are They Used For?
 
 ---
 
 label: 1.3.1
-title: What services depend on them?
+title: What Services Depend On Them?
 content:
 Data centers are an essential part of almost all modern day digital systems. Everything from AI, to Facebook, to Netflix use 
 data centers in order to store and process data. Modern data centers are also capable of providing computing power, meaning 
@@ -53,7 +53,7 @@ for a number of companies at once.
 ---
 
 label: 1.3.2
-title: What is the difference in data center usage between a company like Netflix vs OpenAI?
+title: What is the Difference in Data Center Usage Between a Company like Netflix vs. OpenAI?
 content:
 Services like Netflix use data centers to deliver already existing content to users. These systems are highly efficient, and 
 are considered to be low power systems. Services such as OpenAI’s ChatGPT, however, use a lot more power and resources because 
@@ -65,12 +65,12 @@ number is expected to grow to anywhere from 6.7 to 12% by 2028.
 ---
 
 label: 1.4
-title: What is the scope of the issue?
+title: What is the Scope of the Issue?
 
 ---
 
 label: 1.4.1
-title: How many data centers are there now?
+title: How Many Data Centers Are There Now?
 content:
 The US currently has about 5,400 active facilities. The biggest hubs are in Northern Virginia, Chicago, New Jersey, New York, 
 Los Angeles, and Miami. Another ~3,000 are planned or currently under construction.
@@ -78,7 +78,7 @@ Los Angeles, and Miami. Another ~3,000 are planned or currently under constructi
 ---
 
 label: 1.4.2
-title: How many more will there be in 10 years?
+title: How Many More Will There Be In 10 Years?
 content:
 We expect that by 2030, data centers will more than triple their total energy consumption across the country from 2024. 
 This means that they would account for 13% of all energy consumption in the United States!
@@ -86,7 +86,7 @@ This means that they would account for 13% of all energy consumption in the Unit
 ---
 
 label: 1.4.3
-title: Where are they being built?
+title: Where Are They Being Built?
 content:
 Currently, in the US, there are the most data centers in Virginia and Texas, and that’s exactly where plans to build more are. 
 Existing plans for new data centers will double the number of data centers in each of these states. Looking towards the rest of 
@@ -95,7 +95,7 @@ the US, Georgia, Pennsylvania, Ohio, New Mexico, and Illinois are key states to 
 ---
 
 label: 1.5
-title: Who profits from them?
+title: Who Profits From Them?
 
 ---
 
@@ -122,12 +122,12 @@ can afford to build and then rent them.
 ---
 
 label: 1.6
-title: Why should we care?
+title: Why Should We Care?
 
 ---
 
 label: 1.6.1
-title: Who are the stakeholders?
+title: Who Are The Stakeholders?
 content:
 Many data centers are built with the purpose of running one or a few projects. For example, an entire data center might be used to 
 process ChatGPT prompts. While this means the construction of a data center can affect practically anyone (since things like ChatGPT 
@@ -140,7 +140,7 @@ such as the strong noise pollution from all the machines running at the center 2
 ---
 
 label: 1.6.2
-title: What are the negative impacts?
+title: What Are the Negative Impacts?
 content:
 The main negative impacts for locals are mostly the noise that the data center causes, sometimes even making it difficult for 
 people to sleep, even when measures are taken to make the data center quieter. However, the truly large-scale effects come into

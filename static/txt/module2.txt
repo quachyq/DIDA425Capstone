@@ -6,7 +6,7 @@ title: Energy Demand
 ---
 
 label: 2.1.1
-title: Why is energy needed?
+title: Why is Energy Needed?
 content:
 
 .
@@ -14,7 +14,7 @@ content:
 ---
 
 label: 2.1.2
-title: How much energy is needed?
+title: How Much Energy is Needed?
 content:
 
 .
@@ -22,7 +22,7 @@ content:
 ---
 
 label: 2.1.3
-title: Where does the energy come from?
+title: Where Does the Energy Come From?
 content:
 
 .
@@ -42,7 +42,7 @@ title: Water Consumption
 ---
 
 label: 2.2.1
-title: Heat as a byproduct
+title: Heat as a Byproduct
 content:
 
 .
@@ -50,7 +50,7 @@ content:
 ---
 
 label: 2.2.2
-title: What role does cold water play?
+title: What Role Does Cold Water Play?
 content:
 
 .
@@ -58,7 +58,7 @@ content:
 ---
 
 label: 2.2.3
-title: How much water is needed?
+title: How Much Water is Needed?
 content:
 
 .
@@ -66,7 +66,7 @@ content:
 ---
 
 label: 2.2.4
-title: Where does the water come from?
+title: Where Does the Water Come From?
 content:
 
 .
@@ -74,7 +74,7 @@ content:
 ---
 
 label: 2.3
-title: Labor in other countries
+title: Labor in Other Countries
 
 ---
 
@@ -87,7 +87,7 @@ content:
 ---
 
 label: 2.3.2
-title: Rare metals
+title: Rare Metals
 content:
 
 .
@@ -95,7 +95,7 @@ content:
 ---
 
 label: 2.3.3
-title: Exploitation of laborers
+title: Exploitation of Laborers
 content:
 
 .

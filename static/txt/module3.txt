@@ -1,12 +1,12 @@
 ---
 
 label: 3.1
-title: What impact do they have on local communities?
+title: What Impact Do They Have on Local Communities?
 
 ---
 
 label: 3.1.1
-title: Water contamination
+title: Water Contamination
 content:
 
 .
@@ -14,7 +14,7 @@ content:
 ---
 
 label: 3.1.2
-title: Energy strain
+title: Energy Strain
 content:
 
 .
@@ -30,7 +30,7 @@ content:
 ---
 
 label: 3.1.4
-title: Noise/air pollution
+title: Noise/Air Pollution
 content:
 
 .
@@ -38,7 +38,7 @@ content:
 ---
 
 label: 3.1.5
-title: Waste products
+title: Waste Products
 content:
 
 .
@@ -46,12 +46,12 @@ content:
 ---
 
 label: 3.2
-title: Local environmental implications
+title: Local Environmental Implications
 
 ---
 
 label: 3.2.1
-title: What are the key impacts of data centers on its surroundings?
+title: What Are the Key Impacts of Data Centers on Their Surroundings?
 content:
 
 .
@@ -59,7 +59,7 @@ content:
 ---
 
 label: 3.2.2
-title: What do people who live near these data centers have to say?
+title: What Do People Who Live Near These Data Centers Have to Say?
 content:
 
 .
@@ -67,7 +67,7 @@ content:
 ---
 
 label: 3.2.3
-title: Health hazards posed bu data centers?
+title: Health Hazards Posed by Data Centers
 content:
 
 .
