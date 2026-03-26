@@ -35,6 +35,8 @@ def module(module_label):
         abort(404)
         
     module_id = modules.find_id_from_label(module_label.replace("-","."))
-    current_mod = modules_list[int(module_id)]
+    current_mod = modules.dict_master_list[int(module_id)]
 
     return render_template("learn-page.html", current_mod = current_mod)
+
+#print(modules.dict_master_list)

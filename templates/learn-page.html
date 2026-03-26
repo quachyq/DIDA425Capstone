@@ -50,21 +50,41 @@
         </div>
     </div>
     <div class = 'main-area'>
-    <p>{{ current_mod.sections[0].content }}</p>
+    <p id = 'content'>{{ current_mod.sections[0].content }}</p>
+
+    <button id = "next">next</button>
+    <button id = "back">back</button>
     </div>
 </section>
 
 <script>
-        const layout = document.getElementsByClassName("layout")[0];
+    let currentIndex = 0;
+    const modules = {{ current_mod | tojson }}
 
-        // Show Sidebar button functionality
-        function toggleSidebar() {
-            layout.classList.toggle("sidebar-expand");
-        }
+    const content = document.getElementById("content");
+    const nextButton = document.getElementById("next");
+    const backButton = document.getElementById("back");
 
-        const module = {{ modules.dict_master_list | tojson}};
-        console.log(module);
+    console.log(nextButton)
+    function renderText(Index) {
+        content.innerText = modules.sections[Index].content;
+        backButton.disabled = currentIndex === 0;
+        nextButton.disabled = currentIndex === modules.sections.length -1
+        console.log(modules.sections)
+    }
 
+    nextButton.onclick = () => renderText(++currentIndex)
+    backButton.onclick = () => renderText(--currentIndex)
+
+
+    const layout = document.getElementsByClassName("layout")[0];
+
+    // Show Sidebar button functionality
+    function toggleSidebar() {
+        layout.classList.toggle("sidebar-expand");
+    }
+
+            
 </script>
 
 {% endblock %}
