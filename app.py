@@ -30,7 +30,9 @@ def module(module_label):
     try:
         next_mod = working_module.master_list[int(module_label[-1])]
     except:
-        next_mod = app.learning_outline_list[int(module_label[0])].master_module
+        if int(module_label[0])!=4:
+            next_mod = app.learning_outline_list[int(module_label[0])].master_module
+            
         
 
     
