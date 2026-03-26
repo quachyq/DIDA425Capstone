@@ -82,17 +82,27 @@
     const content = document.getElementById("content");
     const nextButton = document.getElementById("next");
     const backButton = document.getElementById("back");
+    const nextSection = document.getElementById("next-section");
 
-
+    nextSection.style.visibility = "hidden";
+    
     if (!modules.sections || modules.sections.length == 1) {
         nextButton.style.visibility = "hidden";
         backButton.style.visibility = "hidden";
+        nextSection.style.visibility = "visible";
     }
     
     function renderText(Index) {
         content.innerText = modules.sections[Index].content;
         backButton.disabled = currentIndex === 0;
         nextButton.disabled = currentIndex === modules.sections.length -1
+
+        if (nextButton.disabled) {
+            nextSection.style.visibility = "visible";
+        }
+        else {
+            nextSection.style.visibility = "hidden";
+        }
     }
 
     nextButton.onclick = () => renderText(++currentIndex)

@@ -5,12 +5,27 @@ import copy
 from pathlib import Path
 
 class CustomFlask(Flask):
+    """
+    Custom Flask object for initializing app specific attributes
+    Includes the directory as an attr
+    """
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         path = os.path.abspath(__file__)
         self.dir = os.path.dirname(path)
-
+        self.jinja_env.autoescape = False
+        
     def initialize_modules(self):
+        """
+        Module Initialization Method
+        
+        Hardcoded the master module instances because theres only 4
+        Creates a learning outline list formated as such:
+        
+        [Module1Json, Module2Json, Module3Json, Module4Json]
+        
+        See ModuleJson for more info on this object
+        """
         main_mod_1 = MasterModule(title = "What Is a Data Center?", label = "1", objective = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.")
         main_mod_2 = MasterModule(title = "What Are the Broad Implications?", label = "2", objective = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.")
         main_mod_3 = MasterModule(title = "What Are the Local Effects?", label = "3", objective = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.")
@@ -19,9 +34,11 @@ class CustomFlask(Flask):
         main_mod_list = [main_mod_1,main_mod_2,main_mod_3,main_mod_4]
         learning_outline_list = []
         
+        # Iterates over the amount of files in static/txt. This is where all module txt files go
         for i in range(len(list(os.scandir(f"{self.dir}/static/txt")))):
             learning_outline_list.append(ModuleJson(ModuleTxt(f"module{i+1}.txt", self.dir), main_mod_list[i]))
 
+        # adds the list jinja vars
         self.jinja_env.globals.update(
             learning_outline_list = learning_outline_list
         )
@@ -82,9 +99,22 @@ class ModuleTxt:
                 content_collect = True
 
 class Module:
+    """
+    Module Object
+    
+    Attrs::
+    
+    title: Module title
+    label: 1.1
+    sections: [Submodule1, ...]
+    id: index
+    href: autofilled
+    
+    """
     def __init__(self, title, label, sections=None, id = None, href: str = None):
         self.title = title
         self.label = label
+        # This specification is REQUIRED!!!! Types used later (idk for what)
         self.sections = sections if sections is not None else []
         self.href = href
         self.id = int(label[-1]) - 1
@@ -98,6 +128,11 @@ class Module:
         self.sections.append(submodule)
     
     def format_dict(self):
+        """
+        Method to format the object into a nice jsonable dictionary
+        
+        Creates the dict as an attr and returns it
+        """
         #self.id = len(self.json)
         self.dict = {
             "id":self.id,
@@ -116,17 +151,34 @@ class Module:
         return self.dict
     
 class MasterModule(Module):
+    """
+    Defines Masters with a learning objective
+    
+    Ex. Module 1
+    """
     def __init__(self, *args, objective = None, **kwargs):
         super().__init__(*args, **kwargs)
         self.objective = objective
         
 class Submodule(Module):
+    """
+    Submodule with empty section
+    """
     def __init__(self, content = None, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.content = content
         self.sections = []
     
 class ModuleJson:
+    """
+    Object that contains iteratable attrs
+    Used for organizing main modules into categories
+    
+    master_list and dict_master_list contain Module classes that can be called in Jinja
+    
+    The purpose of this class is for Jinja to interact with for using the {{ x | tojson }} call
+    This makes these accessible through JS
+    """
     def __init__(self, txt: ModuleTxt, master_module: MasterModule):
         self.txt = txt
         self.master_module = master_module
@@ -138,7 +190,11 @@ class ModuleJson:
             i["sections"] = [section.format_dict() for section in i["sections"]]
         
     def construct_list(self):
-
+        """
+        Creates the master list attr.
+        
+        This contains each each module class.
+        """
         for mod in self.txt.module_list:
             temp_module = Module(title=mod["name"], label = mod["label"])
             for submod in self.txt.submodule_list:
@@ -153,10 +209,16 @@ class ModuleJson:
             self.master_list.append(copy.deepcopy(temp_module))
     
     def get_labels(self):
+        """
+        Returns list of labels the list
+        """
         label_list = [mod['label'] for mod in self.dict_master_list]
         return label_list
     
     def find_id_from_label(self, lab):
+        """
+        does what it says
+        """
         for mod in self.dict_master_list:
             if mod["label"] == lab:
                 return self.dict_master_list.index(mod)
