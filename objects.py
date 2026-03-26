@@ -12,7 +12,7 @@ class CustomFlask(Flask):
         
     def initialize_modules(self):
         main_mod_1 = MasterModule(title = "What is a data center?", label = "1", objective = "Lorem")
-        main_mod_2 = MasterModule(title = "What are the borad implications?", label = "2", objective = "Lorem")
+        main_mod_2 = MasterModule(title = "What are the broad implications?", label = "2", objective = "Lorem")
         main_mod_3 = MasterModule(title = "What are the local effects?", label = "3", objective = "Lorem")
         main_mod_4 = MasterModule(title = "How are you affected and what can you do?", label = "4", objective = "Lorem")
         
