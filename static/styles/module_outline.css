@@ -29,6 +29,7 @@ body {
     width: auto;
     border-radius: 20px;
     display: flex;
+    transition: background-color 0.2s ease;
 }
 
 .box-div-1 {
@@ -77,4 +78,14 @@ body {
 .module-number {
     font-family: 'DM Sans', sans-serif;
     margin-right: 10px;
+}
+
+
+a.clickable-box:hover .module-box {
+    background-color: #949494;
+    cursor: pointer;
+}
+
+a.clickable-box:active .module-box {
+    background-color: #787878;
 }
