@@ -3,7 +3,7 @@
 {% block title %}Index{% endblock %}
 {% block head %}
 {{ super() }}
-<link rel="stylesheet" href="{{ url_for('static',filename='styles/test.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='styles/learnpage.css') }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz@0,9..40;1,9..40&family=Libre+Baskerville:ital@0;1&display=swap" rel="stylesheet">
@@ -15,9 +15,9 @@
 <section class = 'layout'>
     <div class = 'header'>
         <ol class = 'header-content'>
-            <li><a href = "/">Home</a></li>
+            <li><a class='links' href = "/">Home</a></li>
             <li>➤</li>
-            <li><a href = "/module-outline">Module List</a></li>
+            <li><a class='links' href = "/module-outline">Module List</a></li>
             <li>➤</li>
             <li>X Module Name</li>
             <li>➤</li>
@@ -31,13 +31,14 @@
             </button>
         </div>
         <div class = "sidebar-expanded">
+
             <ol class='module-section'>  
                 <div class="module-name">
                     <b class="module-num">1</b>
                     What is a data center?
                 </div>
                 {% for mod in modules_list %}
-                <a href= "{{ url_for('module', module_label=mod.label.replace(".","-"))}}">
+                <a class='links' href= "{{ url_for('module', module_label=mod.label.replace(".","-"))}}">
                 <li class="submodule-section">
                     <div class="module-name">
                         <b class="module-num"> {{ mod.label }} </b>
@@ -47,6 +48,49 @@
                 </a>
                 {% endfor %}
             </ol>
+
+            <ol class='module-section'>  
+                <div class="module-name">
+                    <b class="module-num">X</b>
+                    Module Name Module Name Module Name 
+                </div>
+                <li class="submodule-section">
+                    <div class="module-name">
+                        <b class="module-num"> X.X </b>
+                        Submodule Title
+                    </div>
+                </li>
+                </a>
+            </ol>
+
+            <ol class='module-section'>  
+                <div class="module-name">
+                    <b class="module-num">X</b>
+                    Module Name Module Name Module Name 
+                </div>
+                <li class="submodule-section">
+                    <div class="module-name">
+                        <b class="module-num"> X.X </b>
+                        Submodule Title
+                    </div>
+                </li>
+                </a>
+            </ol>
+
+            <ol class='module-section'>  
+                <div class="module-name">
+                    <b class="module-num">X</b>
+                    Module Name Module Name Module Name 
+                </div>
+                <li class="submodule-section">
+                    <div class="module-name">
+                        <b class="module-num"> X.X </b>
+                        Submodule Title
+                    </div>
+                </li>
+                </a>
+            </ol>
+
         </div>
     </div>
     <div class = 'main-area'>
