@@ -66,7 +66,7 @@ body {
 }
 
 a.links:hover .submodule-section {
-    background-color: #949494;
+    background-color: #b0b0b0;
     cursor: pointer;
 }
 
@@ -177,4 +177,17 @@ button.sidebar-open {
     border-radius: 5px;
     margin-top: 10px;
 
+}
+
+
+#next-section {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1em;
+    background-color: rgb(226, 226, 226);
+    color: rgb(0, 0, 0);
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-decoration: none;
 }

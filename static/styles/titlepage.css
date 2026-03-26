@@ -28,5 +28,16 @@ body {
     padding: 10px 15px;
     border: none;
     border-radius: 8px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+
+.access-button:hover {
+    background-color: #707070;
+    cursor: pointer;
+}
+
+.access-button:active {
+    background-color: #505050;
 }
 

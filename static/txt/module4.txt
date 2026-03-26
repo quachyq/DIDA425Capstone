@@ -22,7 +22,7 @@ content:
 ---
 
 label: 4.2
-title: Good habits
+title: Good Habits
 
 ---
 
@@ -51,7 +51,7 @@ content:
 ---
 
 label: 4.3
-title: Continue to stay informed
+title: Continue To Stay Informed
 
 ---
 
