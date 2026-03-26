@@ -26,6 +26,9 @@ def outline():
 @app.route("/learn-page/module<module_label>")
 def module(module_label):
     working_module = app.learning_outline_list[int(module_label[0])-1]
+    print(module_label)
+    if len(module_label) == 1:
+        return render_template("learn-page.html", current_mod = [{}], obj = working_module.master_module.objective, working_module = working_module)
     
     if module_label.replace("-",".") not in working_module.get_labels():
         abort(404)
@@ -35,4 +38,4 @@ def module(module_label):
     
     
 
-    return render_template("learn-page.html", current_mod = current_mod)
+    return render_template("learn-page.html", current_mod = current_mod, working_module = working_module)

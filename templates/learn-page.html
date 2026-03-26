@@ -19,9 +19,11 @@
             <li>➤</li>
             <li><a class='links' href = "/module-outline">Module List</a></li>
             <li>➤</li>
-            <li>X Module Name</li>
+            <li>{{ working_module.master_module.label }} {{ working_module.master_module.title }}</li>
+            {% if current_mod != [{}] %}
             <li>➤</li>
             <li>{{ current_mod.label }} {{ current_mod.title }}</li>
+            {% endif %}
         </ol>
     </div>
     <div class = 'sidebar'>
@@ -33,19 +35,21 @@
         <div class = "sidebar-expanded">
 
             <ol class='module-section'>  
+                {% for module in learning_outline_list %}
                 <div class="module-name">
-                    <b class="module-num">1</b>
-                    What is a data center?
+                    <b class="module-num">{{ module.master_module.label }}</b>
+                    {{ module.master_module.title }}
                 </div>
-                {% for mod in modules_list %}
-                <a class='links' href= "{{ url_for('module', module_label=mod.label.replace(".","-"))}}">
+                {% for submodule in module.master_list %}
+                <a class='links' href= "{{ url_for('module', module_label=submodule.label.replace(".","-"))}}">
                 <li class="submodule-section">
                     <div class="module-name">
-                        <b class="module-num"> {{ mod.label }} </b>
-                        {{ mod.title }}
+                        <b class="module-num"> {{ submodule.label }} </b>
+                        {{ submodule.title }}
                     </div>
                 </li>
                 </a>
+                {% endfor %}
                 {% endfor %}
             </ol>
 
@@ -94,7 +98,13 @@
         </div>
     </div>
     <div class = 'main-area'>
-    <p id = 'content'>{{ current_mod.sections[0].content }}</p>
+    <p id = 'content'>
+        {% if obj %}
+        {{ obj }}
+        {% else %}
+        {{ current_mod.sections[0].content }}
+        {% endif %}
+    </p>
 
     <button id = "next">next</button>
     <button id = "back">back</button>
@@ -103,7 +113,8 @@
 
 <script>
     let currentIndex = 0;
-    const modules = {{ current_mod | tojson }}
+
+    const modules = {{ current_mod | tojson }};
 
     const content = document.getElementById("content");
     const nextButton = document.getElementById("next");
