@@ -15,9 +15,9 @@
 <section class = 'layout'>
     <div class = 'header'>
         <ol class = 'header-content'>
-            <li><a class='links' href = "/">Home</a></li>
+            <li><a class='header-links' href = "/">Home</a></li>
             <li>➤</li>
-            <li><a class='links' href = "/module-outline">Module List</a></li>
+            <li><a class='header-links' href = "/module-outline">Module List</a></li>
             <li>➤</li>
             <li><a class = 'links' href = "/learn-page/{{ working_module.master_module.href }}">
                 {{ working_module.master_module.label }} {{ working_module.master_module.title }} 
@@ -67,8 +67,8 @@
         {% endif %}
     </p>
 
-    <button id = "next">next</button>
     <button id = "back">back</button>
+    <button id = "next">next</button>
     </div>
 </section>
 
