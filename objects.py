@@ -13,6 +13,8 @@ class CustomFlask(Flask):
         super().__init__(*args, **kwargs)
         path = os.path.abspath(__file__)
         self.dir = os.path.dirname(path)
+        
+        # this gets HTML tags working in txt.
         self.jinja_env.autoescape = False
         
     def initialize_modules(self):
@@ -36,7 +38,7 @@ class CustomFlask(Flask):
         
         # Iterates over the amount of files in static/txt. This is where all module txt files go
         for i in range(len(list(os.scandir(f"{self.dir}/static/txt")))):
-            learning_outline_list.append(ModuleJson(ModuleTxt(f"module{i+1}.txt", self.dir), main_mod_list[i]))
+            learning_outline_list.append(ModuleJson(ModuleTxt(f"module{i+1}.html", self.dir), main_mod_list[i]))
 
         # adds the list jinja vars
         self.jinja_env.globals.update(
