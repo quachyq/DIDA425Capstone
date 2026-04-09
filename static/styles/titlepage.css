@@ -1,15 +1,16 @@
 body {
-    background-color: white;
+    background-color: #FFF8E0;
 }
 
 #home-block {
-    background-color: white; 
+    background-color: #FFF8E0; 
     padding: 9%;
 }
 
 .title {
     font-family: 'Libre Baskerville', serif;
     font-size: 3.75em;
+    color: #1C304A;
 }
 
 .description {
@@ -23,8 +24,8 @@ body {
 .access-button {
     font-family: 'Libre Baskerville', serif;
     font-size: 1.25em;
-    background-color: black;
-    color: white;
+    background-color: #DBDEB6;
+    color: #1C304A;
     padding: 10px 15px;
     border: none;
     border-radius: 8px;
