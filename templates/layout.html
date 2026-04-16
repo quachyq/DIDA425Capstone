@@ -5,34 +5,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Title{% endblock %}</title>
-    <link rel="stylesheet" href = "{{ url_for('static',filename='styles/learnpage.css') }}">
+    <link rel="stylesheet" href = "{{ url_for('static',filename='styles/layout.css') }}">
     {% endblock %}
 </head>
 
 <body>
+    <div id = "canvas">
     {% block body %}
-    
-    <div id="main-content">
-        <div id="sidebar">
-            <div class = "sidebar-buttons">
-                <button class='open-sidebar' onclick = "toggleSidebar()">Sidebar</button>
-            </div>
-
-            <div class = "sidebar-content">
-                
-                <a href="/module">1.1</a> </br>
-                <a>1.2</a>
-            </div>
-        </div>
-
-        <div id="learn-panel">
             {% block module_content %}
 
             {% endblock %}
-        </div>
+    {% endblock %}
     </div>
 
-        {% endblock %}
+    <button id = "accessibility">Accessibility</button>
 
+    <div id = "accessibility-menu">
+        <div id = "text-slider-container">
+            Text Size
+            <input type="range" min="50" max="200" value="100" class="slider" id ="text-size">
+
+            Text Spacing
+            <input type="range" min="50" max="200" value="100" class="slider" id ="text-spacing">
+
+        </div>
+
+    </div>
+    <iframe src="https://ft.maps.arcgis.com/apps/instant/sidebar/index.html?appid=fdb7678fb2e345eb8b0a3a49971240c4" width="400" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+    <iframe src="https://experience.arcgis.com/experience/5a4d072ad01449bba5698a80103fb909/page/Map" width="1000" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+    <script>
+        const canvas = document.getElementById("canvas")
+        var textSizeSlider = document.getElementById("text-size")
+        var textSpacingSlider = document.getElementById("text-spacing")
+
+        textSizeSlider.oninput = function() {
+            canvas.style.fontSize = `${this.value}%`
+        }
+
+        textSpacingSlider.oninput = function() {
+            canvas.style.lineHeight = `${this.value * 0.01}`
+        }
+
+        function openAccessibilityMenu() {
+            
+        }
+    </script>
 </body>
 </html>

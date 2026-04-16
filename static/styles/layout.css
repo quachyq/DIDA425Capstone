@@ -1,0 +1,18 @@
+button#accessibility {
+    z-index: 10000;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+}
+
+#accessibility-menu {
+    z-index: 10001;
+    position: fixed;
+    right: 40px;
+    top: 0;
+    overflow-y: scroll;
+    background-color: rgb(108, 108, 108);
+}
+canvas.accessibility-expand #acessibility-menu {
+    visibility: visible;
+}

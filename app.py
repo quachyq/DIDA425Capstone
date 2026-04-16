@@ -25,17 +25,19 @@ def outline():
 
 @app.route("/learn-page/module<module_label>")
 def module(module_label):
+    # Assign the current working module
     working_module = app.learning_outline_list[int(module_label[0])-1]
     
+    # Testing to see if the module is in the index
     try:
         next_mod = working_module.master_list[int(module_label[-1])]
+    
+    # if not -> we are going to the next main modules
     except:
         if int(module_label[0])!=4:
             next_mod = app.learning_outline_list[int(module_label[0])].master_module
             
-        
-
-    
+    # checking if we are in a main module (redundant?)
     if len(module_label) == 1:
         next_mod = working_module.master_list[0]
         
@@ -49,8 +51,6 @@ def module(module_label):
         
     module_id = working_module.find_id_from_label(module_label.replace("-","."))
     current_mod = working_module.dict_master_list[int(module_id)]
-    
-    
 
     return render_template("learn-page.html",
                            current_mod = current_mod,
