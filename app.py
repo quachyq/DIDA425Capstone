@@ -5,6 +5,10 @@ app = CustomFlask(import_name = __name__)
 
 app.initialize_modules()
 
+@app.route('/map')
+def map():
+    return render_template('map_widget.html')
+
 @app.route('/')
 def index():
     return render_template('index1.html')

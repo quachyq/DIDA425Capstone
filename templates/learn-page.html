@@ -97,7 +97,7 @@
     
     // Function to render new text by indexing on section
     function renderText(Index) {
-        content.innerText = modules.sections[Index].content;
+        content.innerHTML = modules.sections[Index].content;
         backButton.disabled = currentIndex === 0;
         nextButton.disabled = currentIndex === modules.sections.length -1
 
