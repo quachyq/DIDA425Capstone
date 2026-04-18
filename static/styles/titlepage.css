@@ -3,7 +3,7 @@ body {
 }
 
 #home-block {
-    background-color: #FFF8E0; 
+    background-color: var(--base-color); 
     padding: 9%;
 }
 

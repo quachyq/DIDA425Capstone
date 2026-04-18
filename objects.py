@@ -42,7 +42,8 @@ class CustomFlask(Flask):
 
         # adds the list jinja vars
         self.jinja_env.globals.update(
-            learning_outline_list = learning_outline_list
+            learning_outline_list = learning_outline_list,
+            base_color = "#222222"
         )
         
         self.learning_outline_list = learning_outline_list
