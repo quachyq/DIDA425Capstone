@@ -43,7 +43,30 @@ class CustomFlask(Flask):
         # adds the list jinja vars
         self.jinja_env.globals.update(
             learning_outline_list = learning_outline_list,
-            base_color = "#222222"
+            terracotta_lightest = "#F5ECE8",
+            terracotta_light = "#E8C5B5",
+            terracotta_mid_light = "#D4967E",
+            terracotta_mid = "#B86B5A",
+            terracotta_dark = "#8C4A40",
+            terracotta_darkest = "#5E2E28",
+            dune_lightest = "#FAF6F0",
+            dune_light = "#EDE3D3",
+            dune_mid_light = "#D8C9B0",
+            dune_mid = "#BFA98A",
+            dune_dark = "#8A7460",
+            dune_darkest = "#5A4A38",
+            teal_lightest = "#E8F2F0",
+            teal_light = "#B8D8D4",
+            teal_mid_light = "#7EB8B0",
+            teal_mid = "#4D9088",
+            teal_dark = "#2E6860",
+            teal_darkest = "#1A4040",
+            chalk_lightest = "#F7F5F2",
+            chalk_light = "#E2DDD8",
+            chalk_mid_light = "#B8B3AE",
+            chalk_mid = "#7A7470",
+            chalk_dark = "#4A4540",
+            chalk_darkest = "#2A2825"
         )
         
         self.learning_outline_list = learning_outline_list
