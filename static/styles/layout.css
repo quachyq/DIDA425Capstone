@@ -1,18 +1,29 @@
 button#accessibility {
-    z-index: 10000;
+    z-index: 5;
     position: fixed;
     right: 10px;
     bottom: 10px;
 }
 
 #accessibility-menu {
-    z-index: 10001;
+    z-index: 2;
     position: fixed;
-    right: 40px;
+    height: 100%;
+    width: 270px;
+    right: 0;
     top: 0;
     overflow-y: scroll;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in-out;
     background-color: rgb(108, 108, 108);
 }
-canvas.accessibility-expand #acessibility-menu {
-    visibility: visible;
+
+#text-slider-container {
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+#accessibility-menu.open {
+    transform: translateX(0px);
 }

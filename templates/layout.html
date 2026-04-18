@@ -18,35 +18,43 @@
     {% endblock %}
     </div>
 
-    <button id = "accessibility">Accessibility</button>
+    <button id = "accessibility" onclick = "openAccessibilityMenu()">Accessibility</button>
 
     <div id = "accessibility-menu">
         <div id = "text-slider-container">
             Text Size
             <input type="range" min="50" max="200" value="100" class="slider" id ="text-size">
-
+            <br>
             Text Spacing
-            <input type="range" min="50" max="200" value="100" class="slider" id ="text-spacing">
-
+            <input type="range" min="100" max="105" value="100" class="slider" id ="text-spacing">
+            <br>
+            Line Height
+            <input type="range" min="50" max="200" value="100" class="slider" id ="line-height">
         </div>
 
     </div>
 
     <script>
-        const canvas = document.getElementById("canvas")
-        var textSizeSlider = document.getElementById("text-size")
-        var textSpacingSlider = document.getElementById("text-spacing")
+        const canvas = document.getElementById("canvas");
+        const accessMenu = document.getElementById("accessibility-menu")
+        var textSizeSlider = document.getElementById("text-size");
+        var textSpacingSlider = document.getElementById("text-spacing");
+        var lineHeightSlider = document.getElementById("line-height");
 
         textSizeSlider.oninput = function() {
-            canvas.style.fontSize = `${this.value}%`
+            canvas.style.fontSize = `${this.value}%`;
         }
 
         textSpacingSlider.oninput = function() {
-            canvas.style.lineHeight = `${this.value * 0.01}`
+            canvas.style.letterSpacing = `${this.value - 100}px`;
         }
 
+        lineHeightSlider.oninput = function() {
+            canvas.style.lineHeight = `${this.value * 0.01}`;
+        }
+        
         function openAccessibilityMenu() {
-            
+            accessMenu.classList.toggle("open");
         }
     </script>
 </body>
