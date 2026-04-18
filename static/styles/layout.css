@@ -1,12 +1,13 @@
 button#accessibility {
-    z-index: 5;
+    z-index: 11;
     position: fixed;
     right: 10px;
     bottom: 10px;
+    
 }
 
 #accessibility-menu {
-    z-index: 2;
+    z-index: 10;
     position: fixed;
     height: 100%;
     width: 270px;
