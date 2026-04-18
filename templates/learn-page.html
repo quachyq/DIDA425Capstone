@@ -24,8 +24,18 @@
             </a></li>
             {% if current_mod != [{}] %}
             <li class="arrow">▶</li>
-            <li>{{ current_mod.label }} {{ current_mod.title }}</li>
+            <li><a class = 'header-links'>{{ current_mod.label }} {{ current_mod.title }}</a></li>
             {% endif %}
+            <script>
+                function updateLinkColor() {
+                    headerLinks = document.getElementsByClassName("header-links");
+                    workingMod = headerLinks[headerLinks.length - 1];
+
+                    workingMod.classList.toggle("is-current");
+                }
+
+                updateLinkColor()
+            </script>
         </ol>
     </div>
     <div class = 'sidebar'>
@@ -71,12 +81,17 @@
     <button id = "back">back</button>
     <button id = "next">next</button>
     <progress id = 'submod-progress' value = '0' max = '{{ (current_mod.sections | length) - 1 }}'></progress>
-    <a id = "next-section" href = "/learn-page/{{ next_mod.href }}">To Section {{ next_mod.label }}<a>
+
+    {% if next_mod %}
+        <a id = "next-section" href = "/learn-page/{{ next_mod.href }}">To Section {{ next_mod.label }}<a>
+    {% endif %}
     </div>
 </section>
 
 <script>
     let currentIndex = 0;
+
+    const layout = document.getElementsByClassName("layout")[0];
 
     const modules = {{ current_mod | tojson }};
 
@@ -85,8 +100,12 @@
     const backButton = document.getElementById("back");
     const nextSection = document.getElementById("next-section");
     const progressBar = document.getElementById("submod-progress");
+
     // Made these hidden by default
+
+    if (nextSection) {
     nextSection.style.visibility = "hidden";
+    }
     backButton.style.visibility = "hidden";
 
     // Checking what kind of section we are in and if it has sections in it
@@ -126,8 +145,38 @@
     nextButton.onclick = () => renderText(++currentIndex)
     backButton.onclick = () => renderText(--currentIndex)
 
+    // Keyboard Navigation
+    document.addEventListener('keydown', (event) => {
+        if (event.key === "ArrowRight") {
+            if (nextSection.style.visibility === "hidden") {
+                nextButton.click()
+            }
+            else {
+                nextSection.click()
+            }
+        }
+        else if (event.key === "ArrowLeft") {
+            backButton.click()
+        }
+        else if (event.key === "Tab") {
+            toggleSidebar()
+        }
+    })
 
-    const layout = document.getElementsByClassName("layout")[0];
+    // Check if next section is clicked
+    nextSection.addEventListener('click', (event) => {
+        // Keep it open when moving to next section
+        if (layout.classList.contains("sidebar-expand")) {
+            sessionStorage.setItem("sidebarOpen", "True");
+        }
+    })
+
+    document.addEventListener("DOMContentLoaded", function() {
+        if (sessionStorage.getItem("sidebarOpen") === "True") {
+            sessionStorage.removeItem("sidebarOpen");
+            toggleSidebar()
+        }
+    })
 
     // Show Sidebar button functionality
     function toggleSidebar() {
