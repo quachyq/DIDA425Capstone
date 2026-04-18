@@ -11,7 +11,7 @@ def map():
 
 @app.route('/')
 def index():
-    return render_template('index1.html')
+    return render_template('title-page.html')
 
 @app.route('/', methods=['POST'])
 def next_button():

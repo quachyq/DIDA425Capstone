@@ -1,16 +1,22 @@
 body {
-    background-color: #FFF8E0;
+    background-color: var(--dune-lightest);
 }
 
-#home-block {
-    background-color: var(--base-color); 
+#main-block {
+    background-color: var(--dune-lightest); 
     padding: 9%;
 }
+
+#course-overview-block {
+    background-color: var(--teal-mid); 
+    padding: 9%;
+}
+
 
 .title {
     font-family: 'Libre Baskerville', serif;
     font-size: 3.75em;
-    color: #1C304A;
+    color: var(--terracotta-darkest);
 }
 
 .description {
@@ -19,13 +25,14 @@ body {
     max-width: 55%;
     padding-top: 10px;
     padding-bottom: 15px;
+    color: var(--dune-darkest)
 }
 
 .access-button {
     font-family: 'Libre Baskerville', serif;
     font-size: 1.25em;
-    background-color: #DBDEB6;
-    color: #1C304A;
+    background-color: var(--teal-mid);
+    color: var(--dune-lightest);
     padding: 10px 15px;
     border: none;
     border-radius: 8px;
