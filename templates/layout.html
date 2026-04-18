@@ -26,12 +26,12 @@
             <input type="range" min="50" max="200" value="100" class="slider" id ="text-size">
             <br>
             Text Spacing
-            <input type="range" min="100" max="105" value="100" class="slider" id ="text-spacing">
+            <input type="range" min="101" max="105" value="100" class="slider" id ="text-spacing">
             <br>
             Line Height
-            <input type="range" min="50" max="200" value="100" class="slider" id ="line-height">
+            <input type="range" min="100" max="160" value="100" class="slider" id ="line-height">
         </div>
-
+        <button id = 'reset-css' onclick = 'resetDefaultCSS()'> Reset to Default</button>
     </div>
 
     <script>
@@ -50,12 +50,23 @@
         }
 
         lineHeightSlider.oninput = function() {
-            canvas.style.lineHeight = `${this.value * 0.01}`;
+            canvas.style.lineHeight = `${this.value * 0.01 + 0.4}`;
         }
         
         function openAccessibilityMenu() {
             accessMenu.classList.toggle("open");
         }
+
+        function resetDefaultCSS() {
+            canvas.style.fontSize = "100%";
+            canvas.style.letterSpacing = "normal";
+            canvas.style.lineHeight = "normal";
+
+            textSizeSlider.value = 100;
+            textSpacingSlider.value = 100;
+            lineHeightSlider.value = 100;
+        }
+
     </script>
 </body>
 </html>

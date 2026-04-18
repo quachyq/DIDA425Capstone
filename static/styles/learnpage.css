@@ -180,6 +180,16 @@ button.sidebar-open {
 
 }
 
+progress#submod-progress {
+    accent-color: red;
+    appearance: none; /* Removes default OS styling */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: fixed;
+    bottom: 10px;
+    height: 20px;
+}
+
 
 #next-section {
     font-family: 'Libre Baskerville', serif;
@@ -192,3 +202,4 @@ button.sidebar-open {
     margin-top: 10px;
     text-decoration: none;
 }
+

@@ -69,7 +69,7 @@
 
     <button id = "back">back</button>
     <button id = "next">next</button>
-
+    <progress id = 'submod-progress' value = '0' max = '{{ (current_mod.sections | length) - 1 }}'></progress>
     <a id = "next-section" href = "/learn-page/{{ next_mod.href }}">To Section {{ next_mod.label }}<a>
     </div>
 </section>
@@ -83,7 +83,7 @@
     const nextButton = document.getElementById("next");
     const backButton = document.getElementById("back");
     const nextSection = document.getElementById("next-section");
-
+    const progressBar = document.getElementById("submod-progress");
     // Made these hidden by default
     nextSection.style.visibility = "hidden";
     backButton.style.visibility = "hidden";
@@ -101,6 +101,7 @@
         backButton.disabled = currentIndex === 0;
         nextButton.disabled = currentIndex === modules.sections.length -1
 
+        progressBar.value = Index
         // Hides next button if at the end and makes the next section visible
         if (nextButton.disabled) {
             nextSection.style.visibility = "visible";
