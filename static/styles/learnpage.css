@@ -85,7 +85,6 @@ body {
     color: var(--teal-dark);
 }
 
-
 a.links:hover .submodule-section {
     background-color: #dadada;
     cursor: pointer;
@@ -173,6 +172,17 @@ button.sidebar-open {
     line-height: 1.1;
 }
 
+.submodule-section.is-current {
+    color: var(--dune-lightest);
+    background-color: var(--terracotta-mid);
+}
+
+.submodule-name.is-current {
+    color: var(--dune-lightest);
+}
+.submodule-num.is-current {
+    color: var(--dune-lightest);
+}
 .main-area {
     grid-row: 2 / 4;
     grid-column: 3 / 4;

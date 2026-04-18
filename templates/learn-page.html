@@ -24,17 +24,16 @@
             </a></li>
             {% if current_mod != [{}] %}
             <li class="arrow">▶</li>
-            <li><a class = 'header-links'>{{ current_mod.label }} {{ current_mod.title }}</a></li>
+            <li><a class = 'header-links'>{{ current_mod.label }} {{ current_mod.name }}</a></li>
             {% endif %}
             <script>
-                function updateLinkColor() {
-                    headerLinks = document.getElementsByClassName("header-links");
-                    workingMod = headerLinks[headerLinks.length - 1];
+                function updateLinkColor(linkType) {
+                            links = document.getElementsByClassName(linkType);
+                            workingMod = links[links.length - 1];
+                            workingMod.classList.toggle("is-current");
+                        }
 
-                    workingMod.classList.toggle("is-current");
-                }
-
-                updateLinkColor()
+                updateLinkColor("header-links")
             </script>
         </ol>
     </div>
@@ -62,6 +61,14 @@
                     </div>
                 </li>
                 </a>
+
+                {% if submodule.label == current_mod.label %}
+                    <script>
+                        updateLinkColor("submodule-section")
+                        updateLinkColor("submodule-name")
+                        updateLinkColor("submodule-num")
+                    </script>
+                {% endif %}
                 {% endfor %}
                 
             </ol>
