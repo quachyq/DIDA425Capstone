@@ -6,7 +6,7 @@
 
 body {
     margin: 0;
-    background-color: #fff8e0;
+    background-color: var(--dune-lightest);
     overflow-x: hidden;
     overflow-y: hidden;
 
@@ -15,15 +15,15 @@ body {
 .layout {
     height: 100vh;
     display: grid;
-    grid-template-columns: [col1] 255px [col2] 15px [col3] 45px [col4] auto [col5];
-    grid-template-rows: [row1] 45px [row2] auto [row3];
+    grid-template-columns: [col1] 255px [col2] 45px [col3] auto [col4];
+    grid-template-rows: [row1] 45px [row2] 45px [row3] auto [row4];
 }
 
 .header {
     grid-row: 1 / 2;
-    grid-column: 1 / 5;
+    grid-column: 1 / 4;
     z-index: 3;
-    background-color: var(--dune-lightest);
+    background-color: var(--dune-light);
 }
 
 .header-content {
@@ -39,14 +39,27 @@ body {
 }
 
 .sidebar {
-    grid-row: 2 / 3;
-    grid-column: 1 / 4;
+    grid-row: 2 / 4;
+    grid-column: 1 / 3;
     z-index: 2;
-    background-color: var(--teal-darkest);
     border-radius: 0 10px 0 0;
-    justify-content: right;
-    transform: translateX(-270px);
+    transform: translateX(-255px);
     transition: transform 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.sidebar-header {
+    background-color: var(--teal-dark);
+    height: 45px;
+    width: 300px;
+    border-radius: 0 10px 10px 0;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--teal-light);
 }
 
 .sidebar-content {
@@ -60,7 +73,12 @@ body {
 
 .header-links {
     text-decoration: none;
-    color: black;
+    color: var(--dune-dark);
+}
+
+.arrow {
+    text-decoration: none;
+    color: var(--dune-mid);
 }
 
 .header-links.is-current {
@@ -88,20 +106,22 @@ a.header-links:active {
 
 button.sidebar-open {
     position: fixed;
-    top: 5px;
+    top: 3px;
     right: 10px;
     width: fit-content;
     height: fit-content;
     font-size: 1.75em;
-    background-color: #777e6c;
+    background-color: var(--teal-dark);
     border: none;
+    color: var(--teal-light)
 }
 
 .sidebar-expanded {
+    flex: 1;
     margin-right: 45px;
     width: auto; 
     height: auto;
-    background-color: rgb(135, 135, 135); 
+    background-color: var(--teal-darkest); 
     transition: transform 0.5s ease-in-out;
     overflow-y: scroll;
     height: 100vh
@@ -113,7 +133,7 @@ button.sidebar-open {
     flex-direction: column;
     list-style: none;
     margin: 10px;
-    background-color: rgb(204, 204, 204); 
+    background-color: var(--teal-darkest); 
     border-radius: 5px;
 }
 
@@ -121,28 +141,49 @@ button.sidebar-open {
     font-family: 'DM Sans', sans-serif;
     margin: 10px;
     display: flex;
+    color: var(--teal-light)
+}
+
+.submodule-name {
+    font-family: 'DM Sans', sans-serif;
+    margin: 10px;
+    display: flex;
+    color: var(--teal-mid-light)
 }
 
 .module-num {
     font-family: 'DM Sans', sans-serif;
     margin-right: 10px;
+    color: var(--teal-light)
+}
+
+.submodule-num {
+    font-family: 'DM Sans', sans-serif;
+    margin-right: 10px;
+    color: var(--teal-mid-light)
 }
 
 .submodule-section {
     font-family: 'DM Sans', sans-serif;
-    margin: 0 10px 10px 10px;
-    background-color: rgb(185, 185, 185); 
+    margin: 0 0 0 10px;
+    background-color: var(--teal-darkest); 
     border-radius: 5px;
     padding: 1px 0;
     transition: background-color 0.2s ease;
+    line-height: 1.1;
 }
 
 .main-area {
+    grid-row: 2 / 4;
+    grid-column: 3 / 4;
+    z-index: 1;
     font-family: 'DM Sans', sans-serif;
     font-size: 1.25em;
     padding: 10%;
     transform: translateX(-255px);
     transition: transform 0.5s ease-in-out;
+    overflow-y: auto;
+    color: var(--dune-darkest)
 }
 
 .layout.sidebar-expand .sidebar {
@@ -201,3 +242,21 @@ progress#submod-progress {
     text-decoration: none;
 }
 
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--teal-mid);
+    border-radius: 4px;
+    border: 2px solid var(--teal-darkest);
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--teal-darkest);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--teal-lightest);
+}

@@ -16,24 +16,25 @@
     <div class = 'header'>
         <ol class = 'header-content'>
             <li><a class='header-links' href = "/">Home</a></li>
-            <li>➤</li>
+            <li class="arrow">▶</li>
             <li><a class='header-links' href = "/module-outline">Module List</a></li>
-            <li>➤</li>
+            <li class="arrow">▶</li>
             <li><a class = 'header-links' href = "/learn-page/{{ working_module.master_module.href }}">
                 {{ working_module.master_module.label }} {{ working_module.master_module.title }} 
             </a></li>
             {% if current_mod != [{}] %}
-            <li>➤</li>
+            <li class="arrow">▶</li>
             <li>{{ current_mod.label }} {{ current_mod.title }}</li>
             {% endif %}
         </ol>
     </div>
     <div class = 'sidebar'>
-        <div class="sidebar-content">
-            <button class = "sidebar-open" onclick = "toggleSidebar()">
-                ☰
-            </button>
+        <div class="sidebar-header">
+            Modules
         </div>
+        <button class="sidebar-open" onclick="toggleSidebar()">
+                ☰
+        </button>
         <div class = "sidebar-expanded">
             {% for module in learning_outline_list %}
             <ol class='module-section'>  
@@ -45,8 +46,8 @@
                 {% for submodule in module.master_list %}
                 <a class='links' href= "{{ url_for('module', module_label=submodule.label.replace(".","-"))}}">
                 <li class="submodule-section">
-                    <div class="module-name">
-                        <b class="module-num"> {{ submodule.label }} </b>
+                    <div class="submodule-name">
+                        <b class="submodule-num"> {{ submodule.label }} </b>
                         {{ submodule.title }}
                     </div>
                 </li>
