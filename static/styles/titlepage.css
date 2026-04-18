@@ -1,5 +1,6 @@
 body {
     background-color: var(--dune-lightest);
+    margin: 0;
 }
 
 #main-block {
@@ -10,6 +11,8 @@ body {
 #course-overview-block {
     background-color: var(--teal-mid); 
     padding: 9%;
+    clip-path: polygon(0 20%, 100% 0%, 100% 100%, 0% 100%);
+    margin-top: -8%;
 }
 
 
@@ -19,7 +22,22 @@ body {
     color: var(--terracotta-darkest);
 }
 
+.title2 {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 3.75em;
+    color: var(--terracotta-darkest);
+}
+
 .description {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.3em;
+    max-width: 55%;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    color: var(--dune-darkest)
+}
+
+.description2 {
     font-family: 'DM Sans', sans-serif;
     font-size: 1.3em;
     max-width: 55%;
