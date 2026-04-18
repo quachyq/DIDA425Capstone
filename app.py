@@ -9,6 +9,10 @@ app.initialize_modules()
 def map():
     return render_template('map_widget.html')
 
+@app.route('/datacenter-interactive')
+def interactive_datacenter():
+    return render_template('datacenter_3d.html')
+
 @app.route('/')
 def index():
     return render_template('title-page.html')
@@ -56,7 +60,12 @@ def module(module_label):
     module_id = working_module.find_id_from_label(module_label.replace("-","."))
     current_mod = working_module.dict_master_list[int(module_id)]
 
-    return render_template("learn-page.html",
+    try:
+        return render_template("learn-page.html",
                            current_mod = current_mod,
                            working_module = working_module,
                             next_mod = next_mod)
+    except UnboundLocalError:
+        return render_template("learn-page.html",
+                               current_mod = current_mod,
+                               working_module = working_module)
