@@ -53,7 +53,7 @@
                     {{ module.master_module.title }}
                 </div>
                 {% for submodule in module.master_list %}
-                <a class='links' href= "{{ url_for('module', module_label=submodule.label.replace(".","-"))}}">
+                <a class='sidebar-links' href= "{{ url_for('module', module_label=submodule.label.replace(".","-"))}}">
                 <li class="submodule-section">
                     <div class="submodule-name">
                         <b class="submodule-num"> {{ submodule.label }} </b>
@@ -178,6 +178,14 @@
         }
     })
 
+    // Check if sidebar modules are clicked
+    document.addEventListener("click", (event) => {
+        const closestLink = event.target.closest("a")
+        if (layout.classList.contains("sidebar-expand") && closestLink) {
+            sessionStorage.setItem("sidebarOpen", "True");
+        }
+    })
+    // Loading the sidebar when a new page is updated
     document.addEventListener("DOMContentLoaded", function() {
         if (sessionStorage.getItem("sidebarOpen") === "True") {
             sessionStorage.removeItem("sidebarOpen");

@@ -66,7 +66,7 @@ body {
     width: 100%;
 }
 
-.links {
+.sidebar-links {
     text-decoration: none;
     color: black;
 }
@@ -96,12 +96,12 @@ body {
     color: var(--terracotta-mid);
 }
 
-a.links:hover .submodule-section {
+a.sidebar-links:hover .submodule-section {
     background-color: #dadada;
     cursor: pointer;
 }
 
-a.links:active .submodule-section {
+a.sidebar-links:active .submodule-section {
     background-color: #787878;
 }
 
