@@ -66,7 +66,7 @@ body {
     width: 100%;
 }
 
-.links {
+.sidebar-links {
     text-decoration: none;
     color: black;
 }
@@ -87,16 +87,16 @@ body {
     font-family: 'Libre Baskerville', serif;
 }
 
-a.links:hover .submodule-section {
+a.sidebar-links:hover .submodule-section {
     background-color: #dadada;
     cursor: pointer;
 }
 
-a.links:active .submodule-section {
+a.sidebar-links:active .submodule-section {
     background-color: #787878;
 }
 
-a.header-links:hover {
+a.sidebar-header-links:hover {
     color: #7a7a7a;
     cursor: pointer;
 }
