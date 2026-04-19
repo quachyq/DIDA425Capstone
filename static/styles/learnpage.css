@@ -152,6 +152,9 @@ button.sidebar-open {
     background-color: var(--teal-darkish);
 }
 
+.module-section.is-current .submodule-section {
+    background-color: var(--teal-darkish);
+}
 .module-name {
     font-family: 'Libre Baskerville', serif;
     margin: 10px;
@@ -190,6 +193,7 @@ button.sidebar-open {
     line-height: 1.15;
 }
 
+
 .submodule-section.is-current {
     color: var(--dune-lightest);
     background-color: var(--terracotta-mid);
@@ -201,6 +205,7 @@ button.sidebar-open {
 .submodule-num.is-current {
     color: var(--dune-lightest);
 }
+
 .main-area {
     grid-row: 2 / 4;
     grid-column: 3 / 4;

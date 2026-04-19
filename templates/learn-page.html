@@ -47,9 +47,9 @@
         <div class = "sidebar-expanded">
             {% for module in learning_outline_list %}
             <ol class='module-section'> 
-                {% if module.master_module.label == current_mod.label[0] %}
+                {% if module.master_module.label == working_module.master_module.label[0] %}
                     <script>
-                        updateLinkColor("module-section")
+                        //updateLinkColor("module-section")
                     </script>
                 {% endif %}
                 <div class="module-name">
