@@ -42,20 +42,23 @@
             Modules
         </div>
         <button class="sidebar-open" onclick="toggleSidebar()">
-                ☰
+            <img height="30px" width="30px" src="../static/images/buttons/me.jpg">
         </button>
         <div class = "sidebar-expanded">
             {% for module in learning_outline_list %}
             <ol class='module-section'> 
-                {% if module.master_module.label == working_module.master_module.label[0] %}
-                    <script>
-                        //updateLinkColor("module-section")
-                    </script>
-                {% endif %}
+                
                 <div class="module-name">
                     <b class="module-num">{{ module.master_module.label }}</b>
                     {{ module.master_module.title }}
                 </div>
+
+                {% if module.master_module.label == working_module.master_module.label[0] %}
+                    <script>
+                        updateLinkColor("module-section");
+                    </script>
+                {% endif %}
+
                 {% for submodule in module.master_list %}
                 <a class='sidebar-links' href= "{{ url_for('module', module_label=submodule.label.replace(".","-"))}}">
                 <li class="submodule-section">

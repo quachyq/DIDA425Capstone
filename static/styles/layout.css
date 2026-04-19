@@ -13,7 +13,7 @@ button#accessibility {
     width: 270px;
     right: 0;
     top: 0;
-    overflow-y: scroll;
+    overflow-y: auto;
     transform: translateX(100%);
     transition: transform 0.5s ease-in-out;
     background-color: rgb(108, 108, 108);
