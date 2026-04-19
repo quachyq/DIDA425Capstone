@@ -136,6 +136,7 @@ button.sidebar-open {
     margin: 10px;
     background-color: var(--teal-darkest); 
     border-radius: 5px;
+    padding-bottom: 10px;
 }
 
 .module-name {
@@ -168,7 +169,7 @@ button.sidebar-open {
 
 .submodule-section {
     font-family: 'DM Sans', sans-serif;
-    margin: 0 0 0 10px;
+    margin: 0 10px 0 10px;
     background-color: var(--teal-darkest); 
     border-radius: 5px;
     padding: 1px 0;

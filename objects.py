@@ -60,6 +60,7 @@ class CustomFlask(Flask):
             teal_mid_light = "#7EB8B0",
             teal_mid = "#4D9088",
             teal_dark = "#2E6860",
+            teal_darkish = "#245450",
             teal_darkest = "#1A4040",
             chalk_lightest = "#F7F5F2",
             chalk_light = "#E2DDD8",
