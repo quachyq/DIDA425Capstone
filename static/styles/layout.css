@@ -1,8 +1,10 @@
 button#accessibility {
     z-index: 11;
     position: fixed;
-    right: 10px;
+    left: 10px;
     bottom: 10px;
+    background: none;
+    border: none;
     
 }
 

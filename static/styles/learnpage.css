@@ -224,40 +224,70 @@ button.sidebar-open {
 
 
 #next {
-    font-family: 'Libre Baskerville', serif;
-    font-size: 1em;
-    background-color: black;
-    color: white;
-    padding: 3px 8px;
+    background: none;
     border: none;
-    border-radius: 5px;
-    margin-top: 10px;
 
 }
 
 
 #back {
-    font-family: 'Libre Baskerville', serif;
-    font-size: 1em;
-    background-color: black;
-    color: white;
-    padding: 3px 8px;
+    background: none;
     border: none;
-    border-radius: 5px;
-    margin-top: 10px;
 
+}
+
+.button-group {
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.button-group img {
+    transition: all 0.2s ease-in-out;
+}
+
+#next:hover img {
+    filter: brightness(1.2) saturate(0.8);
+}
+
+#next:active img {
+    filter: brightness(1.1) saturate(0.9);
+}
+
+#back:hover img {
+    filter: brightness(1.2) saturate(0.8);
+}
+
+#back:active img {
+    filter: brightness(1.1) saturate(0.9);
 }
 
 progress#submod-progress {
-    accent-color: red;
-    appearance: none; /* Removes default OS styling */
-    -webkit-appearance: none;
-    -moz-appearance: none;
     position: fixed;
-    bottom: 10px;
-    height: 20px;
+    bottom: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    appearance: none;
+    height: 10px;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
+progress::-webkit-progress-bar {
+  background-color: var(--dune-light);
+  border-radius: 10px;
+}
+
+progress::-webkit-progress-value {
+  background-color: var(--terracotta-mid);
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
 
 #next-section {
     font-family: 'Libre Baskerville', serif;
@@ -288,4 +318,11 @@ progress#submod-progress {
 
 ::-webkit-scrollbar-thumb:hover {
     background-color: var(--teal-lightest);
+}
+
+
+.hamburger {
+    position: fixed;
+    top: 10px;
+    right: 6px;
 }

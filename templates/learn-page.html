@@ -42,7 +42,7 @@
             Modules
         </div>
         <button class="sidebar-open" onclick="toggleSidebar()">
-            <img height="30px" width="30px" src="../static/images/buttons/me.jpg">
+            <img class="hamburger" width="35px" src="../static/images/buttons/Hamburger-symbol.PNG">
         </button>
         <div class = "sidebar-expanded">
             {% for module in learning_outline_list %}
@@ -91,9 +91,15 @@
         {{ current_mod.sections[0].content }}
         {% endif %}
     </p>
-
-    <button id = "back">back</button>
-    <button id = "next">next</button>
+    <div class="button-group">
+        <button id = "back">
+            <img width="100px" src="../static/images/buttons/Back-button.PNG">
+        </button>
+        <button id = "next">
+            <img width="100px" src="../static/images/buttons/Next-button.PNG">
+        </button>
+    </div>
+    
     <progress id = 'submod-progress' value = '0' max = '{{ (current_mod.sections | length) - 1 }}'></progress>
 
     {% if next_mod %}
