@@ -83,7 +83,7 @@ body {
 }
 
 .header-links.is-current {
-    color: var(--terracotta-dark);
+    color: var(--teal-dark);
     font-weight: 1000;
     font-family: 'Libre Baskerville', serif;
 }
