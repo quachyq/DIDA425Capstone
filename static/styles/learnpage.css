@@ -148,6 +148,10 @@ button.sidebar-open {
     padding-bottom: 10px;
 }
 
+.module-section.is-current {
+    background-color: var(--teal-darkish);
+}
+
 .module-name {
     font-family: 'Libre Baskerville', serif;
     margin: 10px;
