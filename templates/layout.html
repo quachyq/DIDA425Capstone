@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Title{% endblock %}</title>
     <link rel="stylesheet" href = "{{ url_for('static',filename='styles/layout.css') }}">
+    <link href="https://fonts.cdnfonts.com/css/open-dyslexic" rel="stylesheet">
     {% endblock %}
 </head>
 
@@ -75,6 +76,12 @@
         var textSpacingSlider = document.getElementById("text-spacing");
         var lineHeightSlider = document.getElementById("line-height");
 
+        const allContained = document.querySelectorAll('*');
+
+        if (sessionStorage.getItem("dyslexicFriendly")) {
+            document.body.classList.toggle('dyslexic');
+        }
+
         textSizeSlider.oninput = function() {
             canvas.style.fontSize = `${this.value}%`;
         }
@@ -88,7 +95,13 @@
         }
         
         function toggleFont() {
-            canvas.classList.toggle('dyslexic');
+            document.body.classList.toggle('dyslexic');
+            if (document.body.classList.contains('dyslexic')) {
+                sessionStorage.setItem("dyslexicFriendly", "True");
+            }
+            else {
+                sessionStorage.removeItem("dyslexicFriendly");
+            }
         }
 
         function openAccessibilityMenu() {

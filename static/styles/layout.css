@@ -1,4 +1,7 @@
-@import url('https://fonts.cdnfonts.com/css/open-dyslexic');
+@font-face {
+    font-family: 'OpenDyslexic';
+    src: url('/static/fonts/OpenDyslexic-Regular.otf') format('opentype');
+  }
 
 button#accessibility {
     z-index: 11;
@@ -10,8 +13,8 @@ button#accessibility {
     
 }
 
-#canvas.dyslexic {
-    font-family: 'Open-Dyslexic', sans-serif;
+body.dyslexic, body.dyslexic * {
+    font-family: 'OpenDyslexic', sans-serif !important;
 }
 
 #accessibility-menu {

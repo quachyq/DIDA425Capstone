@@ -128,6 +128,9 @@
     var nextSection = document.getElementById("next-section");
     const progressBar = document.getElementById("submod-progress");
 
+    if (sessionStorage.getItem("sidebarOpen")) {
+        toggleSidebar();
+    }
     // Made these hidden by default
     if (!nextSection) {
         nextSection = document.getElementsByClassName('submodule-continue')[0];
@@ -194,38 +197,15 @@
         }
     })
 
-    function checkSidebarActive(button) {
-        button.addEventListener('click', (event) => {
-        // Keep it open when moving to next section
-        if (layout.classList.contains("sidebar-expand")) {
-            sessionStorage.setItem("sidebarOpen", "True");
-        }
-    })
-    }
-
-    // Check if next section is clicked
-    if (nextSection) {
-    checkSidebarActive(nextSection);
-    }
-
-    // Check if sidebar modules are clicked
-    document.addEventListener("click", (event) => {
-        const closestLink = event.target.closest("a")
-        if (layout.classList.contains("sidebar-expand") && closestLink) {
-            sessionStorage.setItem("sidebarOpen", "True");
-        }
-    })
-    // Loading the sidebar when a new page is updated
-    document.addEventListener("DOMContentLoaded", function() {
-        if (sessionStorage.getItem("sidebarOpen") === "True") {
-            sessionStorage.removeItem("sidebarOpen");
-            toggleSidebar()
-        }
-    })
-
     // Show Sidebar button functionality
     function toggleSidebar() {
         layout.classList.toggle("sidebar-expand");
+        if (layout.classList.contains("sidebar-expand")) {
+            sessionStorage.setItem("sidebarOpen", "True");
+        }
+        else {
+            sessionStorage.removeItem("sidebarOpen");
+        }
     }
 
 </script>
