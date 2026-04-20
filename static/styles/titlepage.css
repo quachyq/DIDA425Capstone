@@ -1,21 +1,23 @@
 body {
-    background-color: var(--dune-lightest);
+    background-color: var(--dune-light);
     margin: 0;
 }
 
 #main-block {
-    background-color: var(--dune-lightest); 
+    background-color: var(--dune-light); 
     padding: 9%;
 }
 
 #course-overview-block {
-    background-color: var(--dune-light); 
-    padding: 15% 9% 9% 9%;
-    clip-path: polygon(0 30%, 100% 0%, 100% 100%, 0% 100%);
+    background-color: var(--teal-dark); 
+    padding: 9% 9% 9% 9%;
+    clip-path: polygon(0 20%, 100% 0%, 100% 80%, 0% 100%);
     margin-top: -15%;
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 3rem;     
 }
 
 
@@ -28,7 +30,15 @@ body {
 .title2 {
     font-family: 'Libre Baskerville', serif;
     font-size: 3.25em;
-    color: var(--terracotta-darkest);
+    text-align: right;
+    color: var(--teal-lightest);
+}
+
+.title3 {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 3.25em;
+    text-align: right;
+    color: var(--teal-lightest);
 }
 
 .description {
@@ -46,15 +56,25 @@ body {
     max-width: 55%;
     padding-top: 10px;
     padding-bottom: 15px;
-    color: var(--dune-darkest);
+    color: var(--teal-light);
+    max-width: 100%;
+}
+
+.description3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.3em;
     max-width: 55%;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    color: var(--teal-light);
+    max-width: 100%;
 }
 
 .access-button {
     font-family: 'Libre Baskerville', serif;
     font-size: 1.25em;
-    background-color: var(--teal-mid);
-    color: var(--dune-lightest);
+    background-color: var(--terracotta-mid);
+    color: var(--terracotta-lightest);
     padding: 10px 15px;
     border: none;
     border-radius: 8px;
@@ -71,3 +91,16 @@ body {
     background-color: #505050;
 }
 
+.course-overview-img {
+    margin-top: 5%;
+    margin-left: -2%;
+    width: 500px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.course-overview {
+    flex: 1; 
+}
