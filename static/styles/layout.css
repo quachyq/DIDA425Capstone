@@ -1,3 +1,5 @@
+@import url('https://fonts.cdnfonts.com/css/open-dyslexic');
+
 button#accessibility {
     z-index: 11;
     position: fixed;
@@ -6,6 +8,10 @@ button#accessibility {
     background: none;
     border: none;
     
+}
+
+#canvas.dyslexic {
+    font-family: 'Open-Dyslexic', sans-serif;
 }
 
 #accessibility-menu {

@@ -64,6 +64,7 @@
             Line Height
             <input type="range" min="100" max="160" value="100" class="slider" id ="line-height">
         </div>
+        <button id = 'dyslexic-font' onclick = 'toggleFont()'> Dyslexic Friendly Font </button>
         <button id = 'reset-css' onclick = 'resetDefaultCSS()'> Reset to Default</button>
     </div>
 
@@ -86,6 +87,10 @@
             canvas.style.lineHeight = `${this.value * 0.01 + 0.4}`;
         }
         
+        function toggleFont() {
+            canvas.classList.toggle('dyslexic');
+        }
+
         function openAccessibilityMenu() {
             accessMenu.classList.toggle("open");
         }

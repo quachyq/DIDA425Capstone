@@ -38,7 +38,7 @@ def module(module_label):
     
     # Testing to see if the module is in the index
     try:
-        next_mod = working_module.master_list[int(module_label[-1])]
+        next_mod = working_module.dict_master_list[int(module_label[-1])]
     
     # if not -> we are going to the next main modules
     except:
@@ -47,7 +47,7 @@ def module(module_label):
             
     # checking if we are in a main module (redundant?)
     if len(module_label) == 1:
-        next_mod = working_module.master_list[0]
+        next_mod = working_module.dict_master_list[0]
         
         return render_template("learn-page.html", current_mod = [{}],
                                obj = working_module.master_module.objective,

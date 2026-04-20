@@ -91,20 +91,28 @@
         {{ current_mod.sections[0].content }}
         {% endif %}
     </p>
+
     <div class="button-group">
-        <button id = "back">
+        <button id = "back" style = "position: fixed; bottom: 50px; left: 5%;",>
             <img width="100px" src="../static/images/buttons/Back-button.PNG">
         </button>
-        <button id = "next">
+        <button id = "next" style = "position: fixed; bottom: 50px; right: 5%;",>
             <img width="100px" src="../static/images/buttons/Next-button.PNG">
         </button>
     </div>
+        {% if next_mod %}
+            {% if next_mod.label | length == 1 %}
+                <a id = "next-section" href = "/learn-page/{{ next_mod.href }}">To Section {{ next_mod.label }}<a>
+            {% else %}
+                <button id = "next" style = "position: fixed; bottom: 50px; right: 5%;", class = "submodule-continue" onclick = "window.location.href = '/learn-page/{{ next_mod.href }}'">
+                    <img width="100px" src="../static/images/buttons/Next-button.PNG">
+                </a>
+            {% endif %}
+        {% endif %}
     
+
     <progress id = 'submod-progress' value = '0' max = '{{ (current_mod.sections | length) - 1 }}'></progress>
 
-    {% if next_mod %}
-        <a id = "next-section" href = "/learn-page/{{ next_mod.href }}">To Section {{ next_mod.label }}<a>
-    {% endif %}
     </div>
 </section>
 
@@ -114,19 +122,19 @@
     const layout = document.getElementsByClassName("layout")[0];
 
     const modules = {{ current_mod | tojson }};
-
     const content = document.getElementById("content");
     const nextButton = document.getElementById("next");
     const backButton = document.getElementById("back");
-    const nextSection = document.getElementById("next-section");
+    var nextSection = document.getElementById("next-section");
     const progressBar = document.getElementById("submod-progress");
 
     // Made these hidden by default
-
-    if (nextSection) {
-    nextSection.style.visibility = "hidden";
+    if (!nextSection) {
+        nextSection = document.getElementsByClassName('submodule-continue')[0];
     }
+
     backButton.style.visibility = "hidden";
+    nextSection.style.visibility = "hidden";
 
     // Checking what kind of section we are in and if it has sections in it
     if (!modules.sections || modules.sections.length == 1) {
@@ -135,6 +143,7 @@
         nextSection.style.visibility = "visible";
     }
     
+
     // Function to render new text by indexing on section
     function renderText(Index) {
         content.innerHTML = modules.sections[Index].content;
@@ -146,10 +155,12 @@
         if (nextButton.disabled) {
             nextSection.style.visibility = "visible";
             nextButton.style.visibility = "hidden";
+
         }
         else {
             nextButton.style.visibility = "visible";
             nextSection.style.visibility = "hidden";
+
         }
 
         // If at the beginning, makes the back button hidden.
@@ -183,13 +194,19 @@
         }
     })
 
-    // Check if next section is clicked
-    nextSection.addEventListener('click', (event) => {
+    function checkSidebarActive(button) {
+        button.addEventListener('click', (event) => {
         // Keep it open when moving to next section
         if (layout.classList.contains("sidebar-expand")) {
             sessionStorage.setItem("sidebarOpen", "True");
         }
     })
+    }
+
+    // Check if next section is clicked
+    if (nextSection) {
+    checkSidebarActive(nextSection);
+    }
 
     // Check if sidebar modules are clicked
     document.addEventListener("click", (event) => {

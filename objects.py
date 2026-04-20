@@ -165,6 +165,7 @@ class Module:
             "id":self.id,
             "label":self.label,
             "name":self.title,
+            "href": self.href
          }
         
         if len(self.sections) != 0:
