@@ -1,0 +1,50 @@
+{% extends "testpage.html" %}
+{% block sandbox %}
+
+<style>
+    ul {
+    padding-left: 40px;
+    }
+
+    .img-text-descriptor {
+        position: absolute;
+        left: 60%;
+        top: 10%;
+    }
+</style>
+
+<iframe src = "../datacenter-interactive" width = 60% height = 500px></iframe>
+
+<div class = "img-text-descriptor">
+The “technology infrastructure” are the physical pieces of equipment housed by the data center.
+The main components are the following:
+<ul>
+    <li>Data storage arrays</li>
+    <ul>
+        <li>
+            As the name suggests, these store user and company data. Storing data through these rather than getting it from the user’s computer 
+            saves time.
+        </li>
+    </ul>
+    <li>Web servers</li>
+    <ul>
+        <li>These are the main computational components. These run software and do any necessary computations for the programs running.</li>
+    </ul>
+    <li>
+        Power sources
+    </li>
+    <ul>
+        <li>
+            Large generators and batteries are used to keep the system running even during power outages.
+        </li>
+    </ul>
+    <li>Cooling equipment</li>
+    <ul>
+        <li>
+            Usually either giant fans or water cooling systems are used to keep the rest of the equipment from overheating.
+        </li>
+        
+    </ul>
+</ul>
+</div>
+{% endblock %}

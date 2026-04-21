@@ -109,6 +109,18 @@
                 </a>
             {% endif %}
         {% endif %}
+        
+        {% if prev_mod.label != "4.3" %}
+        {% if not current_mod.label %}
+            <a id = "prev-section" href = "/learn-page/{{ prev_mod.href }}"> Back To Section {{ prev_mod.label }}<a>
+        {% else %}
+            <button id = 'back' style = "position: fixed; bottom: 50px; left: 5%;", class = "submodule-previous" onclick = "window.location.href = '/learn-page/{{ prev_mod.href }}'">
+                <img width="100px" src="../static/images/buttons/Back-button.PNG">
+            </a>
+        {% endif %}
+        {% endif %}
+
+
     
 
     <progress id = 'submod-progress' value = '0' max = '{{ (current_mod.sections | length) - 1 }}'></progress>
@@ -118,6 +130,15 @@
 
 <script>
     let currentIndex = 0;
+    
+    document.addEventListener("DOMContentLoaded", () => {
+            if (sessionStorage.getItem("backClicked")) {
+                sessionStorage.removeItem("backClicked");
+                currentIndex = modules.sections.length -1;
+
+                renderText(currentIndex);
+            }
+        })
 
     const layout = document.getElementsByClassName("layout")[0];
 
@@ -128,14 +149,18 @@
     var nextSection = document.getElementById("next-section");
     const progressBar = document.getElementById("submod-progress");
 
+    const prevMod = {{ prev_mod | tojson }};
+
+
     if (sessionStorage.getItem("sidebarOpen")) {
         toggleSidebar();
     }
-    // Made these hidden by default
+
     if (!nextSection) {
         nextSection = document.getElementsByClassName('submodule-continue')[0];
     }
 
+    // Made these hidden by default
     backButton.style.visibility = "hidden";
     nextSection.style.visibility = "hidden";
 
@@ -175,6 +200,9 @@
         }
     }
 
+    
+
+
     // Shorthand to assign the onclick function to index ticking
     nextButton.onclick = () => renderText(++currentIndex)
     backButton.onclick = () => renderText(--currentIndex)
@@ -189,8 +217,15 @@
                 nextSection.click()
             }
         }
-        else if (event.key === "ArrowLeft") {
-            backButton.click()
+        else if (event.key === "ArrowLeft" & prevMod.label != "4.3") {
+
+            if (currentIndex === 0) {
+                window.location.href = `/learn-page/${prevMod.href}`;
+                sessionStorage.setItem("backClicked", "True");
+            }
+            else{
+                backButton.click()
+            }
         }
         else if (event.key === "Tab") {
             toggleSidebar()

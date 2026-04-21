@@ -1,0 +1,87 @@
+{%extends "layout.html"%}
+
+{% block title %}Index{% endblock %}
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static',filename='styles/learnpage.css') }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz@0,9..40;1,9..40&family=Libre+Baskerville:ital@0;1&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+
+<section class = 'layout'>
+    <div class = 'header'>
+        <ol class = 'header-content'>
+            <li><a class='header-links' href = "/">Home</a></li>
+            <li class="arrow">▶</li>
+            <li><a class='header-links' href = "/module-outline">Module List</a></li>
+            <li class="arrow">▶</li>
+            <li><a class = 'header-links' href = "">
+                placeholding
+            </a></li>
+            <li class="arrow">▶</li>
+            <li><a class = 'header-links'>placeholding</a></li>
+            <script>
+                function updateLinkColor(linkType) {
+                            links = document.getElementsByClassName(linkType);
+                            workingMod = links[links.length - 1];
+                            workingMod.classList.toggle("is-current");
+                        }
+
+                updateLinkColor("header-links")
+            </script>
+        </ol>
+    </div>
+    <div class = 'sidebar'>
+        <div class="sidebar-header">
+            Modules
+        </div>
+        <button class="sidebar-open" onclick="toggleSidebar()">
+            <img class="hamburger" width="35px" src="../static/images/buttons/Hamburger-symbol.PNG">
+        </button>
+        <div class = "sidebar-expanded">
+            <ol class='module-section'> 
+                
+                <div class="module-name">
+                    <b class="module-num">Placeholder</b>
+                    Place
+                </div>
+
+                <a class='sidebar-links' href= "">
+                <li class="submodule-section">
+                    <div class="submodule-name">
+                        <b class="submodule-num">Placeholder</b>
+                        Placeholder
+                    </div>
+                </li>
+                </a>
+
+            </ol>
+
+
+        </div>
+    </div>
+    <div class = 'main-area'>
+    <p id = 'content'>
+        {% block sandbox %}
+        
+        {% endblock %}
+    </p>
+
+    <div class="button-group">
+        <button id = "back" style = "position: fixed; bottom: 50px; left: 5%;",>
+            <img width="100px" src="../static/images/buttons/Back-button.PNG">
+        </button>
+        <button id = "next" style = "position: fixed; bottom: 50px; right: 5%;",>
+            <img width="100px" src="../static/images/buttons/Next-button.PNG">
+        </button>
+    </div>
+
+    <progress id = 'submod-progress' value = '0' max = ''></progress>
+
+    </div>
+</section>
+
+{% endblock %}

@@ -175,7 +175,7 @@ class Module:
             try:
                 self.dict.update({"content":self.content})
             except:
-                raise ValueError("Module contents unknown")
+                self.dict.update({"obj": self.objective})
         return self.dict
     
 class MasterModule(Module):

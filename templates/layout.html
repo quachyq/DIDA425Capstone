@@ -4,7 +4,7 @@
     {% block head %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Title{% endblock %}</title>
+    <title>{% block title %}Data Center Learning Modules{% endblock %}</title>
     <link rel="stylesheet" href = "{{ url_for('static',filename='styles/layout.css') }}">
     <link href="https://fonts.cdnfonts.com/css/open-dyslexic" rel="stylesheet">
     {% endblock %}
@@ -68,7 +68,6 @@
         <button id = 'dyslexic-font' onclick = 'toggleFont()'> Dyslexic Friendly Font </button>
         <button id = 'reset-css' onclick = 'resetDefaultCSS()'> Reset to Default</button>
     </div>
-
     <script>
         const canvas = document.getElementById("canvas");
         const accessMenu = document.getElementById("accessibility-menu")

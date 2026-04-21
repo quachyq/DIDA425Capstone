@@ -3,6 +3,26 @@
     src: url('/static/fonts/OpenDyslexic-Regular.otf') format('opentype');
   }
 
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: var(--dune-lightest);
+    overflow-y: auto;
+
+}
+
+.layout {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: [row1] 70% [row2] auto [row3];
+    grid-template-columns: [col1] auto [col2];
+}
+
 button#accessibility {
     z-index: 11;
     position: fixed;
@@ -10,20 +30,19 @@ button#accessibility {
     bottom: 10px;
     background: none;
     border: none;
-    
 }
+
 
 body.dyslexic, body.dyslexic * {
     font-family: 'OpenDyslexic', sans-serif !important;
     letter-spacing: -0.1em;
 }
 
+
 #accessibility-menu {
     z-index: 10;
     position: fixed;
-    height: 100%;
     width: 270px;
-    right: 0;
     top: 0;
     overflow-y: auto;
     transform: translateX(100%);
