@@ -27,14 +27,20 @@ my_colors = c(
 )
 pal_fun = colorFactor(my_colors, datacenter_sf$status)
 
-map = leaflet() %>%
+map = leaflet() %>% onRender("
+    function(el, x) {
+      this.on('popupopen', function(e) {
+        console.log(e.popup.getContent());
+      });
+    }
+  ") %>%
   addCircleMarkers(data = datacenter_sf, color = ~pal_fun(status), radius = 1,
           popup = p_popup) %>%
   addProviderTiles(providers$CartoDB.Positron) %>%
   addLegend("bottomright",  # location
           pal=pal_fun,    # palette function
           values=datacenter_sf$status, 
-          title = 'Status') # legend 
+          title = 'Status') # legend
 
 saveWidget(map, file = "templates/map_widget.html", selfcontained = T)
 

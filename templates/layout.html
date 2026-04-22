@@ -76,9 +76,9 @@
                     Visual Settings
                     <hr>
                     <p class="slider-text">Contrast</p>
-                    <input type="range" min="100" max="160" value="100" class="slider">
+                    <input type="range" min="0" max="200" value="100" class="slider" id = "contrast">
                     <p class="slider-text">Saturation</p>
-                    <input type="range" min="100" max="160" value="100" class="slider">
+                    <input type="range" min="0" max="200" value="100" class="slider" id = "saturation">
                 </div>
             </div>
             <button id = 'reset-css' onclick = 'resetDefaultCSS()'> Reset to Default</button>
@@ -89,7 +89,8 @@
             var textSizeSlider = document.getElementById("text-size");
             var textSpacingSlider = document.getElementById("text-spacing");
             var lineHeightSlider = document.getElementById("line-height");
-
+            var contrastSlider = document.getElementById("contrast");
+            var saturationSlider = document.getElementById("saturation");
             const allContained = document.querySelectorAll('*');
 
             if (sessionStorage.getItem("dyslexicFriendly")) {
@@ -106,6 +107,14 @@
 
             lineHeightSlider.oninput = function() {
                 canvas.style.lineHeight = `${this.value * 0.01 + 0.4}`;
+            }
+
+            contrastSlider.oninput = function() {
+                canvas.style.filter = `contrast(${this.value}%)`
+            }
+            
+            saturationSlider.oninput = function() {
+                canvas.style.filter = `saturate(${this.value}%)`
             }
             
             function toggleFont() {
@@ -126,10 +135,13 @@
                 canvas.style.fontSize = "100%";
                 canvas.style.letterSpacing = "normal";
                 canvas.style.lineHeight = "normal";
+                canvas.style.filter = "saturate(100%) contrast(100%)";
 
                 textSizeSlider.value = 100;
                 textSpacingSlider.value = 100;
                 lineHeightSlider.value = 100;
+                contrastSlider.value = 100;
+                saturationSlider.value = 100;
             }
 
         </script>

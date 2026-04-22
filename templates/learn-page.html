@@ -118,17 +118,23 @@
                     <img width="100px" src="../static/images/buttons/Next-button.PNG">
                 </a>
             {% endif %}
+        {% elif current_mod.label == "4.3" %}
+            <a href = "/"> Go home </a>
+            <script>
+                document.getElementById("next").style.visibility = "hidden";
+            </script>
         {% endif %}
         
         {% if prev_mod.label != "4.3" %}
         {% if not current_mod.label %}
-            <a id = "prev-section" href = "/learn-page/{{ prev_mod.href }}"> Back To Section {{ prev_mod.label }}<a>
+            <a id = "prev-section" href = "/learn-page/{{ prev_mod.href }}" onclick = "sessionStorage.setItem('backClicked', 'True')"> Back To Section {{ prev_mod.label }}<a>
         {% else %}
-            <button id = 'back' style = "position: fixed; bottom: 50px; left: 5%;" class = "submodule-previous" onclick = "window.location.href = '/learn-page/{{ prev_mod.href }}'">
+            <button id = 'back' style = "position: fixed; bottom: 50px; left: 5%;" class = "submodule-previous" onclick = "{window.location.href = '/learn-page/{{ prev_mod.href }}'; sessionStorage.setItem('backClicked', 'True');}">
                 <img width="100px" src="../static/images/buttons/Back-button.PNG">
             </button>
             </a>
         {% endif %}
+        
         {% endif %}
 
 
@@ -146,7 +152,7 @@
             if (sessionStorage.getItem("backClicked")) {
                 sessionStorage.removeItem("backClicked");
                 currentIndex = modules.sections.length -1;
-
+                console.log
                 renderText(currentIndex);
             }
         })
