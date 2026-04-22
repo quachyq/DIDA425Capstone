@@ -1,6 +1,7 @@
 body {
     background-color: var(--dune-light);
     margin: 0;
+    overflow-y: auto;
 }
 
 #main-block {

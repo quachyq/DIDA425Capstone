@@ -61,7 +61,7 @@
             <img id = "keys" width="200px" style="margin-top: 15px; margin-bottom: 15px;", src="../static/images/graphics/Keys.PNG">
             <div id = "text-slider-container">
                 <div class="settings-category">
-                    Reading Settings
+                    <p class="settings-title">Reading Settings</p>
                     <hr>
                     <p class="slider-text">Text Size</p>
                     <input type="range" min="50" max="200" value="100" class="slider" id ="text-size">
@@ -69,14 +69,14 @@
                     <input type="range" min="101" max="105" value="100" class="slider" id ="text-spacing">
                     <p class="slider-text">Line Height</p>
                     <input type="range" min="100" max="160" value="100" class="slider" id ="line-height">
-                    
-                    <button id = 'dyslexic-font' onclick = 'toggleFont()'> Dyslexic Friendly </button>
+
+                    <div class="dyslexic-stuff"><input type="checkbox" id = 'dyslexic-font' onclick = 'toggleFont()'> Dyslexic Friendly </div>
                 </div>
                 <div class="settings-category">
-                    Visual Settings
+                    <p class="settings-title">Visual Settings</p>
                     <hr>
                     <p class="slider-text">Contrast</p>
-                    <input type="range" min="0" max="200" value="100" class="slider" id = "contrast">
+                    <input type="range" min="100" max="200" value="100" class="slider" id = "contrast">
                     <p class="slider-text">Saturation</p>
                     <input type="range" min="0" max="200" value="100" class="slider" id = "saturation">
                 </div>

@@ -42,7 +42,7 @@ body.dyslexic, body.dyslexic * {
     z-index: 10;
     position: fixed;
     width: 250px;
-    height: 450px;
+    /*height: 450px;*/
     top: 0;
     right: 0;
     transform: translateY(-100%);
@@ -77,13 +77,70 @@ body.dyslexic, body.dyslexic * {
 
 .settings-category {
     align-self: flex-start;
-    padding: 0 15px 0 15px;
+    padding: 0 20px 0 20px;
     font-family: 'Libre Baskerville', serif;
 }
 
+.settings-title {
+    font-size: 0.95em;
+    font-family: 'Libre Baskerville', serif;
+    color: var(--dune-lightest);
+}
+
 .slider-text {
-    font-size: 0.9em;
+    font-size: 0.85em;
     font-family: 'DM Sans', sans-serif;
+    color: var(--dune-lightest);
+    margin-bottom: -5px;
+    margin-top: 5px;
+}
+
+.dyslexic-stuff {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85em;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--dune-lightest);
+    margin: 5px 0;
+    margin-bottom: 10px;
+}
+
+#dyslexic-font {
+    margin-right: 3px;
+    appearance: none;
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    background: var(--terracotta-mid);
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background 0.2s ease;
+    position: relative;
+}
+
+#dyslexic-font:checked {
+    background: var(--terracotta-lightest);
+    border-color: var(--terracotta-lightest);
+}
+
+#dyslexic-font:checked::after {
+    content: '';
+    position: absolute;
+    left: 3px;
+    top: 0px;
+    width: 5px;
+    height: 9px;
+    border: 2px solid var(--terracotta-dark);
+    border-top: none;
+    border-left: none;
+    transform: rotate(45deg);
+}
+
+#dyslexic-font:hover {
+    background: var(--terracotta-mid-light);
+    border-color: var(--terracotta-light);
 }
 
 #accessibility-menu.open {
@@ -100,26 +157,39 @@ body.dyslexic, body.dyslexic * {
     background: var(--terracotta-mid);
     outline: none;
     cursor: pointer;
-    margin: 6px 0 12px 0;
+    transition: background 0.2s ease;
 }
 
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 16px;
-    height: 16px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
     background: var(--terracotta-lightest);
-    border: 2px solid var(--terracotta-mid-light);
     cursor: pointer;
     transition: background 0.2s ease, transform 0.1s ease;
 }
 
-.slider::-webkit-slider-thumb:hover {
-    background: var(--terracotta-light);
-    transform: scale(1.2);
-}
 
 .slider:hover {
     background: var(--terracotta-mid-light);
+}
+
+hr {
+    border: 1px solid var(--terracotta-light);
+    border-radius: 2px;
+    margin: 3px 0;
+}
+
+#reset-css {
+    border-radius: 5px;
+    background-color: var(--terracotta-darkest);
+    color: var(--terracotta-lightest);
+    font-family: 'DM Sans', sans-serif;
+    padding: 5px;
+    font-size: 0.9em;
+    border: none;
+    margin: 15px 20px;
+
 }
