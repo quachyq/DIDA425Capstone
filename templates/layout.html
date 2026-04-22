@@ -42,81 +42,96 @@
 </style>
 
 <body>
-    <div id = "canvas">
-    {% block body %}
-            {% block module_content %}
+        <div id = "canvas">
+        {% block body %}
+                {% block module_content %}
 
-            {% endblock %}
-    {% endblock %}
-    </div>
-
-    <button id = "accessibility" onclick = "openAccessibilityMenu()">
-        <img width="45px" src="../static/images/buttons/Accessibility-symbol.PNG">
-    </button>
-
-    <div id = "accessibility-menu">
-        <div id = "text-slider-container">
-            Text Size
-            <input type="range" min="50" max="200" value="100" class="slider" id ="text-size">
-            <br>
-            Text Spacing
-            <input type="range" min="101" max="105" value="100" class="slider" id ="text-spacing">
-            <br>
-            Line Height
-            <input type="range" min="100" max="160" value="100" class="slider" id ="line-height">
+                {% endblock %}
+        {% endblock %}
         </div>
-        <button id = 'dyslexic-font' onclick = 'toggleFont()'> Dyslexic Friendly Font </button>
-        <button id = 'reset-css' onclick = 'resetDefaultCSS()'> Reset to Default</button>
-    </div>
-    <script>
-        const canvas = document.getElementById("canvas");
-        const accessMenu = document.getElementById("accessibility-menu")
-        var textSizeSlider = document.getElementById("text-size");
-        var textSpacingSlider = document.getElementById("text-spacing");
-        var lineHeightSlider = document.getElementById("line-height");
 
-        const allContained = document.querySelectorAll('*');
+        <button id = "accessibility" onclick = "openAccessibilityMenu()">
+            <img width="35px" src="../static/images/buttons/Accessibility-symbol.PNG">
+        </button>
 
-        if (sessionStorage.getItem("dyslexicFriendly")) {
-            document.body.classList.toggle('dyslexic');
-        }
+        <div id = "accessibility-menu">
+            <div class="menu-header">
+                Accessibility Menu
+            </div>
+            <img id = "keys" width="200px" style="margin-top: 15px; margin-bottom: 15px;", src="../static/images/graphics/Keys.PNG">
+            <div id = "text-slider-container">
+                <div class="settings-category">
+                    Reading Settings
+                    <hr>
+                    <p class="slider-text">Text Size</p>
+                    <input type="range" min="50" max="200" value="100" class="slider" id ="text-size">
+                    <p class="slider-text">Text Spacing</p>
+                    <input type="range" min="101" max="105" value="100" class="slider" id ="text-spacing">
+                    <p class="slider-text">Line Height</p>
+                    <input type="range" min="100" max="160" value="100" class="slider" id ="line-height">
+                    
+                    <button id = 'dyslexic-font' onclick = 'toggleFont()'> Dyslexic Friendly </button>
+                </div>
+                <div class="settings-category">
+                    Visual Settings
+                    <hr>
+                    <p class="slider-text">Contrast</p>
+                    <input type="range" min="100" max="160" value="100" class="slider">
+                    <p class="slider-text">Saturation</p>
+                    <input type="range" min="100" max="160" value="100" class="slider">
+                </div>
+            </div>
+            <button id = 'reset-css' onclick = 'resetDefaultCSS()'> Reset to Default</button>
+        </div>
+        <script>
+            const canvas = document.getElementById("canvas");
+            const accessMenu = document.getElementById("accessibility-menu")
+            var textSizeSlider = document.getElementById("text-size");
+            var textSpacingSlider = document.getElementById("text-spacing");
+            var lineHeightSlider = document.getElementById("line-height");
 
-        textSizeSlider.oninput = function() {
-            canvas.style.fontSize = `${this.value}%`;
-        }
+            const allContained = document.querySelectorAll('*');
 
-        textSpacingSlider.oninput = function() {
-            canvas.style.letterSpacing = `${this.value - 100}px`;
-        }
-
-        lineHeightSlider.oninput = function() {
-            canvas.style.lineHeight = `${this.value * 0.01 + 0.4}`;
-        }
-        
-        function toggleFont() {
-            document.body.classList.toggle('dyslexic');
-            if (document.body.classList.contains('dyslexic')) {
-                sessionStorage.setItem("dyslexicFriendly", "True");
+            if (sessionStorage.getItem("dyslexicFriendly")) {
+                document.body.classList.toggle('dyslexic');
             }
-            else {
-                sessionStorage.removeItem("dyslexicFriendly");
+
+            textSizeSlider.oninput = function() {
+                canvas.style.fontSize = `${this.value}%`;
             }
-        }
 
-        function openAccessibilityMenu() {
-            accessMenu.classList.toggle("open");
-        }
+            textSpacingSlider.oninput = function() {
+                canvas.style.letterSpacing = `${this.value - 100}px`;
+            }
 
-        function resetDefaultCSS() {
-            canvas.style.fontSize = "100%";
-            canvas.style.letterSpacing = "normal";
-            canvas.style.lineHeight = "normal";
+            lineHeightSlider.oninput = function() {
+                canvas.style.lineHeight = `${this.value * 0.01 + 0.4}`;
+            }
+            
+            function toggleFont() {
+                document.body.classList.toggle('dyslexic');
+                if (document.body.classList.contains('dyslexic')) {
+                    sessionStorage.setItem("dyslexicFriendly", "True");
+                }
+                else {
+                    sessionStorage.removeItem("dyslexicFriendly");
+                }
+            }
 
-            textSizeSlider.value = 100;
-            textSpacingSlider.value = 100;
-            lineHeightSlider.value = 100;
-        }
+            function openAccessibilityMenu() {
+                accessMenu.classList.toggle("open");
+            }
 
-    </script>
+            function resetDefaultCSS() {
+                canvas.style.fontSize = "100%";
+                canvas.style.letterSpacing = "normal";
+                canvas.style.lineHeight = "normal";
+
+                textSizeSlider.value = 100;
+                textSpacingSlider.value = 100;
+                lineHeightSlider.value = 100;
+            }
+
+        </script>
 </body>
 </html>

@@ -3,31 +3,30 @@
     src: url('/static/fonts/OpenDyslexic-Regular.otf') format('opentype');
   }
 
-  * {
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+
 body {
     margin: 0;
-    background-color: var(--dune-lightest);
-    overflow-y: auto;
+    overflow-x: hidden;
+    overflow-y: hidden;
 
 }
 
 .layout {
     height: 100vh;
-    display: grid;
-    grid-template-rows: [row1] 70% [row2] auto [row3];
-    grid-template-columns: [col1] auto [col2];
 }
 
 button#accessibility {
     z-index: 11;
     position: fixed;
-    left: 10px;
-    bottom: 10px;
+    right: 5px;
+    top: 5px;
     background: none;
     border: none;
 }
@@ -42,20 +41,85 @@ body.dyslexic, body.dyslexic * {
 #accessibility-menu {
     z-index: 10;
     position: fixed;
-    width: 270px;
+    width: 250px;
+    height: 450px;
     top: 0;
-    overflow-y: auto;
-    transform: translateX(100%);
+    right: 0;
+    transform: translateY(-100%);
     transition: transform 0.5s ease-in-out;
-    background-color: rgb(108, 108, 108);
+    background-color: var(--terracotta-dark);
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+#keys {
+    align-self: center;
+}
+.menu-header {
+    height: 45px;
+    background-color: var(--terracotta-darkest);
+    display: flex;
+    align-items: center;
+    font-family: 'Libre Baskerville', serif;
+    padding-left: 15px;
+    align-self: flex-start;
+    min-width: 250px;
+    min-height: 45px;
+    color: var(--terracotta-lightest);
+
 }
 
 #text-slider-container {
-    padding: 10px;
-    background-color: white;
-    border-radius: 10px;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--terracotta-light);
+}
+
+.settings-category {
+    align-self: flex-start;
+    padding: 0 15px 0 15px;
+    font-family: 'Libre Baskerville', serif;
+}
+
+.slider-text {
+    font-size: 0.9em;
+    font-family: 'DM Sans', sans-serif;
 }
 
 #accessibility-menu.open {
     transform: translateX(0px);
+}
+
+
+.slider {
+    width: 100%;
+    appearance: none;
+    -webkit-appearance: none;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--terracotta-mid);
+    outline: none;
+    cursor: pointer;
+    margin: 6px 0 12px 0;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--terracotta-lightest);
+    border: 2px solid var(--terracotta-mid-light);
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.slider::-webkit-slider-thumb:hover {
+    background: var(--terracotta-light);
+    transform: scale(1.2);
+}
+
+.slider:hover {
+    background: var(--terracotta-mid-light);
 }
