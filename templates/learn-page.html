@@ -46,6 +46,7 @@
         </button>
         <div class = "sidebar-expanded">
             {% for module in learning_outline_list %}
+            <a class = 'sidebar-links' href = "/learn-page/{{ module.master_module.href }}" >
             <ol class='module-section'> 
                 
                 <div class="module-name">
@@ -79,11 +80,21 @@
                 {% endfor %}
                 
             </ol>
+            </a>
             {% endfor %}
 
         </div>
     </div>
+
     <div class = 'main-area'>
+    <p id = "mod-title"> 
+        {% if obj %}
+        <b>{{ working_module.master_module.label }} {{ working_module.master_module.title }}</b> <br><br>
+        {% else %}
+        <b>{{ current_mod.label }} {{ current_mod.name }}</b> <br><br>
+        {% endif %}
+    </p>
+    
     <p id = 'content'>
         {% if obj %}
         {{ obj }}
@@ -93,10 +104,10 @@
     </p>
 
     <div class="button-group">
-        <button id = "back" style = "position: fixed; bottom: 50px; left: 5%;",>
+        <button id = "back" style = "position: fixed; bottom: 50px; left: 5%;">
             <img width="100px" src="../static/images/buttons/Back-button.PNG">
         </button>
-        <button id = "next" style = "position: fixed; bottom: 50px; right: 5%;",>
+        <button id = "next" style = "position: fixed; bottom: 50px; right: 5%;">
             <img width="100px" src="../static/images/buttons/Next-button.PNG">
         </button>
     </div>
@@ -114,8 +125,9 @@
         {% if not current_mod.label %}
             <a id = "prev-section" href = "/learn-page/{{ prev_mod.href }}"> Back To Section {{ prev_mod.label }}<a>
         {% else %}
-            <button id = 'back' style = "position: fixed; bottom: 50px; left: 5%;", class = "submodule-previous" onclick = "window.location.href = '/learn-page/{{ prev_mod.href }}'">
+            <button id = 'back' style = "position: fixed; bottom: 50px; left: 5%;" class = "submodule-previous" onclick = "window.location.href = '/learn-page/{{ prev_mod.href }}'">
                 <img width="100px" src="../static/images/buttons/Back-button.PNG">
+            </button>
             </a>
         {% endif %}
         {% endif %}
@@ -146,12 +158,13 @@
     const content = document.getElementById("content");
     const nextButton = document.getElementById("next");
     const backButton = document.getElementById("back");
+    const backPrevModButton = document.getElementsByClassName("submodule-previous")[0];
     var nextSection = document.getElementById("next-section");
     const progressBar = document.getElementById("submod-progress");
 
     const prevMod = {{ prev_mod | tojson }};
 
-
+    // Checks if sidebar is open
     if (sessionStorage.getItem("sidebarOpen")) {
         toggleSidebar();
     }
@@ -169,15 +182,24 @@
         nextButton.style.visibility = "hidden";
         backButton.style.visibility = "hidden";
         nextSection.style.visibility = "visible";
+
+        progressBar.style.visibility = "hidden";
+
     }
     
-
     // Function to render new text by indexing on section
     function renderText(Index) {
         content.innerHTML = modules.sections[Index].content;
         backButton.disabled = currentIndex === 0;
         nextButton.disabled = currentIndex === modules.sections.length -1
-
+        
+        if (backPrevModButton) {
+        if (currentIndex === 0) {
+            backPrevModButton.style.visibility = "visible";
+        }
+        else {
+            backPrevModButton.style.visibility = "hidden";
+        } }
         progressBar.value = Index
         // Hides next button if at the end and makes the next section visible
         if (nextButton.disabled) {
@@ -199,9 +221,6 @@
             backButton.style.visibility = "visible";
         }
     }
-
-    
-
 
     // Shorthand to assign the onclick function to index ticking
     nextButton.onclick = () => renderText(++currentIndex)

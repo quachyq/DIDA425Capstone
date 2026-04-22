@@ -6,17 +6,26 @@ library(htmlwidgets)
 
 datacenter_sf = read_sf("static/data/datacenters.shp") %>% select(c(fclty_n, oprtr_n,sizernk,prjct_c,status))
 
-datacenter_sf[is.na(datacenter_sf)] = ""
+datacenter_sf[is.na(datacenter_sf)] = "Unknown"
 
-p_popup = paste0("Facility Name: ", datacenter_sf$fclty_n, 
+p_popup = paste0("<b>Facility Name: </b>", datacenter_sf$fclty_n, 
                  "<br>",
-                 "Operator: ", datacenter_sf$oprtr_n, 
+                 "<b>Operator: </b>", datacenter_sf$oprtr_n, 
                  "<br>",
-                 "Size Rank: ", datacenter_sf$sizernk, 
+                 "<b>Size Rank: </b>", datacenter_sf$sizernk, 
                  "<br>",
-                 "Projected Cost: ",datacenter_sf$prjct_c, sep = "")
+                 "<b>Projected Cost: </b>",datacenter_sf$prjct_c, sep = "")
 
-pal_fun = colorFactor(topo.colors(3), datacenter_sf$status)
+my_colors = c(
+  "Approved/Permitted/Under construction" = "green",
+  "Cancelled" = "red",
+  "Expanding" = "coral",
+  "Operating" = "blue",
+  "Proposed" = "orange",
+  "Suspended" = "darkgoldenrod",
+  "Unknown" = "purple"
+)
+pal_fun = colorFactor(my_colors, datacenter_sf$status)
 
 map = leaflet() %>%
   addCircleMarkers(data = datacenter_sf, color = ~pal_fun(status), radius = 1,
@@ -27,5 +36,5 @@ map = leaflet() %>%
           values=datacenter_sf$status, 
           title = 'Status') # legend 
 
-saveWidget(map, file = "map_widget.html", selfcontained = T)
+saveWidget(map, file = "templates/map_widget.html", selfcontained = T)
 

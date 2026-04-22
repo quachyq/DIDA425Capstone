@@ -4,7 +4,10 @@
   box-sizing: border-box;
 }
 
-
+ul {
+    padding-left: 40px;
+    }
+    
 body {
     margin: 0;
     background-color: var(--dune-lightest);
