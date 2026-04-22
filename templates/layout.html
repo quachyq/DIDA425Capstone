@@ -66,7 +66,7 @@
                     <p class="slider-text">Text Size</p>
                     <input type="range" min="50" max="200" value="100" class="slider" id ="text-size">
                     <p class="slider-text">Text Spacing</p>
-                    <input type="range" min="101" max="105" value="100" class="slider" id ="text-spacing">
+                    <input type="range" min="100" max="105" value="100" class="slider" id ="text-spacing">
                     <p class="slider-text">Line Height</p>
                     <input type="range" min="100" max="160" value="100" class="slider" id ="line-height">
 
@@ -93,6 +93,22 @@
             var saturationSlider = document.getElementById("saturation");
             const allContained = document.querySelectorAll('*');
 
+            const sliders = [textSizeSlider, textSpacingSlider,lineHeightSlider,contrastSlider,saturationSlider];
+
+            function saveAccessSettings(option) {
+                option.addEventListener("change", function() {
+                    value = this.value;
+
+                    localStorage.setItem(this.id, value);
+
+                })
+            }
+
+            function loadAccessSettings(option) {
+                option.value = localStorage.getItem(option.id);
+                option.oninput()
+            }
+            
             if (sessionStorage.getItem("dyslexicFriendly")) {
                 document.body.classList.toggle('dyslexic');
             }
@@ -102,7 +118,7 @@
             }
 
             textSpacingSlider.oninput = function() {
-                canvas.style.letterSpacing = `${this.value - 100}px`;
+                canvas.style.letterSpacing = `${this.value - 99}px`;
             }
 
             lineHeightSlider.oninput = function() {
@@ -117,6 +133,18 @@
                 canvas.style.filter = `saturate(${this.value}%)`
             }
             
+            loadAccessSettings(textSizeSlider);
+            loadAccessSettings(textSpacingSlider);
+            loadAccessSettings(lineHeightSlider);
+            loadAccessSettings(contrastSlider);
+            loadAccessSettings(saturationSlider);
+
+            saveAccessSettings(textSizeSlider);
+            saveAccessSettings(textSpacingSlider);
+            saveAccessSettings(lineHeightSlider);
+            saveAccessSettings(contrastSlider);
+            saveAccessSettings(saturationSlider);
+
             function toggleFont() {
                 document.body.classList.toggle('dyslexic');
                 if (document.body.classList.contains('dyslexic')) {
@@ -142,6 +170,10 @@
                 lineHeightSlider.value = 100;
                 contrastSlider.value = 100;
                 saturationSlider.value = 100;
+
+                for (i in sliders) {
+                    localStorage.setItem(sliders[i].id, sliders[i].value);
+                }
             }
 
         </script>
