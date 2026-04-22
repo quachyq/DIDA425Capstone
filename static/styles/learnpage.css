@@ -84,6 +84,7 @@ body {
 .arrow {
     text-decoration: none;
     color: var(--dune-mid);
+    cursor: default;
 }
 
 .header-links.is-current {
@@ -93,20 +94,53 @@ body {
 }
 
 .header-links.is-current:hover {
-    color: var(--terracotta-mid-light);
+    color: var(--teal-mid-light);
 }
 
 .header-links.is-current:active {
-    color: var(--terracotta-mid);
+    color: var(--teal-mid);
 }
 
 a.sidebar-links:hover .submodule-section {
-    background-color: #dadada;
+    background-color: var(--teal-dark);
     cursor: pointer;
 }
 
+a.sidebar-links:hover .submodule-name {
+    color: var(--teal-lightest);
+}
+
+a.sidebar-links:hover .submodule-num {
+    color: var(--teal-light);
+}
+
 a.sidebar-links:active .submodule-section {
-    background-color: #787878;
+    background-color: var(--teal-darkish);
+    cursor: pointer;
+}
+
+a.sidebar-links:active .submodule-name {
+    color: var(--teal-light);
+}
+
+a.sidebar-links:active .submodule-num {
+    color: var(--teal-mid-light);
+}
+
+a.sidebar-links:hover .module-num {
+    color: var(--teal-lightest);
+}
+
+a.sidebar-links:hover .module-name {
+    color: var(--teal-lightest);
+}
+
+a.sidebar-links:active .module-num {
+    color: var(--teal-light);
+}
+
+a.sidebar-links:active .module-name {
+    color: var(--teal-light);
 }
 
 a.header-links:hover {
@@ -158,6 +192,8 @@ button.sidebar-open {
     display: flex;
     color: var(--teal-light);
     font-size: 0.9em;
+    transition: all 0.2s ease-in-out;
+
 }
 
 .module-section.is-current .module-name {
@@ -174,18 +210,21 @@ button.sidebar-open {
     display: flex;
     color: var(--teal-mid-light);
     font-size: 0.85em;
+    transition: all 0.2s ease-in-out;
 }
 
 .module-num {
     font-family: 'Libre Baskerville', serif;
     margin-right: 10px;
     color: var(--teal-mid-light);
+    transition: all 0.2s ease-in-out;
 }
 
 .submodule-num {
     font-family: 'DM Sans', sans-serif;
     margin-right: 10px;
     color: var(--teal-mid);
+    transition: all 0.2s ease-in-out;
 }
 
 .submodule-section {
@@ -194,7 +233,7 @@ button.sidebar-open {
     background-color: var(--teal-darkest); 
     border-radius: 5px;
     padding: 1px 0;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease-in-out;
     line-height: 1.15;
 }
 
@@ -315,7 +354,7 @@ progress::-webkit-progress-value {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color: var(--teal-lightest);
+    background-color: var(--teal-mid-light);
 }
 
 
@@ -323,4 +362,5 @@ progress::-webkit-progress-value {
     position: fixed;
     top: 10px;
     right: 6px;
+    cursor: pointer;
 }

@@ -29,8 +29,13 @@ button#accessibility {
     top: 5px;
     background: none;
     border: none;
+    cursor: pointer;
+    transition: filter 0.2s ease-in-out;
 }
 
+button#accessibility:hover {
+    filter: brightness(1.2) saturate(0.8);
+}
 
 body.dyslexic, body.dyslexic * {
     font-family: 'OpenDyslexic', sans-serif !important;
@@ -191,5 +196,16 @@ hr {
     font-size: 0.9em;
     border: none;
     margin: 15px 20px;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
 
+}
+
+#reset-css:hover {
+    background-color: var(--terracotta-lightest);
+    color: var(--terracotta-darkest);
+}
+
+#reset-css:active {
+    background-color: var(--terracotta-light);
 }
