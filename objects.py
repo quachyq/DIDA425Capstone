@@ -18,10 +18,14 @@ class CustomFlask(Flask):
         self.jinja_env.autoescape = False
         
         with open("citations.txt", "r", encoding = "utf-8") as f:
-            content = f.read()
+            line_list = [line.strip() for line in f if line.strip() != '' or line.strip() != '\\u200c']
+            pre = "<p class = 'hanging-indent'>"
+            suf = "</p>"
             
-            self.citations = content.replace('\n','<br>')
-        
+            new_list = [f"{pre}{line}{suf}<br>" for line in line_list]
+            print(new_list)
+            self.citations = '\n'.join(new_list)
+            
     def initialize_modules(self):
         """
         Module Initialization Method
