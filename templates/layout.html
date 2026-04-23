@@ -118,11 +118,11 @@
             }
 
             textSpacingSlider.oninput = function() {
-                canvas.style.letterSpacing = `${this.value - 99}px`;
+                canvas.style.letterSpacing = `${this.value - 100}px`;
             }
 
             lineHeightSlider.oninput = function() {
-                canvas.style.lineHeight = `${this.value * 0.01 + 0.4}`;
+                canvas.style.lineHeight = `${this.value * 0.01 + 0.5}`;
             }
 
             contrastSlider.oninput = function() {
@@ -161,17 +161,12 @@
 
             function resetDefaultCSS() {
                 canvas.style.fontSize = "100%";
-                canvas.style.letterSpacing = "normal";
-                canvas.style.lineHeight = "normal";
+                canvas.style.letterSpacing = "0px";
+                canvas.style.lineHeight = "1.5";
                 canvas.style.filter = "saturate(100%) contrast(100%)";
 
-                textSizeSlider.value = 100;
-                textSpacingSlider.value = 100;
-                lineHeightSlider.value = 100;
-                contrastSlider.value = 100;
-                saturationSlider.value = 100;
-
                 for (i in sliders) {
+                    sliders[i].value = 100;
                     localStorage.setItem(sliders[i].id, sliders[i].value);
                 }
             }
