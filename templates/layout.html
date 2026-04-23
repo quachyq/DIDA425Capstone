@@ -96,7 +96,7 @@
             const sliders = [textSizeSlider, textSpacingSlider,lineHeightSlider,contrastSlider,saturationSlider];
 
             function saveAccessSettings(option) {
-                option.addEventListener("change", function() {
+                option.addEventListener("input", function() {
                     value = this.value;
 
                     localStorage.setItem(this.id, value);
@@ -125,12 +125,15 @@
                 canvas.style.lineHeight = `${this.value * 0.01 + 0.5}`;
             }
 
+            function applyFilters() {
+                canvas.style.filter = `contrast(${contrastSlider.value}%) saturate(${saturationSlider.value}%)`;
+            }
             contrastSlider.oninput = function() {
-                canvas.style.filter = `contrast(${this.value}%)`
+                applyFilters();
             }
             
             saturationSlider.oninput = function() {
-                canvas.style.filter = `saturate(${this.value}%)`
+                applyFilters();
             }
             
             loadAccessSettings(textSizeSlider);
