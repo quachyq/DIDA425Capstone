@@ -3,7 +3,7 @@
 ‌De Roucy-Rochegonde, Laure, and Adrien Buffard. AI, Data Centers and Energy Demand Reassessing and Exploring the Trends IFRI PAPERS. 2025, www.ifri.org/sites/default/files/2025-02/ifri_buffard-rochegonde_ai_data_centers_energy_2025_2.pdf.
 
 Chen, Xin, et al. Electricity Demand and Grid Impacts of AI Data Centers: Challenges and Prospects. arxiv.org/pdf/2509.07218.
-‌
+
 Business Insider. “Exposing the Dark Side of America’s AI Data Center Explosion.” YouTube, 12 Sept. 2025, www.youtube.com/watch?v=t-8TDOFqkQA.
 ‌
 Susnjara, Stephanie, and Ian Smalley. “Data Centers.” Ibm.com, 4 Sept. 2024, www.ibm.com/think/topics/data-centers.

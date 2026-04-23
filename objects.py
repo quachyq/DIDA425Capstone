@@ -22,8 +22,7 @@ class CustomFlask(Flask):
             pre = "<p class = 'hanging-indent'>"
             suf = "</p>"
             
-            new_list = [f"{pre}{line}{suf}<br>" for line in line_list]
-            print(new_list)
+            new_list = [f"{pre}{line}{suf}<div class = 'spacer'></div>" for line in line_list]
             self.citations = '\n'.join(new_list)
             
     def initialize_modules(self):

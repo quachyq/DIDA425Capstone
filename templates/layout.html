@@ -91,10 +91,15 @@
             var lineHeightSlider = document.getElementById("line-height");
             var contrastSlider = document.getElementById("contrast");
             var saturationSlider = document.getElementById("saturation");
+
+            var dyslexicCheck = document.getElementById("dyslexic-font");
+
             const allContained = document.querySelectorAll('*');
 
             const sliders = [textSizeSlider, textSpacingSlider,lineHeightSlider,contrastSlider,saturationSlider];
 
+            
+            
             function saveAccessSettings(option) {
                 option.addEventListener("input", function() {
                     value = this.value;
@@ -174,6 +179,11 @@
                 }
             }
 
+            sessionStorage.setItem("notFirstLoad", "True");
+
+            if (!sessionStorage.getItem("notFirstLoad")) {
+                resetDefaultCss();
+            }
         </script>
 </body>
 </html>
