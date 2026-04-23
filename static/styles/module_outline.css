@@ -105,3 +105,22 @@ a.clickable-box:hover .module-box {
 a.clickable-box:active .module-box {
     background-color: var(--teal-darkish);
 }
+
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--terracotta-light);
+    border-radius: 4px;
+    border: 2px solid var(--terracotta-darkest);
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--terracotta-darkest);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--terracotta-lightest);
+}
