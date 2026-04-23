@@ -8,6 +8,7 @@
     <link rel="stylesheet" href = "{{ url_for('static',filename='styles/layout.css') }}">
     <link href="https://fonts.cdnfonts.com/css/open-dyslexic" rel="stylesheet">
     {% endblock %}
+    <link rel="icon" type="image/x-ico" href="static/images/favicon.ico">
 </head>
 
 <style>
@@ -116,6 +117,7 @@
             
             if (sessionStorage.getItem("dyslexicFriendly")) {
                 document.body.classList.toggle('dyslexic');
+                dyslexicCheck.checked = true;
             }
 
             textSizeSlider.oninput = function() {

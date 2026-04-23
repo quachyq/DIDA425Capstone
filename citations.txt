@@ -1,22 +1,22 @@
 “What Is an AI Data Center - the Future of Data Centers.” Cisco, July 2025, www.cisco.com/site/us/en/learn/topics/computing/what-is-an-ai-data-center.html.
 
-‌De Roucy-Rochegonde, Laure, and Adrien Buffard. AI, Data Centers and Energy Demand Reassessing and Exploring the Trends IFRI PAPERS. 2025, www.ifri.org/sites/default/files/2025-02/ifri_buffard-rochegonde_ai_data_centers_energy_2025_2.pdf.
+De Roucy-Rochegonde, Laure, and Adrien Buffard. AI, Data Centers and Energy Demand Reassessing and Exploring the Trends IFRI PAPERS. 2025, www.ifri.org/sites/default/files/2025-02/ifri_buffard-rochegonde_ai_data_centers_energy_2025_2.pdf.
 
 Chen, Xin, et al. Electricity Demand and Grid Impacts of AI Data Centers: Challenges and Prospects. arxiv.org/pdf/2509.07218.
 
 Business Insider. “Exposing the Dark Side of America’s AI Data Center Explosion.” YouTube, 12 Sept. 2025, www.youtube.com/watch?v=t-8TDOFqkQA.
-‌
+
 Susnjara, Stephanie, and Ian Smalley. “Data Centers.” Ibm.com, 4 Sept. 2024, www.ibm.com/think/topics/data-centers.
-‌
+
 IBM. “Infrastructure.” Ibm.com, 10 June 2021, www.ibm.com/think/topics/infrastructure.
-‌
+
 “Understanding the Power Consumption of Data Centers.” Socomec, 2025, www.socomec.us/en-us/solutions/business/data-centers/understanding-power-consumption-data-centers.
-‌
+
 Yañez-Barnuevo, Miguel. “Data Centers and Water Consumption | Article | EESI.” Eesi.org, 25 June 2025, www.eesi.org/articles/view/data-centers-and-water-consumption.
-‌
+
 “Energy Supply for AI – Energy and AI – Analysis - IEA.” IEA, 2025, www.iea.org/reports/energy-and-ai/energy-supply-for-ai.
 ‌Walker, Carla, and Ian Goldsmith. “From Energy Use to Air Quality, How Data Centers Affect US Communities.” World Resources Institute, 2026, www.wri.org/insights/us-data-center-growth-impacts.
-‌
+
 Shehabi, Arman, et al. 2024 United States Data Center Energy Usage Report. 2024, eta-publications.lbl.gov/sites/default/files/2024-12/lbnl-2024-united-states-data-center-energy-usage-report_1.pdf.
 ‌Judge, Peter. “The data center life story.” Data Center Dynamics, 21 July 2017, https://www.datacenterdynamics.com/en/analysis/the-data-center-life-story/.
 
