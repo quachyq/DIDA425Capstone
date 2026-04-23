@@ -112,10 +112,11 @@
     </div>
         {% if next_mod %}
             {% if next_mod.label | length == 1 %}
-                <a id = "next-section" href = "/learn-page/{{ next_mod.href }}">To Section {{ next_mod.label }}<a>
+                <a style="position: fixed; bottom: 50px; right: 5%; padding: 10px; background-color: var(--teal-darkish); color: var(--teal-lightest)" id = "next-section" href = "/learn-page/{{ next_mod.href }}"><p style="font-size: 0.75em;">Next Module:</p> {{ next_mod.title }}<a>
             {% else %}
                 <button id = "next" style = "position: fixed; bottom: 50px; right: 5%;", class = "submodule-continue" onclick = "window.location.href = '/learn-page/{{ next_mod.href }}'">
                     <img width="100px" src="../static/images/buttons/Next-button.PNG">
+                </button>
                 </a>
             {% endif %}
         {% elif current_mod.label == "4.3" %}
@@ -127,7 +128,7 @@
         
         {% if prev_mod.label != "4.3" %}
         {% if not current_mod.label %}
-            <a id = "prev-section" href = "/learn-page/{{ prev_mod.href }}" onclick = "sessionStorage.setItem('backClicked', 'True')"> Back To Section {{ prev_mod.label }}<a>
+            <a style="position: fixed; bottom: 50px; left: 5%; padding: 10px; background-color: var(--teal-darkish); color: var(--teal-lightest); font-family: 'Libre Baskerville', serif; text-decoration: none; border-radius: 5px;" id = "prev-section" href = "/learn-page/{{ prev_mod.href }}" onclick = "sessionStorage.setItem('backClicked', 'True')"> <p style="font-size: 0.75em;">Previous Module:</p> {{ prev_mod.name }}<a>
         {% else %}
             <button id = 'back' style = "position: fixed; bottom: 50px; left: 5%;" class = "submodule-previous" onclick = "{window.location.href = '/learn-page/{{ prev_mod.href }}'; sessionStorage.setItem('backClicked', 'True');}">
                 <img width="100px" src="../static/images/buttons/Back-button.PNG">
