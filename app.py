@@ -41,6 +41,8 @@ def module(module_label):
     # Assign the current working module
     working_module = app.learning_outline_list[int(module_label[0])-1]
     
+    prev_master_mod = app.learning_outline_list[int(module_label[0])-2].master_module
+    
     # Testing to see if the module is in the index
     try:
         next_mod = working_module.dict_master_list[int(module_label[-1])]
@@ -54,12 +56,12 @@ def module(module_label):
     if len(module_label) == 1:
         next_mod = working_module.dict_master_list[0]
         prev_mod = app.learning_outline_list[int(module_label[0])-2].dict_master_list[-1]
-        print(prev_mod["label"])
         return render_template("learn-page.html", current_mod = [{}],
                                obj = working_module.master_module.objective,
                                working_module = working_module,
                                next_mod = next_mod,
-                               prev_mod=prev_mod)
+                               prev_mod=prev_mod,
+                            prev_master_mod = prev_master_mod)
     
     if module_label.replace("-",".") not in working_module.get_labels():
         abort(404)
@@ -77,11 +79,13 @@ def module(module_label):
                            current_mod = current_mod,
                            working_module = working_module,
                             next_mod = next_mod,
-                            prev_mod = prev_mod)
+                            prev_mod = prev_mod,
+                            prev_master_mod = prev_master_mod)
         
     except UnboundLocalError:
         return render_template("learn-page.html",
                                current_mod = current_mod,
                                working_module = working_module,
-                                prev_mod = prev_mod)
+                                prev_mod = prev_mod,
+                                prev_master_mod = prev_master_mod)
         

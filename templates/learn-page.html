@@ -128,7 +128,7 @@
         
         {% if prev_mod.label != "4.3" %}
         {% if not current_mod.label %}
-            <a style="position: fixed; bottom: 50px; left: 5%; padding: 10px; background-color: var(--teal-darkish); color: var(--teal-lightest); font-family: 'Libre Baskerville', serif; text-decoration: none; border-radius: 5px;" id = "prev-section" href = "/learn-page/{{ prev_mod.href }}" onclick = "sessionStorage.setItem('backClicked', 'True')"> <p style="font-size: 0.75em;">Previous Module:</p> {{ prev_mod.name }}<a>
+            <a style="position: fixed; bottom: 50px; left: 5%; padding: 10px; background-color: var(--teal-darkish); color: var(--teal-lightest); font-family: 'Libre Baskerville', serif; text-decoration: none; border-radius: 5px;" id = "prev-section" href = "/learn-page/{{ prev_mod.href }}" onclick = "sessionStorage.setItem('backClicked', 'True')"> <p style="font-size: 0.75em;">Previous Module:</p> {{ prev_master_mod.title }}<a>
         {% else %}
             <button id = 'back' style = "position: fixed; bottom: 50px; left: 5%;" class = "submodule-previous" onclick = "{window.location.href = '/learn-page/{{ prev_mod.href }}'; sessionStorage.setItem('backClicked', 'True');}">
                 <img width="100px" src="../static/images/buttons/Back-button.PNG">
@@ -170,7 +170,7 @@
     const progressBar = document.getElementById("submod-progress");
 
     const prevMod = {{ prev_mod | tojson }};
-    
+    console.log(prevMod);
     // finding the total length of our learning
 
     let totalLength = 1;
@@ -293,20 +293,7 @@
 
 <script>
     document.addEventListener("input", (event) => {
-        if (event.target.id = "txt2-1-1") {
-            var userAns = parseInt(event.target.value);
-            const messageBox = document.getElementById("message-box");
-
-            if (isNaN(userAns)) {
-                messageBox.innerText = "Please enter a valid number!";
-            }
-
-            else {
-                messageBox.innerText = "Go to the next section to lock in your answer!";
-                sessionStorage.setItem("userAnswer", userAns);
-            }
-        }
-        else if (event.target.id = "txt1-4-1") {
+        if (event.target.id === "activity") {
             var userAns = parseInt(event.target.value);
             const messageBox = document.getElementById("message-box");
 

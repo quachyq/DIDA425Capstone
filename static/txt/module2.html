@@ -44,7 +44,7 @@ for the aforementioned servers.
 <br>
 <br>
 <i>How many homes do you think could be powered by one large data center?</i>
-<input id = "txt2-1-1" class="text-box" type = "text" placeholder="Enter a whole number, no commas.">
+<input id = "activity" class="text-box" type = "text" placeholder="Enter a whole number, no commas.">
 
 <div id = "message-box">
     
@@ -56,18 +56,27 @@ label: 2.1.2
 title: How Much Energy is Needed?
 content:
 <div style="display: flex; font-size: 0.85em;">
+
+<div style = "display: flex; flex-direction: column;">
+<p>
+
 In previous years, data centers generally required somewhere between 5 and 10 kW of energy per rack with 10kW being around
 the same amount of energy taken by a suburban home with all major appliances running at once.
+</p>
+
 <br>
-<br>
+<br><br>
+<p>
 Previously, a single data center would house a few hundred to a few thousand racks. 
 Nowadays, higher end racks consume 50-100kW, with a single large facility possibly housing over 100,000 racks.
-This means that a single one of these buildings could be using up as much energy as a million homes just for servers.
+This means that a single one of these buildings could be using up as much energy as one million homes just for servers.
 This doesn’t even account for the amount of energy required to cool all of the servers!
-
+</p>
+<br>
 <br>
 
-<div id = "user-answer"></div>
+<p id = "user-answer"></p>
+</div>
 <input id = "real-answer" type = "hidden" value = "1000000">
 
 <div style = "display: flex; flex-direction: column;">
@@ -80,6 +89,8 @@ This doesn’t even account for the amount of energy required to cool all of the
     <i style = "font-family: Libre Baskerville, serif; font-size: 0.75em; padding: 0 25px;"> This was a 2024 estimate for how much energy would be consumed by data centers after 2024. It underestimated the growth of the industry. In 2025, a reported ~450TWh of energy was consumed, closer to the prediction for the year 2027.</i>
 </div>
 </div>
+
+
 ---
 
 label: 2.1.3

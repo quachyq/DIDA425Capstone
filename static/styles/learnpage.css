@@ -374,3 +374,32 @@ progress::-webkit-progress-value {
     right: 6px;
     cursor: pointer;
 }
+
+.text-box {
+        font-family: 'DM Sans', sans-serif;
+        font-size: 0.9em;
+        color: var(--dune-darkest);
+        background-color: var(--dune-lightest);
+        border: 1.5px solid var(--dune-mid-light);
+        border-radius: 5px;
+        padding: 8px 12px;
+        outline: none;
+        width: 80%;
+        margin-top: 10px;
+        transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    }
+
+    .text-box:hover {
+        border-color: var(--dune-mid);
+        background-color: var(--dune-light);
+    }
+
+    .text-box:focus {
+        border-color: var(--teal-mid);
+        background-color: var(--dune-lightest);
+    }
+
+    .text-box::placeholder {
+        color: var(--dune-mid);
+        font-family: 'DM Sans', sans-serif;
+    }
