@@ -1,5 +1,5 @@
 body {
-    background-color: var(--dune-light);
+    background-color: var(--terracotta-mid-light);
     margin: 0;
     overflow-y: auto;
 }
@@ -37,9 +37,9 @@ body {
 
 .title3 {
     font-family: 'Libre Baskerville', serif;
-    font-size: 3.25em;
+    font-size: 3.5em;
     text-align: center;
-    color: var(--terracotta-dark);
+    color: var(--terracotta-darkest);
 }
 
 .description {
@@ -110,7 +110,7 @@ body {
 
 .marquee-container { 
     width: 85%;
-    height: 30%;
+    height: 450px;
     padding: 5%;
     margin: 1em auto;
     overflow-y: scroll;
@@ -125,14 +125,23 @@ body {
     top: 6em;
     position: relative;
     box-sizing: border-box;
-    animation: marquee 45s linear infinite;
+    animation: marquee 30s linear infinite;
+    font-family: 'Libre Baskerville', serif;
+    font-style: italic;
+    color: var(--terracotta-darkest);
+    display: inline-block;
 }
 
-.marquee:hover {
+.marquee:active {
     animation-play-state: paused;
 }
 
 @keyframes marquee {
-    from   { transform: translateY(30%); }
-    to { transform:translateY(-130%); }
+    from   { transform: translateY(0%); }
+    to { transform:translateY(-50%); }
+}
+
+
+#citations-block {
+    background-color: var(--terracotta-mid-light);
 }
