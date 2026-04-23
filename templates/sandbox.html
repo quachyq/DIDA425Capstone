@@ -1,50 +1,24 @@
 {% extends "testpage.html" %}
 {% block sandbox %}
 
-<style>
-    ul {
-    padding-left: 40px;
-    }
-
-    .img-text-descriptor {
-        position: absolute;
-        left: 60%;
-        top: 10%;
-    }
-</style>
-
-<iframe src = "../datacenter-interactive" width = 60% height = 500px></iframe>
-
-<div class = "img-text-descriptor">
-The “technology infrastructure” are the physical pieces of equipment housed by the data center.
-The main components are the following:
-<ul>
-    <li>Data storage arrays</li>
-    <ul>
-        <li>
-            As the name suggests, these store user and company data. Storing data through these rather than getting it from the user’s computer 
-            saves time.
-        </li>
-    </ul>
-    <li>Web servers</li>
-    <ul>
-        <li>These are the main computational components. These run software and do any necessary computations for the programs running.</li>
-    </ul>
-    <li>
-        Power sources
-    </li>
-    <ul>
-        <li>
-            Large generators and batteries are used to keep the system running even during power outages.
-        </li>
-    </ul>
-    <li>Cooling equipment</li>
-    <ul>
-        <li>
-            Usually either giant fans or water cooling systems are used to keep the rest of the equipment from overheating.
-        </li>
-        
-    </ul>
-</ul>
+<p id="mod-title"></b><b id="mod-title-2">1.2 – Bones of a Data Center</b></p>
+<br>
+<div style="display: flex; font-size: 0.85em;">
+<img height=275px style="border: 2px solid var(--dune-darkest); margin-right: 25px" src="https://cdn.mos.cms.futurecdn.net/9SPX3KFaKvAj2EFwmdWntR-1200-80.jpg">
+Services like Netflix use data centers to deliver already existing content to users. These systems are highly efficient, and 
+are considered to be low power systems. Services such as OpenAI’s ChatGPT, however, use a lot more power and resources because 
+they are generative.
+<br>
+<br>
+ChatGPT and other large language models such as Google Gemini, Meta AI, and others do not deliver existing 
+data files, they are used to create new content. Many of these services now offer image and or video creation. This requires the
+model to use lots of energy.
+<br>
+<br>
+In 2024, data centers accounted for about 4.4% of total electricity consumption in the US, and that 
+number is expected to grow to anywhere from 6.7 to 12% by 2028.
 </div>
+
+
 {% endblock %}
+

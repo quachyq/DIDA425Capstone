@@ -66,6 +66,16 @@ body {
     color: var(--teal-light);
 }
 
+#mod-title {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1.2em;
+}
+
+#mod-title-2 {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 0.85em;
+}
+
 .sidebar-content {
     width: 100%;
 }
@@ -256,7 +266,7 @@ button.sidebar-open {
     z-index: 1;
     font-family: 'DM Sans', sans-serif;
     font-size: 1.25em;
-    padding: 10%;
+    padding: 8%;
     overflow-y: auto;
     color: var(--dune-darkest);
 }
@@ -304,7 +314,7 @@ button.sidebar-open {
 
 progress#submod-progress {
     position: fixed;
-    bottom: 150px;
+    top: 65px;
     left: 50%;
     transform: translateX(-50%);
     width: 50%;

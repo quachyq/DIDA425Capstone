@@ -88,19 +88,19 @@
     <div class = 'main-area'>
     <p id = "mod-title"> 
         {% if obj %}
-        <b>{{ working_module.master_module.label }} {{ working_module.master_module.title }}</b> <br><br>
+        <b id="mod-title-1">Module {{ working_module.master_module.label }}: {{ working_module.master_module.title }}</b> <br><br>
         {% else %}
-        <b>{{ current_mod.label }} {{ current_mod.name }}</b> <br><br>
+        <b id="mod-title-2">{{ current_mod.label }} – {{ current_mod.name }}</b>
         {% endif %}
     </p>
-    
-    <p id = 'content'>
+    <br>
+    <div id = 'content'>
         {% if obj %}
         {{ obj }}
         {% else %}
         {{ current_mod.sections[0].content }}
         {% endif %}
-    </p>
+    </div>
 
     <div class="button-group">
         <button id = "back" style = "position: fixed; bottom: 50px; left: 5%;">
@@ -152,7 +152,6 @@
             if (sessionStorage.getItem("backClicked")) {
                 sessionStorage.removeItem("backClicked");
                 currentIndex = modules.sections.length -1;
-                console.log
                 renderText(currentIndex);
             }
         })
