@@ -119,7 +119,7 @@
                 </a>
             {% endif %}
         {% elif current_mod.label == "4.3" %}
-            <a href = "/"> Go home </a>
+            <a class = "submodule-continue" href = "/"> Go home </a>
             <script>
                 document.getElementById("next").style.visibility = "hidden";
             </script>
@@ -147,18 +147,18 @@
 
 <script>
     let currentIndex = 0;
-    
+    let moduleProgress;
+
     document.addEventListener("DOMContentLoaded", () => {
             if (sessionStorage.getItem("backClicked")) {
                 sessionStorage.removeItem("backClicked");
                 currentIndex = modules.sections.length -1;
-                console.log
                 renderText(currentIndex);
             }
         })
 
     const layout = document.getElementsByClassName("layout")[0];
-
+    const masterModule = {{ working_module.dict_master_list | tojson }};
     const modules = {{ current_mod | tojson }};
     const content = document.getElementById("content");
     const nextButton = document.getElementById("next");
@@ -168,7 +168,26 @@
     const progressBar = document.getElementById("submod-progress");
 
     const prevMod = {{ prev_mod | tojson }};
+    
+    // finding the total length of our learning
 
+    let totalLength = 1;
+    let labels = [masterModule[0].label[0]];
+
+   masterModule.forEach(module => {
+    console.log(module);
+    totalLength += module.sections.length;
+    labels.push(...module.sections.map(section => section.label))
+   })
+   
+    progressBar.max = totalLength;
+
+    if (modules.sections) {
+        progressBar.value = labels.indexOf(modules.sections[currentIndex].label) + 1;
+    }
+    else {
+        progressBar.value = 0;
+    }
     // Checks if sidebar is open
     if (sessionStorage.getItem("sidebarOpen")) {
         toggleSidebar();
@@ -187,9 +206,6 @@
         nextButton.style.visibility = "hidden";
         backButton.style.visibility = "hidden";
         nextSection.style.visibility = "visible";
-
-        progressBar.style.visibility = "hidden";
-
     }
     
     // Function to render new text by indexing on section
@@ -197,6 +213,7 @@
         content.innerHTML = modules.sections[Index].content;
         backButton.disabled = currentIndex === 0;
         nextButton.disabled = currentIndex === modules.sections.length -1
+        progressBar.value = labels.indexOf(modules.sections[currentIndex].label) + 1;
         
         if (backPrevModButton) {
         if (currentIndex === 0) {
@@ -205,7 +222,6 @@
         else {
             backPrevModButton.style.visibility = "hidden";
         } }
-        progressBar.value = Index
         // Hides next button if at the end and makes the next section visible
         if (nextButton.disabled) {
             nextSection.style.visibility = "visible";

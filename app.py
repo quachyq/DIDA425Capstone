@@ -70,7 +70,6 @@ def module(module_label):
         prev_mod = working_module.dict_master_list[int(module_id) - 1]
     else:
         prev_mod = working_module.master_module.format_dict()
-    print(prev_mod["label"])
         
     try:
 
