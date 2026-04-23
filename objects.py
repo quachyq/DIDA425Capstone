@@ -17,6 +17,11 @@ class CustomFlask(Flask):
         # this gets HTML tags working in txt.
         self.jinja_env.autoescape = False
         
+        with open("citations.txt", "r", encoding = "utf-8") as f:
+            content = f.read()
+            
+            self.citations = content.replace('\n','<br>')
+        
     def initialize_modules(self):
         """
         Module Initialization Method

@@ -1,0 +1,71 @@
+“What Is an AI Data Center - the Future of Data Centers.” Cisco, July 2025, www.cisco.com/site/us/en/learn/topics/computing/what-is-an-ai-data-center.html.
+
+‌De Roucy-Rochegonde, Laure, and Adrien Buffard. AI, Data Centers and Energy Demand Reassessing and Exploring the Trends IFRI PAPERS. 2025, www.ifri.org/sites/default/files/2025-02/ifri_buffard-rochegonde_ai_data_centers_energy_2025_2.pdf.
+
+Chen, Xin, et al. Electricity Demand and Grid Impacts of AI Data Centers: Challenges and Prospects. arxiv.org/pdf/2509.07218.
+‌
+Business Insider. “Exposing the Dark Side of America’s AI Data Center Explosion.” YouTube, 12 Sept. 2025, www.youtube.com/watch?v=t-8TDOFqkQA.
+‌
+Susnjara, Stephanie, and Ian Smalley. “Data Centers.” Ibm.com, 4 Sept. 2024, www.ibm.com/think/topics/data-centers.
+‌
+IBM. “Infrastructure.” Ibm.com, 10 June 2021, www.ibm.com/think/topics/infrastructure.
+‌
+“Understanding the Power Consumption of Data Centers.” Socomec, 2025, www.socomec.us/en-us/solutions/business/data-centers/understanding-power-consumption-data-centers.
+‌
+Yañez-Barnuevo, Miguel. “Data Centers and Water Consumption | Article | EESI.” Eesi.org, 25 June 2025, www.eesi.org/articles/view/data-centers-and-water-consumption.
+‌
+“Energy Supply for AI – Energy and AI – Analysis - IEA.” IEA, 2025, www.iea.org/reports/energy-and-ai/energy-supply-for-ai.
+‌Walker, Carla, and Ian Goldsmith. “From Energy Use to Air Quality, How Data Centers Affect US Communities.” World Resources Institute, 2026, www.wri.org/insights/us-data-center-growth-impacts.
+‌
+Shehabi, Arman, et al. 2024 United States Data Center Energy Usage Report. 2024, eta-publications.lbl.gov/sites/default/files/2024-12/lbnl-2024-united-states-data-center-energy-usage-report_1.pdf.
+‌Judge, Peter. “The data center life story.” Data Center Dynamics, 21 July 2017, https://www.datacenterdynamics.com/en/analysis/the-data-center-life-story/.
+
+Carey, Mac. “How Data Center Alley Is Changing Northern Virginia.” Oxford American, 17 Jan. 2025, https://oxfordamerican.org/oa-now/how-data-center-alley-is-changing-northern-virginia.
+
+Chen, Amber. “A.I. Is on the Rise, and So Is the Environmental Impact of the Data Centers That Drive It.” Smithsonian, 29 Sep. 2025, https://www.smithsonianmag.com/science-nature/with-ai-on-the-rise-what-will-be-the-environmental-impacts-of-data-centers-180987379/.
+
+Shehabi, Arman et al. “2024 United States Data Center Energy Usage Report.” eScholarship, 20 Dec. 2024, https://escholarship.org/uc/item/32d6m0d1.
+
+Siddik, Abu Bakar, et al. “The environmental footprint of data centers in the United States.” Environmental Research Letters, vol. 26, no. 6, 21 May 2021, https://doi.org/10.1088/1748-9326/abfba1.
+
+Gordon, Cindy. “AI Is Accelerating the Loss of Our Scarcest Natural Resource: Water.” Forbes, 25 Feb. 2025, www.forbes.com/sites/cindygordon/2024/02/25/ai-is-accelerating-the-loss-of-our-scarcest-natural-resource-water/.
+
+“AI Has an Environmental Problem. Here’s What the World Can Do about That.” UN Environment Programme, Environment Under Review, 13 Nov. 2025, www.unep.org/news-and-stories/story/ai-has-environmental-problem-heres-what-world-can-do-about.
+
+Electric Power Research Institute. “Powering Intelligence: Analyzing Artificial Intelligence and Data Center Energy Consumption.” Electric Power Research Institute, 28 May 2024, https://www.epri.com/research/products/3002028905.
+
+Morrison, Jacob, et al. “Holistically Evaluating the Environmental Impact of Creating Language Models.” ArXiv.org, 3 Mar. 2025, arxiv.org/abs/2503.05804.
+
+Bush, Molly E. “Construction and Consequences: The Human Impacts of Artificial Intelligence Data Centers.” UAB Institute for Human Rights Blog, 2 Oct. 2025, https://sites.uab.edu/humanrights/2025/10/02/construction-and-consequences-the-human-impacts-of-artificial-intelligence-data-centers/.‌
+
+Pomerleau, Shuting. “AI Data Centers: Why Are They So Energy Hungry?” American Action Forum, 15 July 2025, www.americanactionforum.org/insight/ai-data-centers-why-are-they-so-energy-hungry/#:~:text=Executive%20Summary,they%20generate%20substantially%20more%20heat.
+
+Fitzpatrick, Alex. “America’s Data Center Growth Hot Spots, Mapped.” Axios, 18 Dec. 2025, www.axios.com/2025/12/18/data-center-growth-map-states.
+
+Daly, Lyle. “Data Center Revenue: Nvidia Made More in One Quarter Than AMD, Intel, and IBM in a Year.” The Motley Fool, 5 Mar. 2026, www.fool.com/research/data-center-revenue-ai-companies/.
+
+“The Economics of Data Centers: A Deep Dive into Costs and Revenues.” Concrete Logic, 28 July 2024, www.concretelogicpodcast.com/blog/the-economics-of-data-centers-a-deep-dive-into-costs-and-revenues/.
+
+Pusic, Mara. “AI’s Cooling Problem: How Data Centers Are Transforming Water Use.” Environmental Law Institute, 23 Oct. 2025, www.eli.org/vibrant-environment-blog/ais-cooling-problem-how-data-centers-are-transforming-water-use.
+
+Contreras, Cesareo. “What Is Causing the RAM Shortage? Experts Explain.” Northeastern Global News, 26 Feb. 2026, news.northeastern.edu/2026/02/26/ram-shortage-cause/.
+
+Daley, Peyton. “Rare Earths Mining Takes a Heavy Toll. Is It Worth Moving Mountains for a Domestic Supply?” & the West, Stanford University, 31 Jan. 2026, andthewest.stanford.edu/2026/rare-earths-mining-takes-a-heavy-toll-is-it-worth-moving-mountains-for-a-domestic-supply/.
+
+Anderson, Reese. “In Rural Louisiana, Meta’s New Data Center Promises Growth—But at What Cost?” Sierra, 30 Oct. 2025, www.sierraclub.org/sierra/rural-louisiana-meta-s-new-data-center-promises-growth-what-cost.
+
+“Memory Price Trends.” PC Part Picker, 2026, pcpartpicker.com/trends/price/memory/.
+
+Taha, Abdallah, and Alfred Olufemi. “Data Centres ‘Straining Water Resources’ as AI Swells.” SciDev Net, 15 Nov. 2023, www.scidev.net/global/scidev-net-investigates/data-centres-straining-water-resources-as-ai-swells/.
+
+Saul, Josh, et al. “AI Data Centers Are Sending Power Bills Soaring.” Bloomberg, 29 Sept. 2025, www.bloomberg.com/graphics/2025-ai-data-centers-electricity-prices/.
+
+Gorey, Jon. “Data Drain: The Land and Water Impacts of the AI Boom.” Lincoln Institute of Land Policy, 17 Oct. 2025, www.lincolninst.edu/publications/land-lines-magazine/articles/land-water-impacts-data-centers/.
+
+“Average Household Utility Costs Rise 41% In Last Five Years.” Water Online, 4 Sept. 2025, www.wateronline.com/doc/average-household-utility-costs-rise-in-last-five-years-0001.
+
+Zewe, Adam. “Explained: Generative AI’s Environmental Impact.” MIT News, 17 Jan. 2025, news.mit.edu/2025/explained-generative-ai-environmental-impact-0117.
+
+McLellan, Faith. “AI Data Centres Raise Public Health Concerns.” The Lancet, 16 Jan. 2026, doi-org.proxy.binghamton.edu/10.1016/S0140-6736(26)00033-4.
+
+Meyerson, Harold. “Why Americans Hate Data Centers: Let Us Count the Ways.” The American Prospect, 16 Apr. 2026, prospect.org/2026/04/16/why-americans-hate-data-centers-big-tech/.

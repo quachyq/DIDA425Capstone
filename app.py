@@ -20,7 +20,7 @@ def interactive_datacenter():
 
 @app.route('/')
 def index():
-    return render_template('title-page.html')
+    return render_template('title-page.html', citations = app.citations)
 
 @app.route('/', methods=['POST'])
 def next_button():
