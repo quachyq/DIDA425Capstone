@@ -12,27 +12,29 @@
 
 {% block body %}
 
-<div id = "main-block">
+<div id = "main-block" style = "display: flex; flex-direction: row;">
+    <div style = "display: flex; flex-direction: column; margin-top: 2%; margin-right: 25px;">
     <div class = 'title'>
         Data Center</br>Learning Modules
     </div>
     
     <div class = 'description'>
+        This website aims to raise awareness of the growing impact of data centers and the challenges they pose to both local communities and the broader public. While data centers play a critical role in today’s digital world, they can also strain resources, affect surrounding environments, and influence quality of life both nearby and beyond. These learning modules are designed to provide a clearer understanding of these impacts and what they mean for society as a whole.
         
-        We created this website to raise awareness of the threat posed by data centers. Data centers cause many issues for the communities they are in, and have many impacts on people living outside those areas as well. We hope that through these learning modules you will learn more about what all this means for the general public.
-
     </div>
     
     <form action="{{ url_for('next_button') }}" method="POST">
         <button class = 'access-button' type="submit" name="submit_button" value="Clicked">Access the Modules</button>
     </form>
+    </div>
+    <img height=500px src="../static/images/graphics/Homeimg.PNG">
 </div>
 
 <div id = "course-overview-block">
     <img class="course-overview-img" src="../static/images/graphics/Courseoverview.PNG">
-    <div class = "course-overview">
+    <div class = "course-overview" style = "display: flex; flex-direction: column">
         <div class = 'title2'>
-            Course Overview
+        Course Overview
         </div>
 
         <div class = 'description2'>
@@ -41,20 +43,23 @@
             <br>
 
             <br>
-            The first module introduces the user to data centers. What are they? What do they do? We focus on what components make up a data center, how many there are, and their involvement in systems the user might be familiar with (Netflix, ChatGPT). Upon completion of this module, a user will be able to recognize the involvement of data centers in technology they use every day.
+            Module 1 introduces the user to data centers. What are they? What do they do? We focus on what components make up a data center, how many there are, and their involvement in systems the user might be familiar with. 
             <br>
             <br>
 
-            In module 2, we expand on the operations of a data center to teach about some of the underlying drawbacks of the data center boom, focusing on topics such as excessive energy consumption, water usage, and the sheer number of data centers in the US. Upon completion of this module, a user will understand the scope of this topic in terms of how many resources a data center uses, the prices of such operations, and how widespread their usage is.
+            In Module 2, we expand on the operations of a data center to explore some of the underlying 
+            drawbacks of the data center boom, such as excessive energy consumption and water usage.
+            <br>
+            <br>
+            Module 3 focuses on the local effects of data centers. We challenge the user to think about how their community might be affected by the construction of a data center near them.
             <br>
             <br>
 
-            Module 3 changes the scope to focus more on the local effects of data centers. We challenge the user to think about how their community might be affected by the construction of a data center near them. The primary topics of this module are the utility costs, pollution, and job loss in areas near newly constructed data centers. Upon completion of this module, users will better understand the challenges of having a data center constructed near them.
-            <br>
-            <br>
-
-            Module 4 looks to the future and introduces the user to resources to stay aware of news involving data centers as well as petitioning their local representatives about legislation regarding data centers. Upon completion of this module, the user will now have completed the entire course. Knowing the benefits, uses, and drawbacks of data centers, they may use the resources in module 4 to help guide AI usage in a practical and responsible manner.
-
+           Module 4 looks to the future and introduces the user to resources to stay aware of news involving 
+            data centers as well as petitioning their local representatives about legislation
+             regarding data centers. Knowing the benefits, uses, and drawbacks of data centers, 
+             they may use the resources in this module to help guide responsible AI usage.
+    
         </div>
     </div>
 </div>

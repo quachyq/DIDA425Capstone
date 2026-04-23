@@ -6,7 +6,7 @@
 
 body {
     margin: 0;
-    background-color: var(--bg-dune);
+    background-color: var(--dune-light);
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -21,12 +21,11 @@ body {
     font-size: 3em;
     text-align: center;
     padding: 1.5em;
-    color: var(--teal-darkest);
-
+    color: var(--dune-darkest);
 }
 
 .module-box {
-    background-color: var(--terracotta-mid);
+    background-color: var(--teal-dark);
     margin: 0 45px 15px 45px;
     width: auto;
     border-radius: 20px;
@@ -39,7 +38,6 @@ body {
     height: auto;
     display: flex;
     flex-direction: column;
-
 }
 
 .box-div-2 {
@@ -54,23 +52,26 @@ body {
     font-size: 1.75em;
     margin: 20px 20px 10px 20px;
     display: flex;
-    align-items: center; 
+    align-items: center;
+    color: var(--teal-lightest);
 }
 
 .learn-obj {
     font-family: 'DM Sans', sans-serif; 
     padding: 0 20px 20px 20px;  
     font-size: 1.1em;
-
+    color: var(--teal-light);
 }
+
 
 .submodule-box {
     font-family: 'DM Sans', sans-serif; 
     font-size: 1.1em;
     display: flex;
     margin-bottom: 15px;
-
+    color: var(--teal-light);
 }
+
 
 .box-content {
     font-family: 'DM Sans', sans-serif; 
@@ -80,19 +81,19 @@ body {
 .module-number {
     font-family: 'DM Sans', sans-serif;
     margin-right: 10px;
+    color: var(--teal-mid-light);
 }
-
 
 a {
     text-decoration: none;
-    color: black;
-
+    color: inherit;
 }
+
 a.clickable-box:hover .module-box {
-    background-color: #949494;
+    background-color: var(--teal-darkest);
     cursor: pointer;
 }
 
 a.clickable-box:active .module-box {
-    background-color: #787878;
+    background-color: var(--teal-darkish);
 }
