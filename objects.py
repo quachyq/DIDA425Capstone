@@ -17,7 +17,7 @@ class CustomFlask(Flask):
         # this gets HTML tags working in txt.
         self.jinja_env.autoescape = False
         
-        with open("citations.txt", "r", encoding = "utf-8") as f:
+        with open(f"{self.dir}/citations.txt", "r", encoding = "utf-8") as f:
             line_list = [line.strip() for line in f if line.strip() != '' or line.strip() != '\\u200c']
             pre = "<p class = 'hanging-indent'>"
             suf = "</p>"
