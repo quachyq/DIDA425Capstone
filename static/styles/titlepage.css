@@ -6,14 +6,14 @@ body {
 
 #main-block {
     background-color: var(--dune-light); 
-    padding: 9%;
+    padding: 7%;
 }
 
 #course-overview-block {
     background-color: var(--teal-dark); 
-    padding: 15% 9% 25% 9%;
-    clip-path: polygon(0 20%, 100% 0%, 100% 80%, 0% 100%);
-    margin-top: -15%;
+    padding: 10% 9% 10% 9%;
+    clip-path: polygon(0 10%, 100% 0%, 100% 90%, 0% 100%);
+    margin-top: -10%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -23,13 +23,14 @@ body {
 
 .title {
     font-family: 'Libre Baskerville', serif;
-    font-size: 3.75em;
+    font-size: 3.5em;
     color: var(--terracotta-darkest);
+    line-height: 1.25em;
 }
 
 .title2 {
     font-family: 'Libre Baskerville', serif;
-    font-size: 3.25em;
+    font-size: 3.5em;
     text-align: right;
     color: var(--teal-lightest);
 }
@@ -43,21 +44,23 @@ body {
 
 .description {
     font-family: 'DM Sans', sans-serif;
-    font-size: 1.3em;
-    max-width: 55%;
+    font-size: 1.1em;
+    max-width: 95%;
     padding-top: 10px;
     padding-bottom: 15px;
-    color: var(--dune-darkest)
+    color: var(--dune-darkest);
 }
 
 .description2 {
     font-family: 'DM Sans', sans-serif;
-    font-size: 1.3em;
-    max-width: 55%;
+    font-size: 1em;
+    max-width: 75%;
     padding-top: 10px;
     padding-bottom: 15px;
     color: var(--teal-light);
     max-width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .description3 {
@@ -83,18 +86,18 @@ body {
 
 
 .access-button:hover {
-    background-color: #707070;
+    background-color: var(--terracotta-darkest);
     cursor: pointer;
 }
 
 .access-button:active {
-    background-color: #505050;
+    background-color: var(--terracotta-dark);
 }
 
 .course-overview-img {
     margin-top: 5%;
-    margin-left: -2%;
-    width: 500px;
+    margin-left: -3%;
+    width:450px;
     flex: 1;
     display: flex;
     justify-content: center;
