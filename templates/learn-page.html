@@ -155,6 +155,7 @@
                 sessionStorage.removeItem("backClicked");
                 currentIndex = modules.sections.length -1;
                 renderText(currentIndex);
+                compareAnswer(sessionStorage.getItem("userAnswer"));
             }
         })
 
@@ -212,10 +213,14 @@
     // Function to render new text by indexing on section
     function renderText(Index) {
         content.innerHTML = modules.sections[Index].content;
+
+        compareAnswer(sessionStorage.getItem("userAnswer"));
+
         backButton.disabled = currentIndex === 0;
         nextButton.disabled = currentIndex === modules.sections.length -1
         progressBar.value = labels.indexOf(modules.sections[currentIndex].label) + 1;
         
+
         if (backPrevModButton) {
         if (currentIndex === 0) {
             backPrevModButton.style.visibility = "visible";
@@ -284,6 +289,58 @@
         }
     }
 
+</script>
+
+<script>
+    document.addEventListener("input", (event) => {
+        if (event.target.id = "txt2-1-1") {
+            var userAns = parseInt(event.target.value);
+            const messageBox = document.getElementById("message-box");
+
+            if (isNaN(userAns)) {
+                messageBox.innerText = "Please enter a valid number!";
+            }
+
+            else {
+                messageBox.innerText = "Go to the next section to lock in your answer!";
+                sessionStorage.setItem("userAnswer", userAns);
+            }
+        }
+        else if (event.target.id = "txt1-4-1") {
+            var userAns = parseInt(event.target.value);
+            const messageBox = document.getElementById("message-box");
+
+            if (isNaN(userAns)) {
+                messageBox.innerText = "Please enter a valid number!";
+            }
+
+            else {
+                messageBox.innerText = "Go to the next section to lock in your answer!";
+                sessionStorage.setItem("userAnswer", userAns);
+            }
+        }
+    })
+
+    function compareAnswer(userInput) {
+        const answerMessage = document.getElementById("user-answer");
+        const realAnswer = document.getElementById("real-answer");
+
+        if (answerMessage) {
+            let threshold = realAnswer.value * 0.9;
+
+            
+            if (userInput > realAnswer.value + threshold | userInput < realAnswer.value - threshold) {
+                answerMessage.innerHTML = `A little off!`;
+                
+            }
+            else {
+                answerMessage.innerHTML = `So close!`;
+
+            }
+        }
+    }
+    compareAnswer(sessionStorage.getItem("userAnswer"));
+    
 </script>
 
 {% endblock %}
