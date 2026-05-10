@@ -11,6 +11,7 @@
     <link rel="icon" type="image/x-ico" href="static/images/favicon.ico">
 </head>
 
+<!-- Setting up CSS color palette -->
 <style>
     :root {
         --terracotta-lightest: {{terracotta_lightest}};
@@ -51,10 +52,12 @@
         {% endblock %}
         </div>
 
+        <!--Accessibility Menu Button-->
         <button id = "accessibility" onclick = "openAccessibilityMenu()">
             <img width="35px" src="../static/images/buttons/Accessibility-symbol.PNG">
         </button>
 
+        <!-- Accessibility Menu -->
         <div id = "accessibility-menu">
             <div class="menu-header">
                 Accessibility Menu
@@ -85,6 +88,7 @@
             <button id = 'reset-css' onclick = 'resetDefaultCSS()'> Reset to Default</button>
         </div>
         <script>
+            // Storing HTML elements into JS
             const canvas = document.getElementById("canvas");
             const accessMenu = document.getElementById("accessibility-menu")
             var textSizeSlider = document.getElementById("text-size");
@@ -100,7 +104,7 @@
             const sliders = [textSizeSlider, textSpacingSlider,lineHeightSlider,contrastSlider,saturationSlider];
 
             
-            
+            // Function to store accessibiltiy settings in session
             function saveAccessSettings(option) {
                 option.addEventListener("input", function() {
                     value = this.value;
@@ -110,16 +114,19 @@
                 })
             }
 
+            // Function to load settings when changing page
             function loadAccessSettings(option) {
                 option.value = localStorage.getItem(option.id);
                 option.oninput()
             }
             
+            // Checking Dyslexic Checkbox
             if (sessionStorage.getItem("dyslexicFriendly")) {
                 document.body.classList.toggle('dyslexic');
                 dyslexicCheck.checked = true;
             }
 
+            // The following lines sets the functions for the accessibility options
             textSizeSlider.oninput = function() {
                 canvas.style.fontSize = `${this.value}%`;
             }
@@ -155,6 +162,7 @@
             saveAccessSettings(contrastSlider);
             saveAccessSettings(saturationSlider);
 
+            // Toggle dyslexic font button
             function toggleFont() {
                 document.body.classList.toggle('dyslexic');
                 if (document.body.classList.contains('dyslexic')) {
@@ -165,10 +173,12 @@
                 }
             }
 
+            // Toggles HTML class for opening and closing menu
             function openAccessibilityMenu() {
                 accessMenu.classList.toggle("open");
             }
 
+            // Reset button
             function resetDefaultCSS() {
                 canvas.style.fontSize = "100%";
                 canvas.style.letterSpacing = "0px";
@@ -181,8 +191,10 @@
                 }
             }
 
+            // If this is set, it is not the first time the user has loaded the website
             sessionStorage.setItem("notFirstLoad", "True");
 
+            // If it is the first load, reset the css.
             if (!sessionStorage.getItem("notFirstLoad")) {
                 resetDefaultCss();
             }

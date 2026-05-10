@@ -65,7 +65,8 @@ def module(module_label):
     
     if module_label.replace("-",".") not in working_module.get_labels():
         abort(404)
-        
+    
+    # Setting up some jinja vars
     module_id = working_module.find_id_from_label(module_label.replace("-","."))
     current_mod = working_module.dict_master_list[int(module_id)]
     if module_id != 0:
@@ -73,6 +74,7 @@ def module(module_label):
     else:
         prev_mod = working_module.master_module.format_dict()
         
+    # Tests if modules are in index (If theres a next)
     try:
 
         return render_template("learn-page.html",

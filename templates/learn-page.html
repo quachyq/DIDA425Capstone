@@ -13,6 +13,7 @@
 {% block body %}
 
 <section class = 'layout'>
+    <!-- Header Content that fills with current module -->
     <div class = 'header'>
         <ol class = 'header-content'>
             <li><a class='header-links' href = "/">Home</a></li>
@@ -27,6 +28,7 @@
             <li><a class = 'header-links'>{{ current_mod.label }} {{ current_mod.name }}</a></li>
             {% endif %}
             <script>
+                // Updates the current link in header to change color
                 function updateLinkColor(linkType) {
                             links = document.getElementsByClassName(linkType);
                             workingMod = links[links.length - 1];
@@ -37,6 +39,8 @@
             </script>
         </ol>
     </div>
+
+    <!-- Sidebar -->
     <div class = 'sidebar'>
         <div class="sidebar-header">
             Table of Contents
@@ -56,6 +60,7 @@
 
                 {% if module.master_module.label == working_module.master_module.label[0] %}
                     <script>
+                        // Updates sidebar widget color if it is current
                         updateLinkColor("module-section");
                     </script>
                 {% endif %}
@@ -85,6 +90,7 @@
         </div>
     </div>
 
+    <!-- The main area where the content is created -->
     <div class = 'main-area'>
     <p id = "mod-title"> 
         {% if obj %}
@@ -94,6 +100,9 @@
         {% endif %}
     </p>
     <br>
+    <!--
+    Content is filled here with HTML escape. This is where the txt folder stuff is rendered
+    -->
     <div id = 'content'>
         {% if obj %}
         {{ obj }}
@@ -102,6 +111,7 @@
         {% endif %}
     </div>
 
+    // Next/back buttons
     <div class="button-group">
         <button id = "back" style = "position: fixed; bottom: 50px; left: 5%;">
             <img width="100px" src="../static/images/buttons/Back-button.PNG">
@@ -110,15 +120,26 @@
             <img width="100px" src="../static/images/buttons/Next-button.PNG">
         </button>
     </div>
+    <!--If there is a next module:-->
         {% if next_mod %}
+            <!-- If the next module is a main (like Module 1)-->
             {% if next_mod.label | length == 1 %}
-                <a style="position: fixed; bottom: 50px; right: 5%; padding: 10px; background-color: var(--teal-darkish); color: var(--teal-lightest)" id = "next-section" href = "/learn-page/{{ next_mod.href }}"><p style="font-size: 0.75em;">Next Module:</p> {{ next_mod.title }}<a>
+                <a style="position: fixed; bottom: 50px; right: 5%;
+                 padding: 10px; background-color: var(--teal-darkish);
+                  color: var(--teal-lightest)" id = "next-section"
+                   href = "/learn-page/{{ next_mod.href }}"><p style="font-size: 0.75em;">
+                    Next Module:</p> {{ next_mod.title }}
+                <a>
+
+            <!-- If it is anything else -->
             {% else %}
                 <button id = "next" style = "position: fixed; bottom: 50px; right: 5%;", class = "submodule-continue" onclick = "window.location.href = '/learn-page/{{ next_mod.href }}'">
                     <img width="100px" src="../static/images/buttons/Next-button.PNG">
                 </button>
                 </a>
             {% endif %}
+        
+        <!-- Checking if it is the last module -->
         {% elif current_mod.label == "4.3" %}
             <a class = "submodule-continue" href = "/"> 
                 <img src = "/static/images/graphics/homebutton.PNG" height = "80px" width = "80px" style = "position: absolute; bottom: 10px; right: 10px;">
@@ -128,7 +149,10 @@
             </script>
         {% endif %}
         
+        <!-- Making sure module 1 doesnt have a back button -->
         {% if prev_mod.label != "4.3" %}
+
+        <!--Checking if the current module is not within the previous one-->
         {% if not current_mod.label %}
             <a style="position: fixed; bottom: 50px; left: 5%; padding: 10px; background-color: var(--teal-darkish); color: var(--teal-lightest); font-family: 'Libre Baskerville', serif; text-decoration: none; border-radius: 5px;" id = "prev-section" href = "/learn-page/{{ prev_mod.href }}" onclick = "sessionStorage.setItem('backClicked', 'True')"> <p style="font-size: 0.75em;">Previous Module:</p> {{ prev_master_mod.title }}<a>
         {% else %}
@@ -143,15 +167,18 @@
 
     
 
+    <!--Progress Bar-->
     <progress id = 'submod-progress' value = '0' max = '{{ (current_mod.sections | length) - 1 }}'></progress>
 
     </div>
 </section>
 
 <script>
+    // The following lines checks to see if the user goes back an entire module
     let currentIndex = 0;
     let moduleProgress;
 
+    // Checks for new page load:
     document.addEventListener("DOMContentLoaded", () => {
             if (sessionStorage.getItem("backClicked")) {
                 sessionStorage.removeItem("backClicked");
@@ -161,6 +188,7 @@
             }
         })
 
+    // Storing HTML elements
     const layout = document.getElementsByClassName("layout")[0];
     const masterModule = {{ working_module.dict_master_list | tojson }};
     const modules = {{ current_mod | tojson }};
@@ -172,31 +200,37 @@
     const progressBar = document.getElementById("submod-progress");
 
     const prevMod = {{ prev_mod | tojson }};
-    console.log(prevMod);
+
     // finding the total length of our learning
+    // This is all for the progress bar
 
     let totalLength = 1;
     let labels = [masterModule[0].label[0]];
 
-   masterModule.forEach(module => {
-    console.log(module);
+    // Looping through modules and making them have key-value pairs
+    masterModule.forEach(module => {
     totalLength += module.sections.length;
     labels.push(...module.sections.map(section => section.label))
    })
    
+   // Setting the progress bar max to the total length of the module
     progressBar.max = totalLength;
 
+    // Setting the value of the bar
     if (modules.sections) {
         progressBar.value = labels.indexOf(modules.sections[currentIndex].label) + 1;
     }
     else {
         progressBar.value = 0;
     }
+
     // Checks if sidebar is open
     if (sessionStorage.getItem("sidebarOpen")) {
         toggleSidebar();
     }
 
+    // Catches an error in later steps
+    // If the next section button is not found, store it as a different element
     if (!nextSection) {
         nextSection = document.getElementsByClassName('submodule-continue')[0];
     }
@@ -218,6 +252,7 @@
 
         compareAnswer(sessionStorage.getItem("userAnswer"));
 
+        // Set the following to be disabled only for index conditions
         backButton.disabled = currentIndex === 0;
         nextButton.disabled = currentIndex === modules.sections.length -1
         progressBar.value = labels.indexOf(modules.sections[currentIndex].label) + 1;
@@ -293,12 +328,15 @@
 
 </script>
 
+<!--User Interaction Script-->
 <script>
+    // Checking to see if there is something in the input boxes
     document.addEventListener("input", (event) => {
         if (event.target.id === "activity") {
             var userAns = parseInt(event.target.value);
             const messageBox = document.getElementById("message-box");
 
+            // Catches if the user input is not a number
             if (isNaN(userAns)) {
                 messageBox.innerText = "Please enter a valid number!";
             }
@@ -310,21 +348,25 @@
         }
     })
 
+    // Function to compare the user answer to the real answer
     function compareAnswer(userInput) {
         const answerMessage = document.getElementById("user-answer");
         const realAnswer = document.getElementById("real-answer");
 
+        // Sets an message based on the user answer
         if (answerMessage) {
             let threshold = realAnswer.value * 0.3;
 
-            
-            if (userInput > realAnswer.value + threshold | userInput < realAnswer.value - threshold) {
+            if (userInput == realAnswer.value) {
+                answerMessage.innerHTML = "Spot on!"
+            }
+
+            else if (userInput > realAnswer.value + threshold | userInput < realAnswer.value - threshold) {
                 answerMessage.innerHTML = `A little off!`;
                 
             }
             else {
                 answerMessage.innerHTML = `So close!`;
-
             }
         }
     }
